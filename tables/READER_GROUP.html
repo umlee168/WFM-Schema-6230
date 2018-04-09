@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>READER_GROUP - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>READER_GROUP</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="RDRGRP_ID">RDRGRP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="DEPARTMENT_RDR_GRP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_DEPTRDRGP_RGID">
+						<a href='DEPARTMENT_RDR_GRP.html'>DEPARTMENT_RDR_GRP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_DEPTRDRGP_RGID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="DOCKET_RDR_GRP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_DOCKRDRGP_RGID">
+						<a href='DOCKET_RDR_GRP.html'>DOCKET_RDR_GRP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_DOCKRDRGP_RGID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="EMPLOYEE_READER_GROUP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_ERDGP_RDRGRP_ID">
+						<a href='EMPLOYEE_READER_GROUP.html'>EMPLOYEE_READER_GROUP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_ERDGP_RDRGRP_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="JOB_RDR_GRP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_JOBRDRGP_RGID">
+						<a href='JOB_RDR_GRP.html'>JOB_RDR_GRP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_JOBRDRGP_RGID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="PROJECT_RDR_GRP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_PROJRDRGP_RGID">
+						<a href='PROJECT_RDR_GRP.html'>PROJECT_RDR_GRP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_PROJRDRGP_RGID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="READER.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_RDR_RDRGRP_ID">
+						<a href='READER.html'>READER</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_RDR_RDRGRP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="TIME_CODE_RDR_GRP.RDRGRP_ID references READER_GROUP.RDRGRP_ID via FK_TCDRDRGP_RGID">
+						<a href='TIME_CODE_RDR_GRP.html'>TIME_CODE_RDR_GRP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_TCDRDRGP_RGID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_EMPLOYEE_READER_GROUP.RDRGRP_ID&#39;s name implies that it&#39;s a child of READER_GROUP.RDRGRP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_EMPLOYEE_READER_GROUP.html'>VIEW_EMPLOYEE_READER_GROUP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_READER.RDRGRP_ID&#39;s name implies that it&#39;s a child of READER_GROUP.RDRGRP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_READER.html'>VIEW_READER</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_READER_GROUP.RDRGRP_ID&#39;s name implies that it&#39;s a child of READER_GROUP.RDRGRP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_READER_GROUP.html'>VIEW_READER_GROUP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_READER_GROUP.RDRGRP_ID&#39;s name implies that it&#39;s a child of READER_GROUP.RDRGRP_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_READER_GROUP.html'>VL_READER_GROUP</a><span class='relatedKey'>.RDRGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="RDRGRP_NAME">RDRGRP_NAME</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="RDRGRP_DESC">RDRGRP_DESC</span></td>
+				 <td>VARCHAR2</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="RDRSVR_ID">RDRSVR_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="READER_GROUP.RDRSVR_ID references READER_SERVER.RDRSVR_ID via FK_RGRP_RDRSVR_ID">
+						<a href='READER_SERVER.html'>READER_SERVER</a><span class='relatedKey'>.RDRSVR_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_RGRP_RDRSVR_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="CLIENT_ID">CLIENT_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>1 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="RDRGRP_SHARE_SWIPES">RDRGRP_SHARE_SWIPES</span></td>
+				 <td>CHAR</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>&#39;N&#39; </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='6 columns'>Table contained <span id="recordNumber">3</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_READER_GROUP</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>RDRGRP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> UK_RDRGRP_RDRGRPNM</td>
+				  <td>Must be unique</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>RDRGRP_NAME</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="DEPARTMENT_RDR_GRP.html" title="DEPARTMENT_RDR_GRP" alt="" coords="713,5,981,181">
+<area shape="rect" id="node2" href="READER_GROUP.html" title="READER_GROUP" alt="" coords="296,641,653,887">
+<area shape="rect" id="node8" href="READER_SERVER.html" title="READER_SERVER" alt="" coords="5,732,252,937">
+<area shape="rect" id="node3" href="DOCKET_RDR_GRP.html" title="DOCKET_RDR_GRP" alt="" coords="733,199,961,375">
+<area shape="rect" id="node4" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="697,392,996,568">
+<area shape="rect" id="node5" href="JOB_RDR_GRP.html" title="JOB_RDR_GRP" alt="" coords="750,585,943,761">
+<area shape="rect" id="node6" href="PROJECT_RDR_GRP.html" title="PROJECT_RDR_GRP" alt="" coords="729,779,964,955">
+<area shape="rect" id="node7" href="READER.html" title="READER" alt="" coords="700,972,993,1265">
+<area shape="rect" id="node9" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="721,1283,973,1459">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/READER_GROUP.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="CLOCK_TRAN_PROCESSED.html" title="CLOCK_TRAN_PROCESSED" alt="" coords="1345,163,1631,251">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="1065,316,1231,404">
+<area shape="rect" id="node3" href="READER.html" title="READER" alt="" coords="1001,5,1295,299">
+<area shape="rect" id="node10" href="TIMEZONE.html" title="TIMEZONE" alt="" coords="699,309,858,397">
+<area shape="rect" id="node6" href="READER_GROUP.html" title="READER_GROUP" alt="" coords="600,855,957,1100">
+<area shape="rect" id="node15" href="READER_STATUS.html" title="READER_STATUS" alt="" coords="673,85,884,173">
+<area shape="rect" id="node16" href="READER_TYPE.html" title="READER_TYPE" alt="" coords="683,191,874,279">
+<area shape="rect" id="node4" href="DEPARTMENT_RDR_GRP.html" title="DEPARTMENT_RDR_GRP" alt="" coords="1014,421,1282,597">
+<area shape="rect" id="node5" href="DEPARTMENT.html" title="DEPARTMENT" alt="" coords="686,453,871,541">
+<area shape="rect" id="node17" href="READER_SERVER.html" title="READER_SERVER" alt="" coords="309,945,556,1151">
+<area shape="rect" id="node7" href="DOCKET.html" title="DOCKET" alt="" coords="706,665,851,753">
+<area shape="rect" id="node8" href="PROJECT.html" title="PROJECT" alt="" coords="356,700,509,788">
+<area shape="rect" id="node9" href="DOCKET_RDR_GRP.html" title="DOCKET_RDR_GRP" alt="" coords="1034,615,1262,791">
+<area shape="rect" id="node11" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="1339,508,1637,684">
+<area shape="rect" id="node12" href="JOB_RDR_GRP.html" title="JOB_RDR_GRP" alt="" coords="1051,1037,1245,1213">
+<area shape="rect" id="node13" href="JOB.html" title="JOB" alt="" coords="708,1117,849,1205">
+<area shape="rect" id="node14" href="PROJECT_RDR_GRP.html" title="PROJECT_RDR_GRP" alt="" coords="1031,808,1265,984">
+<area shape="rect" id="node18" href="READER_SERVER_TYPE.html" title="READER_SERVER_TYPE" alt="" coords="5,1036,265,1124">
+<area shape="rect" id="node19" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="1022,1231,1274,1407">
+<area shape="rect" id="node20" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="694,1263,863,1351">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/READER_GROUP.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="DEPARTMENT_RDR_GRP.html" title="DEPARTMENT_RDR_GRP" alt="" coords="713,1125,981,1301">
+<area shape="rect" id="node2" href="READER_GROUP.html" title="READER_GROUP" alt="" coords="296,1085,653,1331">
+<area shape="rect" id="node8" href="READER_SERVER.html" title="READER_SERVER" alt="" coords="5,1577,252,1783">
+<area shape="rect" id="node3" href="DOCKET_RDR_GRP.html" title="DOCKET_RDR_GRP" alt="" coords="733,1319,961,1495">
+<area shape="rect" id="node4" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="697,932,996,1108">
+<area shape="rect" id="node5" href="JOB_RDR_GRP.html" title="JOB_RDR_GRP" alt="" coords="750,5,943,181">
+<area shape="rect" id="node6" href="PROJECT_RDR_GRP.html" title="PROJECT_RDR_GRP" alt="" coords="729,199,964,375">
+<area shape="rect" id="node7" href="READER.html" title="READER" alt="" coords="700,392,993,685">
+<area shape="rect" id="node9" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="721,703,973,879">
+<area shape="rect" id="node10" href="VIEW_EMPLOYEE_READER_GROUP.html" title="VIEW_EMPLOYEE_READER_GROUP" alt="" coords="1040,1068,1380,1220">
+<area shape="rect" id="node11" href="VIEW_READER.html" title="VIEW_READER" alt="" coords="1063,691,1357,843">
+<area shape="rect" id="node12" href="VIEW_READER_GROUP.html" title="VIEW_READER_GROUP" alt="" coords="723,1548,971,1671">
+<area shape="rect" id="node13" href="VL_READER_GROUP.html" title="VL_READER_GROUP" alt="" coords="719,1688,974,1811">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/READER_GROUP.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="CLOCK_TRAN_DELETED.html" title="CLOCK_TRAN_DELETED" alt="" coords="1357,190,1619,278">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="1065,82,1231,170">
+<area shape="rect" id="node3" href="READER.html" title="READER" alt="" coords="1001,187,1295,480">
+<area shape="rect" id="node11" href="TIMEZONE.html" title="TIMEZONE" alt="" coords="699,171,858,259">
+<area shape="rect" id="node7" href="READER_GROUP.html" title="READER_GROUP" alt="" coords="600,824,957,1070">
+<area shape="rect" id="node16" href="READER_STATUS.html" title="READER_STATUS" alt="" coords="673,555,884,643">
+<area shape="rect" id="node17" href="READER_TYPE.html" title="READER_TYPE" alt="" coords="683,366,874,454">
+<area shape="rect" id="node4" href="CLOCK_TRAN_PROCESSED.html" title="CLOCK_TRAN_PROCESSED" alt="" coords="1345,84,1631,172">
+<area shape="rect" id="node5" href="DEPARTMENT_RDR_GRP.html" title="DEPARTMENT_RDR_GRP" alt="" coords="1014,674,1282,850">
+<area shape="rect" id="node6" href="DEPARTMENT.html" title="DEPARTMENT" alt="" coords="686,706,871,794">
+<area shape="rect" id="node18" href="READER_SERVER.html" title="READER_SERVER" alt="" coords="309,915,556,1120">
+<area shape="rect" id="node8" href="DOCKET.html" title="DOCKET" alt="" coords="706,1315,851,1403">
+<area shape="rect" id="node9" href="PROJECT.html" title="PROJECT" alt="" coords="356,1254,509,1342">
+<area shape="rect" id="node10" href="DOCKET_RDR_GRP.html" title="DOCKET_RDR_GRP" alt="" coords="1034,1308,1262,1484">
+<area shape="rect" id="node12" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="1339,331,1637,507">
+<area shape="rect" id="node13" href="JOB_RDR_GRP.html" title="JOB_RDR_GRP" alt="" coords="1051,1502,1245,1678">
+<area shape="rect" id="node14" href="JOB.html" title="JOB" alt="" coords="708,1534,849,1622">
+<area shape="rect" id="node15" href="PROJECT_RDR_GRP.html" title="PROJECT_RDR_GRP" alt="" coords="1031,1115,1265,1291">
+<area shape="rect" id="node19" href="READER_SERVER_TYPE.html" title="READER_SERVER_TYPE" alt="" coords="5,1006,265,1094">
+<area shape="rect" id="node20" href="READER_SERVER_AS_IS.html" title="READER_SERVER_AS_IS" alt="" coords="649,1123,908,1187">
+<area shape="rect" id="node21" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="1022,1695,1274,1871">
+<area shape="rect" id="node22" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="694,1727,863,1815">
+<area shape="rect" id="node23" href="VIEW_CLOCK_TRAN_PROCESSED.html" title="VIEW_CLOCK_TRAN_PROCESSED" alt="" coords="1687,84,2015,148">
+<area shape="rect" id="node24" href="VIEW_EMPLOYEE_READER_GROUP.html" title="VIEW_EMPLOYEE_READER_GROUP" alt="" coords="1681,331,2021,483">
+<area shape="rect" id="node25" href="VIEW_READER.html" title="VIEW_READER" alt="" coords="1341,524,1635,676">
+<area shape="rect" id="node26" href="VIEW_READER_GROUP.html" title="VIEW_READER_GROUP" alt="" coords="1024,534,1272,656">
+<area shape="rect" id="node27" href="VIEW_READER_SERVER.html" title="VIEW_READER_SERVER" alt="" coords="652,474,905,538">
+<area shape="rect" id="node28" href="VL_READER_GROUP.html" title="VL_READER_GROUP" alt="" coords="1021,975,1275,1098">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/READER_GROUP.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

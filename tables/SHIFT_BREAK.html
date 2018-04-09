@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SHIFT_BREAK - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>SHIFT_BREAK</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SHFTBRK_ID">SHFTBRK_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="VIEW_SHIFT_BREAK.SHFTBRK_ID&#39;s name implies that it&#39;s a child of SHIFT_BREAK.SHFTBRK_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_SHIFT_BREAK.html'>VIEW_SHIFT_BREAK</a><span class='relatedKey'>.SHFTBRK_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SHFTBRK_START_TIME">SHFTBRK_START_TIME</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SHFTBRK_END_TIME">SHFTBRK_END_TIME</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SHFTBRK_MINUTES">SHFTBRK_MINUTES</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SHFT_ID">SHFT_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SHIFT_BREAK.SHFT_ID references SHIFT.SHFT_ID via FK_SB_SHFT_ID">
+						<a href='SHIFT.html'>SHIFT</a><span class='relatedKey'>.SHFT_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SB_SHFT_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="TCODE_ID">TCODE_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SHIFT_BREAK.TCODE_ID references TIME_CODE.TCODE_ID via FK_SB_TCODE_ID">
+						<a href='TIME_CODE.html'>TIME_CODE</a><span class='relatedKey'>.TCODE_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SB_TCODE_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="HTYPE_ID">HTYPE_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SHIFT_BREAK.HTYPE_ID references HOUR_TYPE.HTYPE_ID via FK_SB_HTYPE_ID">
+						<a href='HOUR_TYPE.html'>HOUR_TYPE</a><span class='relatedKey'>.HTYPE_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SB_HTYPE_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="CLIENT_ID">CLIENT_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>1 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SHFTBRK_DEF_START">SHFTBRK_DEF_START</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='9 columns'>Table contained <span id="recordNumber">1</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_SHIFT_BREAK</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SHFTBRK_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SFT_BK_SHFT_ID</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SHFT_ID</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="SHIFT_BREAK.html" title="SHIFT_BREAK" alt="" coords="607,79,929,412">
+<area shape="rect" id="node2" href="HOUR_TYPE.html" title="HOUR_TYPE" alt="" coords="5,379,233,555">
+<area shape="rect" id="node3" href="SHIFT.html" title="SHIFT" alt="" coords="320,5,520,211">
+<area shape="rect" id="node4" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="277,228,563,463">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/SHIFT_BREAK.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="ACA_TIMECODE.html" title="ACA_TIMECODE" alt="" coords="961,3380,1159,3468">
+<area shape="rect" id="node2" href="HOUR_TYPE.html" title="HOUR_TYPE" alt="" coords="288,3623,516,3799">
+<area shape="rect" id="node3" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="560,2515,845,2749">
+<area shape="rect" id="node20" href="LABOR_METRIC_SEC.html" title="LABOR_METRIC_SEC" alt="" coords="5,3388,244,3476">
+<area shape="rect" id="node31" href="COLOUR.html" title="COLOUR" alt="" coords="329,1587,475,1675">
+<area shape="rect" id="node4" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="957,3521,1163,3609">
+<area shape="rect" id="node5" href="AS_GROUP_TIME_CODE_EXCLUDE.html" title="AS_GROUP_TIME_CODE_EXCLUDE" alt="" coords="889,2360,1231,2448">
+<area shape="rect" id="node6" href="CLOCK_PRESET.html" title="CLOCK_PRESET" alt="" coords="958,2465,1162,2553">
+<area shape="rect" id="node7" href="CRIT_CLAUSE_HTYPE.html" title="CRIT_CLAUSE_HTYPE" alt="" coords="581,3771,825,3859">
+<area shape="rect" id="node8" href="CRIT_CLAUSE_TCODE.html" title="CRIT_CLAUSE_TCODE" alt="" coords="937,2571,1183,2659">
+<area shape="rect" id="node9" href="EMP_DEF_LAB.html" title="EMP_DEF_LAB" alt="" coords="965,3663,1155,3751">
+<area shape="rect" id="node10" href="EMP_SCHD_DTL_LAYER.html" title="EMP_SCHD_DTL_LAYER" alt="" coords="1303,1919,1563,2007">
+<area shape="rect" id="node11" href="SO_ACTIVITY.html" title="SO_ACTIVITY" alt="" coords="971,1587,1149,1675">
+<area shape="rect" id="node12" href="EMPLOYEE_SCHEDULE.html" title="EMPLOYEE_SCHEDULE" alt="" coords="932,989,1188,1077">
+<area shape="rect" id="node14" href="SHIFT.html" title="SHIFT" alt="" coords="603,671,803,876">
+<area shape="rect" id="node13" href="EMPLOYEE_SCHED_DTL.html" title="EMPLOYEE_SCHED_DTL" alt="" coords="1301,1551,1565,1639">
+<area shape="rect" id="node32" href="SHIFT_GROUP.html" title="SHIFT_GROUP" alt="" coords="307,732,497,820">
+<area shape="rect" id="node15" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1326,3431,1539,3519">
+<area shape="rect" id="node16" href="ES_SHIFT_HIST_DET.html" title="ES_SHIFT_HIST_DET" alt="" coords="1315,3927,1550,4015">
+<area shape="rect" id="node17" href="FCST_NONPROD_HTYPE.html" title="FCST_NONPROD_HTYPE" alt="" coords="570,3912,835,4000">
+<area shape="rect" id="node18" href="FCST_NONPROD_TCODE.html" title="FCST_NONPROD_TCODE" alt="" coords="925,2676,1195,2764">
+<area shape="rect" id="node19" href="HOUR_SET_INCL_TIME_CODE.html" title="HOUR_SET_INCL_TIME_CODE" alt="" coords="908,2781,1212,2869">
+<area shape="rect" id="node21" href="HOUR_TYPE_DATA.html" title="HOUR_TYPE_DATA" alt="" coords="592,4089,813,4177">
+<area shape="rect" id="node22" href="LABOR_SHORTCUT_DTL.html" title="LABOR_SHORTCUT_DTL" alt="" coords="927,3768,1193,3856">
+<area shape="rect" id="node23" href="LOCATION_TIME_CODE.html" title="LOCATION_TIME_CODE" alt="" coords="932,2887,1188,2975">
+<area shape="rect" id="node24" href="MP_DAILY_OVERRIDE.html" title="MP_DAILY_OVERRIDE" alt="" coords="939,5,1181,93">
+<area shape="rect" id="node25" href="MP_TEMPLATE_OVERRIDE.html" title="MP_TEMPLATE_OVERRIDE" alt="" coords="921,111,1199,199">
+<area shape="rect" id="node26" href="MP_TEMPLATE_REQUIREMENT.html" title="MP_TEMPLATE_REQUIREMENT" alt="" coords="903,216,1217,304">
+<area shape="rect" id="node27" href="MP_TEMPLATE_SHIFT_OVERRIDE.html" title="MP_TEMPLATE_SHIFT_OVERRIDE" alt="" coords="895,321,1225,409">
+<area shape="rect" id="node28" href="MP_TEMPLATE_TCODE.html" title="MP_TEMPLATE_TCODE" alt="" coords="933,2992,1187,3080">
+<area shape="rect" id="node29" href="SCHED_COST_DETAIL.html" title="SCHED_COST_DETAIL" alt="" coords="937,3873,1183,3961">
+<area shape="rect" id="node30" href="SCHEDULE_EMPLOYEE.html" title="SCHEDULE_EMPLOYEE" alt="" coords="932,427,1188,515">
+<area shape="rect" id="node33" href="SHIFT_BREAK.html" title="SHIFT_BREAK" alt="" coords="899,1200,1221,1533">
+<area shape="rect" id="node34" href="SHIFT_PATTERN_SHIFT_LABOR.html" title="SHIFT_PATTERN_SHIFT_LABOR" alt="" coords="1275,3131,1591,3219">
+<area shape="rect" id="node35" href="SHIFT_PATTERN_SHIFTS.html" title="SHIFT_PATTERN_SHIFTS" alt="" coords="927,532,1193,620">
+<area shape="rect" id="node36" href="SHIFT_PREMIUM_ZONE.html" title="SHIFT_PREMIUM_ZONE" alt="" coords="933,3169,1187,3257">
+<area shape="rect" id="node37" href="SP_ZONE_INCL_TIME_CODE.html" title="SP_ZONE_INCL_TIME_CODE" alt="" coords="915,1692,1205,1780">
+<area shape="rect" id="node38" href="SR_DETAIL.html" title="SR_DETAIL" alt="" coords="979,673,1141,761">
+<area shape="rect" id="node39" href="SR_SUM_PRIORITY.html" title="SR_SUM_PRIORITY" alt="" coords="948,779,1172,867">
+<area shape="rect" id="node40" href="SR_TEAM_PRIORITY.html" title="SR_TEAM_PRIORITY" alt="" coords="944,884,1176,972">
+<area shape="rect" id="node41" href="TARGET_DETAIL_TIME_CODE.html" title="TARGET_DETAIL_TIME_CODE" alt="" coords="909,1797,1211,1885">
+<area shape="rect" id="node42" href="TIME_CODE_BALANCE.html" title="TIME_CODE_BALANCE" alt="" coords="936,1903,1184,1991">
+<area shape="rect" id="node43" href="TIME_CODE_DATA.html" title="TIME_CODE_DATA" alt="" coords="951,2008,1169,2096">
+<area shape="rect" id="node44" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="934,2113,1186,2201">
+<area shape="rect" id="node45" href="TIME_OFF_TYPE.html" title="TIME_OFF_TYPE" alt="" coords="958,2255,1162,2343">
+<area shape="rect" id="node46" href="TOKE_POOL.html" title="TOKE_POOL" alt="" coords="973,3275,1147,3363">
+<area shape="rect" id="node47" href="UNSTFD_SHIFT.html" title="UNSTFD_SHIFT" alt="" coords="1335,1005,1530,1093">
+<area shape="rect" id="node48" href="WORK_DETAIL.html" title="WORK_DETAIL" alt="" coords="1338,3025,1527,3113">
+<area shape="rect" id="node49" href="WORK_SUMMARY.html" title="WORK_SUMMARY" alt="" coords="953,1095,1167,1183">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/SHIFT_BREAK.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="SHIFT_BREAK.html" title="SHIFT_BREAK" alt="" coords="607,80,929,413">
+<area shape="rect" id="node2" href="HOUR_TYPE.html" title="HOUR_TYPE" alt="" coords="5,440,233,616">
+<area shape="rect" id="node3" href="SHIFT.html" title="SHIFT" alt="" coords="320,5,520,211">
+<area shape="rect" id="node4" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="277,228,563,463">
+<area shape="rect" id="node5" href="VIEW_SHIFT_BREAK.html" title="VIEW_SHIFT_BREAK" alt="" coords="973,208,1208,389">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/SHIFT_BREAK.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="ACA_TIMECODE.html" title="ACA_TIMECODE" alt="" coords="961,4783,1159,4871">
+<area shape="rect" id="node2" href="HOUR_TYPE.html" title="HOUR_TYPE" alt="" coords="288,4885,516,5061">
+<area shape="rect" id="node3" href="TIME_CODE.html" title="TIME_CODE" alt="" coords="560,3895,845,4129">
+<area shape="rect" id="node21" href="LABOR_METRIC_SEC.html" title="LABOR_METRIC_SEC" alt="" coords="5,4377,244,4465">
+<area shape="rect" id="node32" href="COLOUR.html" title="COLOUR" alt="" coords="329,1793,475,1881">
+<area shape="rect" id="node4" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="957,4993,1163,5081">
+<area shape="rect" id="node5" href="AS_GROUP_TIME_CODE_EXCLUDE.html" title="AS_GROUP_TIME_CODE_EXCLUDE" alt="" coords="889,2521,1231,2609">
+<area shape="rect" id="node6" href="CLOCK_PRESET.html" title="CLOCK_PRESET" alt="" coords="958,2344,1162,2432">
+<area shape="rect" id="node7" href="CRIT_CLAUSE_HTYPE.html" title="CRIT_CLAUSE_HTYPE" alt="" coords="581,5715,825,5803">
+<area shape="rect" id="node8" href="CRIT_CLAUSE_TCODE.html" title="CRIT_CLAUSE_TCODE" alt="" coords="937,3267,1183,3355">
+<area shape="rect" id="node9" href="EMP_DEF_LAB.html" title="EMP_DEF_LAB" alt="" coords="965,5681,1155,5769">
+<area shape="rect" id="node10" href="EMP_SCHD_DTL_LAYER.html" title="EMP_SCHD_DTL_LAYER" alt="" coords="1317,3028,1577,3116">
+<area shape="rect" id="node11" href="SO_ACTIVITY.html" title="SO_ACTIVITY" alt="" coords="971,3089,1149,3177">
+<area shape="rect" id="node12" href="EMPLOYEE_SCHEDULE.html" title="EMPLOYEE_SCHEDULE" alt="" coords="932,1509,1188,1597">
+<area shape="rect" id="node14" href="SHIFT.html" title="SHIFT" alt="" coords="603,1256,803,1461">
+<area shape="rect" id="node13" href="EMPLOYEE_SCHED_DTL.html" title="EMPLOYEE_SCHED_DTL" alt="" coords="1315,2616,1579,2704">
+<area shape="rect" id="node33" href="SHIFT_GROUP.html" title="SHIFT_GROUP" alt="" coords="307,87,497,175">
+<area shape="rect" id="node15" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1341,4435,1554,4523">
+<area shape="rect" id="node16" href="ES_SHIFT_HIST_DET.html" title="ES_SHIFT_HIST_DET" alt="" coords="1330,4805,1565,4893">
+<area shape="rect" id="node17" href="FCST_NONPROD_HTYPE.html" title="FCST_NONPROD_HTYPE" alt="" coords="570,5820,835,5908">
+<area shape="rect" id="node18" href="FCST_NONPROD_TCODE.html" title="FCST_NONPROD_TCODE" alt="" coords="925,3372,1195,3460">
+<area shape="rect" id="node19" href="HOUR_SET_DET.html" title="HOUR_SET_DET" alt="" coords="601,5496,804,5584">
+<area shape="rect" id="node20" href="HOUR_SET_INCL_TIME_CODE.html" title="HOUR_SET_INCL_TIME_CODE" alt="" coords="908,2807,1212,2895">
+<area shape="rect" id="node22" href="HOUR_TYPE_DATA.html" title="HOUR_TYPE_DATA" alt="" coords="592,2253,813,2341">
+<area shape="rect" id="node23" href="LABOR_SHORTCUT_DTL.html" title="LABOR_SHORTCUT_DTL" alt="" coords="927,4677,1193,4765">
+<area shape="rect" id="node24" href="LOCATION_TIME_CODE.html" title="LOCATION_TIME_CODE" alt="" coords="932,3477,1188,3565">
+<area shape="rect" id="node25" href="MP_DAILY_OVERRIDE.html" title="MP_DAILY_OVERRIDE" alt="" coords="939,556,1181,644">
+<area shape="rect" id="node26" href="MP_TEMPLATE_OVERRIDE.html" title="MP_TEMPLATE_OVERRIDE" alt="" coords="921,661,1199,749">
+<area shape="rect" id="node27" href="MP_TEMPLATE_REQUIREMENT.html" title="MP_TEMPLATE_REQUIREMENT" alt="" coords="903,767,1217,855">
+<area shape="rect" id="node28" href="MP_TEMPLATE_SHIFT_OVERRIDE.html" title="MP_TEMPLATE_SHIFT_OVERRIDE" alt="" coords="895,872,1225,960">
+<area shape="rect" id="node29" href="MP_TEMPLATE_TCODE.html" title="MP_TEMPLATE_TCODE" alt="" coords="933,3583,1187,3671">
+<area shape="rect" id="node30" href="SCHED_COST_DETAIL.html" title="SCHED_COST_DETAIL" alt="" coords="937,4409,1183,4497">
+<area shape="rect" id="node31" href="SCHEDULE_EMPLOYEE.html" title="SCHEDULE_EMPLOYEE" alt="" coords="932,977,1188,1065">
+<area shape="rect" id="node34" href="SHIFT_BREAK.html" title="SHIFT_BREAK" alt="" coords="899,1651,1221,1984">
+<area shape="rect" id="node35" href="SHIFT_PATTERN_SHIFT_LABOR.html" title="SHIFT_PATTERN_SHIFT_LABOR" alt="" coords="1289,3133,1605,3221">
+<area shape="rect" id="node36" href="SHIFT_PATTERN_SHIFTS.html" title="SHIFT_PATTERN_SHIFTS" alt="" coords="927,1332,1193,1420">
+<area shape="rect" id="node37" href="SHIFT_PREMIUM_ZONE.html" title="SHIFT_PREMIUM_ZONE" alt="" coords="933,5279,1187,5367">
+<area shape="rect" id="node38" href="SP_ZONE_INCL_TIME_CODE.html" title="SP_ZONE_INCL_TIME_CODE" alt="" coords="1303,5360,1592,5448">
+<area shape="rect" id="node39" href="SR_DETAIL.html" title="SR_DETAIL" alt="" coords="979,240,1141,328">
+<area shape="rect" id="node40" href="SR_SUM_PRIORITY.html" title="SR_SUM_PRIORITY" alt="" coords="948,345,1172,433">
+<area shape="rect" id="node41" href="SR_TEAM_PRIORITY.html" title="SR_TEAM_PRIORITY" alt="" coords="944,451,1176,539">
+<area shape="rect" id="node42" href="TARGET_DETAIL_TIME_CODE.html" title="TARGET_DETAIL_TIME_CODE" alt="" coords="909,3688,1211,3776">
+<area shape="rect" id="node43" href="TIME_CODE_BALANCE.html" title="TIME_CODE_BALANCE" alt="" coords="936,2948,1184,3036">
+<area shape="rect" id="node44" href="TIME_CODE_DATA.html" title="TIME_CODE_DATA" alt="" coords="951,3971,1169,4059">
+<area shape="rect" id="node45" href="TIME_CODE_RDR_GRP.html" title="TIME_CODE_RDR_GRP" alt="" coords="934,3793,1186,3881">
+<area shape="rect" id="node46" href="TIME_OFF_TYPE.html" title="TIME_OFF_TYPE" alt="" coords="958,4160,1162,4248">
+<area shape="rect" id="node47" href="TOKE_POOL.html" title="TOKE_POOL" alt="" coords="973,4888,1147,4976">
+<area shape="rect" id="node48" href="UNSTFD_SHIFT.html" title="UNSTFD_SHIFT" alt="" coords="1350,2499,1545,2587">
+<area shape="rect" id="node49" href="VIEW_EMP_DEF_LAB.html" title="VIEW_EMP_DEF_LAB" alt="" coords="1332,5681,1563,5745">
+<area shape="rect" id="node50" href="VIEW_HOUR_SET_DET.html" title="VIEW_HOUR_SET_DET" alt="" coords="938,5528,1182,5592">
+<area shape="rect" id="node51" href="VIEW_HOUR_SET_INCL_TIME_CODE.html" title="VIEW_HOUR_SET_INCL_TIME_CODE" alt="" coords="1275,2773,1620,2837">
+<area shape="rect" id="node52" href="VIEW_MOD_WORK_DETAIL.html" title="VIEW_MOD_WORK_DETAIL" alt="" coords="1692,2253,1967,2317">
+<area shape="rect" id="node53" href="WORK_DETAIL.html" title="WORK_DETAIL" alt="" coords="1353,2203,1542,2291">
+<area shape="rect" id="node54" href="WORK_SUMMARY.html" title="WORK_SUMMARY" alt="" coords="953,1191,1167,1279">
+<area shape="rect" id="node55" href="VIEW_MOD_WORK_SUMMARY.html" title="VIEW_MOD_WORK_SUMMARY" alt="" coords="1298,1272,1597,1336">
+<area shape="rect" id="node56" href="VIEW_PARSE_CLOCKS.html" title="VIEW_PARSE_CLOCKS" alt="" coords="1325,1109,1569,1173">
+<area shape="rect" id="node57" href="VIEW_PAYEXP_ADJUSTMENT.html" title="VIEW_PAYEXP_ADJUSTMENT" alt="" coords="914,2109,1206,2173">
+<area shape="rect" id="node58" href="VIEW_PAYEXP_CURRENT.html" title="VIEW_PAYEXP_CURRENT" alt="" coords="928,2191,1192,2255">
+<area shape="rect" id="node59" href="VIEW_SHIFT.html" title="VIEW_SHIFT" alt="" coords="977,5,1143,69">
+<area shape="rect" id="node60" href="VIEW_SHIFT_BREAK.html" title="VIEW_SHIFT_BREAK" alt="" coords="1330,1763,1565,1944">
+<area shape="rect" id="node61" href="VIEW_SHIFT_PATTERN_SHIFTS.html" title="VIEW_SHIFT_PATTERN_SHIFTS" alt="" coords="1294,1425,1601,1489">
+<area shape="rect" id="node62" href="VIEW_SHIFT_PREMIUM_ZONE.html" title="VIEW_SHIFT_PREMIUM_ZONE" alt="" coords="1300,5161,1595,5225">
+<area shape="rect" id="node63" href="VIEW_SHIFT_PREMIUM_ZONE_FULL.html" title="VIEW_SHIFT_PREMIUM_ZONE_FULL" alt="" coords="1277,5080,1618,5144">
+<area shape="rect" id="node64" href="VIEW_SP_ZONE_INCL_TIME_CODE.html" title="VIEW_SP_ZONE_INCL_TIME_CODE" alt="" coords="1664,5360,1995,5424">
+<area shape="rect" id="node65" href="VIEW_TIME_CODE.html" title="VIEW_TIME_CODE" alt="" coords="955,4596,1165,4660">
+<area shape="rect" id="node66" href="VIEW_TIME_CODE_BALANCE.html" title="VIEW_TIME_CODE_BALANCE" alt="" coords="1303,2865,1592,2929">
+<area shape="rect" id="node67" href="VIEW_TIME_CODE_DATA.html" title="VIEW_TIME_CODE_DATA" alt="" coords="1318,3935,1577,3999">
+<area shape="rect" id="node68" href="VIEW_WORK_DETAIL.html" title="VIEW_WORK_DETAIL" alt="" coords="1714,2485,1945,2549">
+<area shape="rect" id="node69" href="VIEW_WORK_DETAIL_ADJUST.html" title="VIEW_WORK_DETAIL_ADJUST" alt="" coords="2039,2413,2336,2477">
+<area shape="rect" id="node70" href="WORK_DETAIL_ADJUST.html" title="WORK_DETAIL_ADJUST" alt="" coords="1701,2129,1957,2217">
+<area shape="rect" id="node71" href="VIEW_WORK_SUMMARY.html" title="VIEW_WORK_SUMMARY" alt="" coords="1320,1191,1575,1255">
+<area shape="rect" id="node72" href="VL_CLOCK_PRESET.html" title="VL_CLOCK_PRESET" alt="" coords="1334,2368,1561,2432">
+<area shape="rect" id="node73" href="VL_HOUR_TYPE.html" title="VL_HOUR_TYPE" alt="" coords="604,1884,801,1948">
+<area shape="rect" id="node74" href="VL_SHIFT.html" title="VL_SHIFT" alt="" coords="986,87,1134,151">
+<area shape="rect" id="node75" href="VL_SHIFT_PREMIUM_ZONE.html" title="VL_SHIFT_PREMIUM_ZONE" alt="" coords="1309,5279,1586,5343">
+<area shape="rect" id="node76" href="VL_SO_ACTIVITY.html" title="VL_SO_ACTIVITY" alt="" coords="1347,2947,1548,3011">
+<area shape="rect" id="node77" href="VL_TIME_CODE.html" title="VL_TIME_CODE" alt="" coords="963,4515,1157,4579">
+<area shape="rect" id="node78" href="VL_TIME_OFF_TYPE.html" title="VL_TIME_OFF_TYPE" alt="" coords="1334,4063,1561,4127">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/SHIFT_BREAK.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MESSAGE_TYPE - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>MESSAGE_TYPE</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="MSGTYP_ID">MSGTYP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="BUSINESS_OBJECT_TYPE.MSGTYP_ID references MESSAGE_TYPE.MSGTYP_ID via FK_BOT_MSGTYP_ID">
+						<a href='BUSINESS_OBJECT_TYPE.html'>BUSINESS_OBJECT_TYPE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_BOT_MSGTYP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="MESSAGE.MSGTYP_ID references MESSAGE_TYPE.MSGTYP_ID via FK_MSG_MSGTYP_ID">
+						<a href='MESSAGE.html'>MESSAGE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_MSG_MSGTYP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="MESSAGE_DELETE.MSGTYP_ID references MESSAGE_TYPE.MSGTYP_ID via FK_MSGDEL_MSGTY_ID">
+						<a href='MESSAGE_DELETE.html'>MESSAGE_DELETE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_MSGDEL_MSGTY_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MESSAGE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MESSAGE.html'>VIEW_MESSAGE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MESSAGE_DELETE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MESSAGE_DELETE.html'>VIEW_MESSAGE_DELETE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MESSAGE_TYPE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MESSAGE_TYPE.html'>VIEW_MESSAGE_TYPE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MOD_MAIL_FORWARD.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MOD_MAIL_FORWARD.html'>VIEW_MOD_MAIL_FORWARD</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MOD_MESSAGE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MOD_MESSAGE.html'>VIEW_MOD_MESSAGE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MOD_USER_FOLDER.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MOD_USER_FOLDER.html'>VIEW_MOD_USER_FOLDER</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_MOD_USER_FOLDER_EXT.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_MOD_USER_FOLDER_EXT.html'>VIEW_MOD_USER_FOLDER_EXT</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_OUT_GOING_MESSAGE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_OUT_GOING_MESSAGE.html'>VIEW_OUT_GOING_MESSAGE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_BUSINESS_OBJECT_TYPE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_BUSINESS_OBJECT_TYPE.html'>VL_BUSINESS_OBJECT_TYPE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_MESSAGE_TYPE.MSGTYP_ID&#39;s name implies that it&#39;s a child of MESSAGE_TYPE.MSGTYP_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_MESSAGE_TYPE.html'>VL_MESSAGE_TYPE</a><span class='relatedKey'>.MSGTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="MSGTYP_NAME">MSGTYP_NAME</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="MSGURL_ID">MSGURL_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="MESSAGE_TYPE.MSGURL_ID references MESSAGE_TYPE_URL.MSGURL_ID via FK_MSGTY_MSGURL_ID">
+						<a href='MESSAGE_TYPE_URL.html'>MESSAGE_TYPE_URL</a><span class='relatedKey'>.MSGURL_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_MSGTY_MSGURL_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="MSGTYP_PERIOD">MSGTYP_PERIOD</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="MSGURLPARM_CNT">MSGURLPARM_CNT</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='5 columns'>Table contained <span id="recordNumber">10</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_MESSAGE_TYPE</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>MSGTYP_ID</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="BUSINESS_OBJECT_TYPE.html" title="BUSINESS_OBJECT_TYPE" alt="" coords="636,5,968,211">
+<area shape="rect" id="node2" href="MESSAGE_TYPE.html" title="MESSAGE_TYPE" alt="" coords="291,284,592,500">
+<area shape="rect" id="node5" href="MESSAGE_TYPE_URL.html" title="MESSAGE_TYPE_URL" alt="" coords="5,345,247,463">
+<area shape="rect" id="node3" href="MESSAGE.html" title="MESSAGE" alt="" coords="693,228,911,404">
+<area shape="rect" id="node4" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="691,421,913,597">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/MESSAGE_TYPE.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="BO_MESSAGE_HISTORY.html" title="BO_MESSAGE_HISTORY" alt="" coords="1619,5,1880,93">
+<area shape="rect" id="node2" href="BUSINESS_OBJECT.html" title="BUSINESS_OBJECT" alt="" coords="1313,192,1541,280">
+<area shape="rect" id="node3" href="MESSAGE.html" title="MESSAGE" alt="" coords="1028,36,1245,212">
+<area shape="rect" id="node4" href="BUSOBJTYP_VERSION.html" title="BUSOBJTYP_VERSION" alt="" coords="1012,265,1261,353">
+<area shape="rect" id="node5" href="BUSINESS_OBJECT_TYPE.html" title="BUSINESS_OBJECT_TYPE" alt="" coords="636,263,968,468">
+<area shape="rect" id="node6" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="1025,407,1249,495">
+<area shape="rect" id="node9" href="MESSAGE_TYPE.html" title="MESSAGE_TYPE" alt="" coords="291,228,592,444">
+<area shape="rect" id="node8" href="HISTORY_PERMISSION.html" title="HISTORY_PERMISSION" alt="" coords="315,567,567,655">
+<area shape="rect" id="node7" href="BUSINESS_OBJECT_DRAFT.html" title="BUSINESS_OBJECT_DRAFT" alt="" coords="1607,165,1892,253">
+<area shape="rect" id="node11" href="MESSAGE_TYPE_URL.html" title="MESSAGE_TYPE_URL" alt="" coords="5,375,247,492">
+<area shape="rect" id="node10" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="1316,467,1539,643">
+<area shape="rect" id="node12" href="MESSAGE_TYPE_URL_PARAM.html" title="MESSAGE_TYPE_URL_PARAM" alt="" coords="291,461,592,549">
+<area shape="rect" id="node13" href="RECIPIENT_MESSAGE.html" title="RECIPIENT_MESSAGE" alt="" coords="1305,51,1549,139">
+<area shape="rect" id="node14" href="RECIPIENT_MESSAGE_DELETE.html" title="RECIPIENT_MESSAGE_DELETE" alt="" coords="1593,431,1905,519">
+<area shape="rect" id="node15" href="SURVEY_DEPLOYED.html" title="SURVEY_DEPLOYED" alt="" coords="1311,325,1544,413">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/MESSAGE_TYPE.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="BUSINESS_OBJECT_TYPE.html" title="BUSINESS_OBJECT_TYPE" alt="" coords="636,239,968,444">
+<area shape="rect" id="node2" href="MESSAGE_TYPE.html" title="MESSAGE_TYPE" alt="" coords="291,596,592,812">
+<area shape="rect" id="node5" href="MESSAGE_TYPE_URL.html" title="MESSAGE_TYPE_URL" alt="" coords="5,1121,247,1239">
+<area shape="rect" id="node3" href="MESSAGE.html" title="MESSAGE" alt="" coords="693,607,911,783">
+<area shape="rect" id="node4" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="691,5,913,181">
+<area shape="rect" id="node6" href="VIEW_MESSAGE.html" title="VIEW_MESSAGE" alt="" coords="1080,344,1276,467">
+<area shape="rect" id="node7" href="VIEW_MESSAGE_DELETE.html" title="VIEW_MESSAGE_DELETE" alt="" coords="1046,5,1310,157">
+<area shape="rect" id="node8" href="VIEW_MESSAGE_TYPE.html" title="VIEW_MESSAGE_TYPE" alt="" coords="680,908,924,1031">
+<area shape="rect" id="node9" href="VIEW_MOD_MAIL_FORWARD.html" title="VIEW_MOD_MAIL_FORWARD" alt="" coords="1035,823,1321,975">
+<area shape="rect" id="node10" href="VIEW_MOD_MESSAGE.html" title="VIEW_MOD_MESSAGE" alt="" coords="1058,484,1298,607">
+<area shape="rect" id="node11" href="VIEW_MOD_USER_FOLDER.html" title="VIEW_MOD_USER_FOLDER" alt="" coords="1039,992,1317,1144">
+<area shape="rect" id="node12" href="VIEW_MOD_USER_FOLDER_EXT.html" title="VIEW_MOD_USER_FOLDER_EXT" alt="" coords="1020,1161,1336,1313">
+<area shape="rect" id="node13" href="VIEW_OUT_GOING_MESSAGE.html" title="VIEW_OUT_GOING_MESSAGE" alt="" coords="1030,624,1326,805">
+<area shape="rect" id="node14" href="VL_BUSINESS_OBJECT_TYPE.html" title="VL_BUSINESS_OBJECT_TYPE" alt="" coords="1012,175,1344,327">
+<area shape="rect" id="node15" href="VL_MESSAGE_TYPE.html" title="VL_MESSAGE_TYPE" alt="" coords="689,1048,915,1171">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/MESSAGE_TYPE.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="BO_MESSAGE_HISTORY.html" title="BO_MESSAGE_HISTORY" alt="" coords="1764,593,2025,681">
+<area shape="rect" id="node2" href="BUSINESS_OBJECT.html" title="BUSINESS_OBJECT" alt="" coords="1433,936,1661,1024">
+<area shape="rect" id="node3" href="MESSAGE.html" title="MESSAGE" alt="" coords="699,625,916,801">
+<area shape="rect" id="node4" href="BUSOBJTYP_VERSION.html" title="BUSOBJTYP_VERSION" alt="" coords="1064,1544,1313,1632">
+<area shape="rect" id="node5" href="BUSINESS_OBJECT_TYPE.html" title="BUSINESS_OBJECT_TYPE" alt="" coords="641,1363,973,1568">
+<area shape="rect" id="node6" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="1077,701,1301,789">
+<area shape="rect" id="node9" href="MESSAGE_TYPE.html" title="MESSAGE_TYPE" alt="" coords="291,1089,592,1305">
+<area shape="rect" id="node8" href="HISTORY_PERMISSION.html" title="HISTORY_PERMISSION" alt="" coords="315,1589,567,1677">
+<area shape="rect" id="node7" href="BUSINESS_OBJECT_DRAFT.html" title="BUSINESS_OBJECT_DRAFT" alt="" coords="1752,768,2037,856">
+<area shape="rect" id="node11" href="MESSAGE_TYPE_URL.html" title="MESSAGE_TYPE_URL" alt="" coords="5,1353,247,1471">
+<area shape="rect" id="node10" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="1435,175,1658,351">
+<area shape="rect" id="node12" href="MESSAGE_TYPE_URL_PARAM.html" title="MESSAGE_TYPE_URL_PARAM" alt="" coords="291,1833,592,1921">
+<area shape="rect" id="node13" href="RECIPIENT_MESSAGE.html" title="RECIPIENT_MESSAGE" alt="" coords="1067,452,1311,540">
+<area shape="rect" id="node14" href="RECIPIENT_MESSAGE_DELETE.html" title="RECIPIENT_MESSAGE_DELETE" alt="" coords="1739,452,2051,540">
+<area shape="rect" id="node15" href="SURVEY_DEPLOYED.html" title="SURVEY_DEPLOYED" alt="" coords="1430,1579,1663,1667">
+<area shape="rect" id="node16" href="VIEW_BUSINESS_OBJECT.html" title="VIEW_BUSINESS_OBJECT" alt="" coords="1760,1040,2029,1104">
+<area shape="rect" id="node17" href="VIEW_BUSINESS_OBJECT_DRAFT.html" title="VIEW_BUSINESS_OBJECT_DRAFT" alt="" coords="2108,768,2435,832">
+<area shape="rect" id="node18" href="VIEW_BUSOBJTYP_VERSION.html" title="VIEW_BUSOBJTYP_VERSION" alt="" coords="1401,1425,1692,1489">
+<area shape="rect" id="node19" href="VIEW_MESSAGE.html" title="VIEW_MESSAGE" alt="" coords="1091,915,1287,1037">
+<area shape="rect" id="node20" href="VIEW_MESSAGE_DELETE.html" title="VIEW_MESSAGE_DELETE" alt="" coords="1763,283,2027,435">
+<area shape="rect" id="node21" href="VIEW_MESSAGE_TYPE.html" title="VIEW_MESSAGE_TYPE" alt="" coords="685,1621,929,1744">
+<area shape="rect" id="node22" href="VIEW_MESSAGE_TYPE_URL_PARAM.html" title="VIEW_MESSAGE_TYPE_URL_PARAM" alt="" coords="636,1937,979,2001">
+<area shape="rect" id="node23" href="VIEW_MOD_MAIL_FORWARD.html" title="VIEW_MOD_MAIL_FORWARD" alt="" coords="1046,1231,1331,1383">
+<area shape="rect" id="node24" href="VIEW_MOD_MESSAGE.html" title="VIEW_MOD_MESSAGE" alt="" coords="1069,1055,1309,1177">
+<area shape="rect" id="node25" href="VIEW_MOD_USER_FOLDER.html" title="VIEW_MOD_USER_FOLDER" alt="" coords="1049,5,1328,157">
+<area shape="rect" id="node26" href="VIEW_MOD_USER_FOLDER_EXT.html" title="VIEW_MOD_USER_FOLDER_EXT" alt="" coords="1031,211,1347,363">
+<area shape="rect" id="node27" href="VIEW_OUT_GOING_MESSAGE.html" title="VIEW_OUT_GOING_MESSAGE" alt="" coords="1399,701,1695,883">
+<area shape="rect" id="node28" href="VIEW_RECIPIENT_MESSAGE.html" title="VIEW_RECIPIENT_MESSAGE" alt="" coords="1404,404,1689,468">
+<area shape="rect" id="node29" href="VIEW_RECIPIENT_MESSAGE_DELETE.html" title="VIEW_RECIPIENT_MESSAGE_DELETE" alt="" coords="2095,452,2448,516">
+<area shape="rect" id="node30" href="VIEW_SURVEY_DEPLOYED.html" title="VIEW_SURVEY_DEPLOYED" alt="" coords="1757,1613,2032,1677">
+<area shape="rect" id="node31" href="VL_BUSINESS_OBJECT.html" title="VL_BUSINESS_OBJECT" alt="" coords="1769,1148,2020,1212">
+<area shape="rect" id="node32" href="VL_BUSINESS_OBJECT_TYPE.html" title="VL_BUSINESS_OBJECT_TYPE" alt="" coords="1023,1756,1355,1908">
+<area shape="rect" id="node33" href="VL_MESSAGE_TYPE.html" title="VL_MESSAGE_TYPE" alt="" coords="694,1761,921,1884">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/MESSAGE_TYPE.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

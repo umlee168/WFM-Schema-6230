@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SC_WARNING - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>SC_WARNING</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SCWARN_ID">SCWARN_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="OVR_ID">OVR_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SC_WARNING.OVR_ID references OVERRIDE.OVR_ID via FK_SCWARN_OVRID">
+						<a href='OVERRIDE.html'>OVERRIDE</a><span class='relatedKey'>.OVR_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCWARN_OVRID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="WBU_ID">WBU_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SC_WARNING.WBU_ID references WORKBRAIN_USER.WBU_ID via FK_SCWARN_WBUID">
+						<a href='WORKBRAIN_USER.html'>WORKBRAIN_USER</a><span class='relatedKey'>.WBU_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCWARN_WBUID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SC_ID">SC_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SC_WARNING.SC_ID references SC_CONSTRAINT.SC_ID via FK_SCWARN_SCID">
+						<a href='SC_CONSTRAINT.html'>SC_CONSTRAINT</a><span class='relatedKey'>.SC_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCWARN_SCID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SCRULE_ID">SCRULE_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SC_WARNING.SCRULE_ID references SC_RULE.SCRULE_ID via FK_SCWARN_SCRULEID">
+						<a href='SC_RULE.html'>SC_RULE</a><span class='relatedKey'>.SCRULE_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCWARN_SCRULEID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SCWARN_IS_APPRVD">SCWARN_IS_APPRVD</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SCWARN_APPRVL_DATE">SCWARN_APPRVL_DATE</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SCWARN_SOURCE">SCWARN_SOURCE</span></td>
+				 <td>VARCHAR2</td>
+				 <td>4000</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="CLIENT_ID">CLIENT_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>1 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SCCGP_ID">SCCGP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SC_WARNING.SCCGP_ID references SC_CNSTRNT_GROUP.SCCGP_ID via FK_SCWARN_SCCNGP">
+						<a href='SC_CNSTRNT_GROUP.html'>SC_CNSTRNT_GROUP</a><span class='relatedKey'>.SCCGP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCWARN_SCCNGP <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='10 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_SC_WARNING</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SCWARN_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SCWARN_OVRID</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>OVR_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SCWARN_SCCGP</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SCCGP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SCWARN_SCID</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SC_ID</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="SC_WARNING.html" title="SC_WARNING" alt="" coords="339,536,696,899">
+<area shape="rect" id="node2" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="28,5,272,269">
+<area shape="rect" id="node3" href="SC_CONSTRAINT.html" title="SC_CONSTRAINT" alt="" coords="31,627,269,803">
+<area shape="rect" id="node4" href="SC_CNSTRNT_GROUP.html" title="SC_CNSTRNT_GROUP" alt="" coords="26,984,274,1160">
+<area shape="rect" id="node5" href="SC_RULE.html" title="SC_RULE" alt="" coords="61,820,239,967">
+<area shape="rect" id="node6" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="5,287,295,609">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/SC_WARNING.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="1387,1711,1594,1799">
+<area shape="rect" id="node2" href="COGNOS_RPRT_CRIT.html" title="COGNOS_RPRT_CRIT" alt="" coords="979,2100,1222,2188">
+<area shape="rect" id="node3" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="353,1185,518,1273">
+<area shape="rect" id="node4" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="600,3084,889,3407">
+<area shape="rect" id="node7" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="317,3248,554,3336">
+<area shape="rect" id="node8" href="WORKBRAIN_LOCALE.html" title="WORKBRAIN_LOCALE" alt="" coords="315,3353,556,3441">
+<area shape="rect" id="node59" href="WORKBRAIN_LANGUAGE.html" title="WORKBRAIN_LANGUAGE" alt="" coords="5,3264,271,3352">
+<area shape="rect" id="node5" href="BUSINESS_OBJECT.html" title="BUSINESS_OBJECT" alt="" coords="987,3276,1215,3364">
+<area shape="rect" id="node6" href="COGNOS_SESSION.html" title="COGNOS_SESSION" alt="" coords="989,5088,1213,5176">
+<area shape="rect" id="node9" href="DISTRIBUTION_LIST_USER.html" title="DISTRIBUTION_LIST_USER" alt="" coords="960,3381,1241,3469">
+<area shape="rect" id="node10" href="ES_CALL_LOG.html" title="ES_CALL_LOG" alt="" coords="1007,1501,1195,1589">
+<area shape="rect" id="node11" href="ES_PUBLISH.html" title="ES_PUBLISH" alt="" coords="1013,3487,1188,3575">
+<area shape="rect" id="node12" href="ES_ROTATION_PUBLISH_TASK.html" title="ES_ROTATION_PUBLISH_TASK" alt="" coords="946,3592,1255,3680">
+<area shape="rect" id="node13" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1384,821,1597,909">
+<area shape="rect" id="node14" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="979,585,1223,849">
+<area shape="rect" id="node31" href="OVERRIDE_TYPE.html" title="OVERRIDE_TYPE" alt="" coords="641,761,848,849">
+<area shape="rect" id="node15" href="ES_SHIFT_HISTORY.html" title="ES_SHIFT_HISTORY" alt="" coords="986,1185,1215,1273">
+<area shape="rect" id="node16" href="ES_SHIFT_LOCK.html" title="ES_SHIFT_LOCK" alt="" coords="999,1291,1203,1379">
+<area shape="rect" id="node17" href="ES_SHIFT_OFFER.html" title="ES_SHIFT_OFFER" alt="" coords="995,3697,1207,3785">
+<area shape="rect" id="node18" href="ES_SHIFT_OFFER_SHIFTSUM.html" title="ES_SHIFT_OFFER_SHIFTSUM" alt="" coords="1342,3749,1639,3837">
+<area shape="rect" id="node19" href="ES_SHIFTPREF_SUMMARY.html" title="ES_SHIFTPREF_SUMMARY" alt="" coords="962,1607,1239,1695">
+<area shape="rect" id="node20" href="ES_SHIFTPREF_SUMMARY_HISTORY.html" title="ES_SHIFTPREF_SUMMARY_HISTORY" alt="" coords="1314,3179,1667,3267">
+<area shape="rect" id="node21" href="FCST_HISTORY.html" title="FCST_HISTORY" alt="" coords="1740,3836,1937,3924">
+<area shape="rect" id="node22" href="FORECAST.html" title="FORECAST" alt="" coords="1409,3908,1572,3996">
+<area shape="rect" id="node23" href="FCST_LOCK.html" title="FCST_LOCK" alt="" coords="1015,3891,1187,3979">
+<area shape="rect" id="node24" href="FCST_PUB_FORECAST.html" title="FCST_PUB_FORECAST" alt="" coords="1713,3977,1964,4065">
+<area shape="rect" id="node25" href="FS_WAIVER.html" title="FS_WAIVER" alt="" coords="1019,4068,1183,4156">
+<area shape="rect" id="node26" href="ION_ID_PERSON.html" title="ION_ID_PERSON" alt="" coords="999,4173,1202,4261">
+<area shape="rect" id="node27" href="MASS_ENTRY_OVR.html" title="MASS_ENTRY_OVR" alt="" coords="1379,596,1602,684">
+<area shape="rect" id="node28" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="989,4420,1212,4508">
+<area shape="rect" id="node29" href="MESSAGE_FOLDER.html" title="MESSAGE_FOLDER" alt="" coords="988,4279,1213,4367">
+<area shape="rect" id="node30" href="OTE_OFFER.html" title="OTE_OFFER" alt="" coords="1015,4525,1187,4613">
+<area shape="rect" id="node32" href="PAY_GROUP_ACCESS.html" title="PAY_GROUP_ACCESS" alt="" coords="979,4631,1222,4719">
+<area shape="rect" id="node33" href="RECIPIENT_MESSAGE_DELETE.html" title="RECIPIENT_MESSAGE_DELETE" alt="" coords="1335,4347,1647,4435">
+<area shape="rect" id="node34" href="SB_SCHD_BID.html" title="SB_SCHD_BID" alt="" coords="1007,4736,1194,4824">
+<area shape="rect" id="node35" href="SC_CNSTRNT_GROUP.html" title="SC_CNSTRNT_GROUP" alt="" coords="977,35,1225,211">
+<area shape="rect" id="node36" href="WORKBRAIN_ROLE.html" title="WORKBRAIN_ROLE" alt="" coords="633,656,857,744">
+<area shape="rect" id="node37" href="SC_CNSTRNT_RULE.html" title="SC_CNSTRNT_RULE" alt="" coords="1374,111,1607,199">
+<area shape="rect" id="node38" href="SC_RULE.html" title="SC_RULE" alt="" coords="1012,421,1189,568">
+<area shape="rect" id="node39" href="SC_CONSTRAINT.html" title="SC_CONSTRAINT" alt="" coords="981,228,1220,404">
+<area shape="rect" id="node40" href="SC_FILTER_PARM.html" title="SC_FILTER_PARM" alt="" coords="1384,5,1597,93">
+<area shape="rect" id="node41" href="SC_WARNING.html" title="SC_WARNING" alt="" coords="1312,216,1669,579">
+<area shape="rect" id="node42" href="SO_SHIFT_OFFER.html" title="SO_SHIFT_OFFER" alt="" coords="994,4841,1207,4929">
+<area shape="rect" id="node43" href="SO_SHIFT_OFFER_SHIFT.html" title="SO_SHIFT_OFFER_SHIFT" alt="" coords="1358,4875,1623,4963">
+<area shape="rect" id="node44" href="SURVEY_DEPLOYED.html" title="SURVEY_DEPLOYED" alt="" coords="984,4983,1217,5071">
+<area shape="rect" id="node45" href="TIME_OFF_APPROVAL.html" title="TIME_OFF_APPROVAL" alt="" coords="979,1784,1222,1872">
+<area shape="rect" id="node46" href="TIME_OFF_DAY_OVR.html" title="TIME_OFF_DAY_OVR" alt="" coords="1374,701,1607,789">
+<area shape="rect" id="node47" href="TIME_OFF_REQUEST.html" title="TIME_OFF_REQUEST" alt="" coords="982,1396,1219,1484">
+<area shape="rect" id="node48" href="TM_AIASGN_NOTE.html" title="TM_AIASGN_NOTE" alt="" coords="992,1889,1209,1977">
+<area shape="rect" id="node49" href="TM_AIAWORK_NOTE.html" title="TM_AIAWORK_NOTE" alt="" coords="985,1995,1217,2083">
+<area shape="rect" id="node50" href="TM_RESOURCE.html" title="TM_RESOURCE" alt="" coords="1002,2205,1199,2293">
+<area shape="rect" id="node51" href="TM_TASK.html" title="TM_TASK" alt="" coords="1025,2383,1177,2471">
+<area shape="rect" id="node52" href="TM_TASK_NOTE.html" title="TM_TASK_NOTE" alt="" coords="1389,2327,1592,2415">
+<area shape="rect" id="node53" href="TM_TASK_TEAM.html" title="TM_TASK_TEAM" alt="" coords="1390,2441,1591,2529">
+<area shape="rect" id="node54" href="WB_USER_DELEGATE.html" title="WB_USER_DELEGATE" alt="" coords="979,1080,1223,1168">
+<area shape="rect" id="node55" href="WBI_FLAT_USER_TEAM.html" title="WBI_FLAT_USER_TEAM" alt="" coords="974,2665,1227,2753">
+<area shape="rect" id="node56" href="WBI_OVERRIDE_VALUE.html" title="WBI_OVERRIDE_VALUE" alt="" coords="1365,2100,1616,2188">
+<area shape="rect" id="node57" href="WORKBRAIN_ERROR.html" title="WORKBRAIN_ERROR" alt="" coords="982,2771,1219,2859">
+<area shape="rect" id="node58" href="WORKBRAIN_ERROR_LOG.html" title="WORKBRAIN_ERROR_LOG" alt="" coords="962,2876,1239,2964">
+<area shape="rect" id="node60" href="WORKBRAIN_LOG.html" title="WORKBRAIN_LOG" alt="" coords="993,2981,1208,3069">
+<area shape="rect" id="node61" href="WORKBRAIN_USER_LIST.html" title="WORKBRAIN_USER_LIST" alt="" coords="968,2524,1233,2612">
+<area shape="rect" id="node62" href="WORKBRAIN_USER_LIST_MEMBER.html" title="WORKBRAIN_USER_LIST_MEMBER" alt="" coords="1320,2569,1661,2657">
+<area shape="rect" id="node63" href="WORKBRAIN_USER_PREFERENCE.html" title="WORKBRAIN_USER_PREFERENCE" alt="" coords="933,3087,1268,3175">
+<area shape="rect" id="node64" href="WORKBRAIN_USER_TEAM.html" title="WORKBRAIN_USER_TEAM" alt="" coords="964,939,1237,1027">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/SC_WARNING.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="SC_WARNING.html" title="SC_WARNING" alt="" coords="339,536,696,899">
+<area shape="rect" id="node2" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="28,5,272,269">
+<area shape="rect" id="node3" href="SC_CONSTRAINT.html" title="SC_CONSTRAINT" alt="" coords="31,627,269,803">
+<area shape="rect" id="node4" href="SC_CNSTRNT_GROUP.html" title="SC_CNSTRNT_GROUP" alt="" coords="26,984,274,1160">
+<area shape="rect" id="node5" href="SC_RULE.html" title="SC_RULE" alt="" coords="61,820,239,967">
+<area shape="rect" id="node6" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="5,287,295,609">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/SC_WARNING.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="1425,3711,1631,3799">
+<area shape="rect" id="node2" href="COGNOS_RPRT_CRIT.html" title="COGNOS_RPRT_CRIT" alt="" coords="993,3747,1236,3835">
+<area shape="rect" id="node3" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="353,2149,518,2237">
+<area shape="rect" id="node4" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="600,4463,889,4785">
+<area shape="rect" id="node7" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="317,7515,554,7603">
+<area shape="rect" id="node8" href="WORKBRAIN_LOCALE.html" title="WORKBRAIN_LOCALE" alt="" coords="315,7620,556,7708">
+<area shape="rect" id="node86" href="WORKBRAIN_LANGUAGE.html" title="WORKBRAIN_LANGUAGE" alt="" coords="5,7620,271,7708">
+<area shape="rect" id="node5" href="BUSINESS_OBJECT.html" title="BUSINESS_OBJECT" alt="" coords="1001,4465,1229,4553">
+<area shape="rect" id="node6" href="COGNOS_SESSION.html" title="COGNOS_SESSION" alt="" coords="1003,7624,1227,7712">
+<area shape="rect" id="node9" href="DISTRIBUTION_LIST_USER.html" title="DISTRIBUTION_LIST_USER" alt="" coords="974,5912,1255,6000">
+<area shape="rect" id="node10" href="EMPLOYEE_WORKBRAIN_USER.html" title="EMPLOYEE_WORKBRAIN_USER" alt="" coords="958,2393,1271,2457">
+<area shape="rect" id="node11" href="ES_CALL_LOG.html" title="ES_CALL_LOG" alt="" coords="1021,2848,1209,2936">
+<area shape="rect" id="node12" href="ES_PUBLISH.html" title="ES_PUBLISH" alt="" coords="1027,6565,1202,6653">
+<area shape="rect" id="node13" href="ES_ROTATION_PUBLISH_TASK.html" title="ES_ROTATION_PUBLISH_TASK" alt="" coords="960,6671,1269,6759">
+<area shape="rect" id="node14" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1008,913,1221,1001">
+<area shape="rect" id="node15" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="623,468,867,732">
+<area shape="rect" id="node33" href="OVERRIDE_TYPE.html" title="OVERRIDE_TYPE" alt="" coords="332,408,539,496">
+<area shape="rect" id="node16" href="ES_SHIFT_HISTORY.html" title="ES_SHIFT_HISTORY" alt="" coords="1000,2475,1229,2563">
+<area shape="rect" id="node17" href="ES_SHIFT_LOCK.html" title="ES_SHIFT_LOCK" alt="" coords="1426,1212,1630,1300">
+<area shape="rect" id="node18" href="ES_SHIFT_OFFER.html" title="ES_SHIFT_OFFER" alt="" coords="1009,6053,1221,6141">
+<area shape="rect" id="node19" href="ES_SHIFT_OFFER_SHIFTSUM.html" title="ES_SHIFT_OFFER_SHIFTSUM" alt="" coords="1379,6211,1677,6299">
+<area shape="rect" id="node20" href="ES_SHIFTPREF_SUMMARY.html" title="ES_SHIFTPREF_SUMMARY" alt="" coords="976,3359,1253,3447">
+<area shape="rect" id="node21" href="ES_SHIFTPREF_SUMMARY_HISTORY.html" title="ES_SHIFTPREF_SUMMARY_HISTORY" alt="" coords="1351,4332,1705,4420">
+<area shape="rect" id="node22" href="FCST_HISTORY.html" title="FCST_HISTORY" alt="" coords="1847,5739,2044,5827">
+<area shape="rect" id="node23" href="FORECAST.html" title="FORECAST" alt="" coords="1447,5399,1609,5487">
+<area shape="rect" id="node24" href="FCST_LOCK.html" title="FCST_LOCK" alt="" coords="1029,5380,1201,5468">
+<area shape="rect" id="node25" href="FCST_PUB_FORECAST.html" title="FCST_PUB_FORECAST" alt="" coords="1820,5212,2071,5300">
+<area shape="rect" id="node26" href="FS_WAIVER.html" title="FS_WAIVER" alt="" coords="1033,4099,1197,4187">
+<area shape="rect" id="node27" href="ION_ID_PERSON.html" title="ION_ID_PERSON" alt="" coords="1013,4956,1216,5044">
+<area shape="rect" id="node28" href="JP_JOB_POSTING_OVERRIDE.html" title="JP_JOB_POSTING_OVERRIDE" alt="" coords="964,251,1265,339">
+<area shape="rect" id="node29" href="MASS_ENTRY_OVR.html" title="MASS_ENTRY_OVR" alt="" coords="1003,392,1226,480">
+<area shape="rect" id="node30" href="MESSAGE_DELETE.html" title="MESSAGE_DELETE" alt="" coords="1003,6388,1226,6476">
+<area shape="rect" id="node31" href="MESSAGE_FOLDER.html" title="MESSAGE_FOLDER" alt="" coords="1002,6776,1227,6864">
+<area shape="rect" id="node32" href="OTE_OFFER.html" title="OTE_OFFER" alt="" coords="1029,3641,1201,3729">
+<area shape="rect" id="node34" href="PAY_GROUP_ACCESS.html" title="PAY_GROUP_ACCESS" alt="" coords="993,6953,1236,7041">
+<area shape="rect" id="node35" href="PAY_GROUP_ACCESS_AUDIT.html" title="PAY_GROUP_ACCESS_AUDIT" alt="" coords="1380,6916,1676,7004">
+<area shape="rect" id="node36" href="RECIPIENT_MESSAGE_DELETE.html" title="RECIPIENT_MESSAGE_DELETE" alt="" coords="1372,6469,1684,6557">
+<area shape="rect" id="node37" href="SB_SCHD_BID.html" title="SB_SCHD_BID" alt="" coords="1021,7200,1208,7288">
+<area shape="rect" id="node38" href="SC_CNSTRNT_GROUP.html" title="SC_CNSTRNT_GROUP" alt="" coords="991,720,1239,896">
+<area shape="rect" id="node39" href="WORKBRAIN_ROLE.html" title="WORKBRAIN_ROLE" alt="" coords="633,1432,857,1520">
+<area shape="rect" id="node40" href="SC_CNSTRNT_RULE.html" title="SC_CNSTRNT_RULE" alt="" coords="1411,124,1645,212">
+<area shape="rect" id="node41" href="SC_RULE.html" title="SC_RULE" alt="" coords="1026,5,1203,152">
+<area shape="rect" id="node42" href="SC_CONSTRAINT.html" title="SC_CONSTRAINT" alt="" coords="995,1019,1234,1195">
+<area shape="rect" id="node43" href="SC_FILTER_PARM.html" title="SC_FILTER_PARM" alt="" coords="1421,779,1635,867">
+<area shape="rect" id="node44" href="SC_WARNING.html" title="SC_WARNING" alt="" coords="1349,399,1707,761">
+<area shape="rect" id="node45" href="SEC_EMPLOYEE.html" title="SEC_EMPLOYEE" alt="" coords="1014,2580,1215,2644">
+<area shape="rect" id="node46" href="SEC_EMPLOYEE_BASE.html" title="SEC_EMPLOYEE_BASE" alt="" coords="990,1824,1239,1888">
+<area shape="rect" id="node47" href="SEC_EMPLOYEE_DATE.html" title="SEC_EMPLOYEE_DATE" alt="" coords="990,1905,1239,1969">
+<area shape="rect" id="node48" href="SEC_EMPLOYEE_LOOKUP.html" title="SEC_EMPLOYEE_LOOKUP" alt="" coords="977,1987,1252,2051">
+<area shape="rect" id="node49" href="SEC_EMPLOYEE_NR.html" title="SEC_EMPLOYEE_NR" alt="" coords="999,2068,1230,2132">
+<area shape="rect" id="node50" href="SEC_WORKBRAIN_TEAM.html" title="SEC_WORKBRAIN_TEAM" alt="" coords="985,1565,1245,1629">
+<area shape="rect" id="node51" href="SO_SHIFT_OFFER.html" title="SO_SHIFT_OFFER" alt="" coords="1008,7341,1221,7429">
+<area shape="rect" id="node52" href="SO_SHIFT_OFFER_SHIFT.html" title="SO_SHIFT_OFFER_SHIFT" alt="" coords="1395,7284,1661,7372">
+<area shape="rect" id="node53" href="SURVEY_DEPLOYED.html" title="SURVEY_DEPLOYED" alt="" coords="998,7483,1231,7571">
+<area shape="rect" id="node54" href="SURVEY_RESULT.html" title="SURVEY_RESULT" alt="" coords="1423,7419,1633,7507">
+<area shape="rect" id="node55" href="TIME_OFF_APPROVAL.html" title="TIME_OFF_APPROVAL" alt="" coords="993,4204,1236,4292">
+<area shape="rect" id="node56" href="TIME_OFF_DAY_OVR.html" title="TIME_OFF_DAY_OVR" alt="" coords="998,497,1231,585">
+<area shape="rect" id="node57" href="TIME_OFF_REQUEST.html" title="TIME_OFF_REQUEST" alt="" coords="996,2661,1233,2749">
+<area shape="rect" id="node58" href="TM_AIASGN_NOTE.html" title="TM_AIASGN_NOTE" alt="" coords="1006,3464,1223,3552">
+<area shape="rect" id="node59" href="TM_AIAWORK_NOTE.html" title="TM_AIAWORK_NOTE" alt="" coords="999,3993,1231,4081">
+<area shape="rect" id="node60" href="TM_RESOURCE.html" title="TM_RESOURCE" alt="" coords="1016,4607,1213,4695">
+<area shape="rect" id="node61" href="TM_TASK.html" title="TM_TASK" alt="" coords="1039,3217,1191,3305">
+<area shape="rect" id="node62" href="TM_TASK_NOTE.html" title="TM_TASK_NOTE" alt="" coords="1427,3180,1629,3268">
+<area shape="rect" id="node63" href="TM_TASK_TEAM.html" title="TM_TASK_TEAM" alt="" coords="1427,3392,1629,3480">
+<area shape="rect" id="node64" href="VIEW_BUSINESS_OBJECT.html" title="VIEW_BUSINESS_OBJECT" alt="" coords="1393,4441,1663,4505">
+<area shape="rect" id="node65" href="VIEW_DISTRIBUTION_LIST_USER.html" title="VIEW_DISTRIBUTION_LIST_USER" alt="" coords="1367,5947,1689,6011">
+<area shape="rect" id="node66" href="VIEW_MESSAGE_DELETE.html" title="VIEW_MESSAGE_DELETE" alt="" coords="1396,6352,1660,6416">
+<area shape="rect" id="node67" href="VIEW_MESSAGE_FOLDER.html" title="VIEW_MESSAGE_FOLDER" alt="" coords="1395,6599,1661,6663">
+<area shape="rect" id="node68" href="VIEW_MOD_EMP_WORKBRAIN_USER.html" title="VIEW_MOD_EMP_WORKBRAIN_USER" alt="" coords="939,2149,1290,2213">
+<area shape="rect" id="node69" href="VIEW_MOD_EMPLOYEE_HOLIDAY.html" title="VIEW_MOD_EMPLOYEE_HOLIDAY" alt="" coords="953,639,1277,703">
+<area shape="rect" id="node70" href="VIEW_MOD_USER_TEAM_MEMBERS.html" title="VIEW_MOD_USER_TEAM_MEMBERS" alt="" coords="943,2767,1287,2831">
+<area shape="rect" id="node71" href="VIEW_MOD_WB_USER_DELEGATE.html" title="VIEW_MOD_WB_USER_DELEGATE" alt="" coords="1363,1688,1693,1752">
+<area shape="rect" id="node72" href="WB_USER_DELEGATE.html" title="WB_USER_DELEGATE" alt="" coords="993,1647,1237,1735">
+<area shape="rect" id="node73" href="VIEW_MOD_WORKBRAIN_USER_WBUD.html" title="VIEW_MOD_WORKBRAIN_USER_WBUD" alt="" coords="933,4712,1296,4776">
+<area shape="rect" id="node74" href="VIEW_MSG_SEND_MESSAGE.html" title="VIEW_MSG_SEND_MESSAGE" alt="" coords="970,2231,1259,2295">
+<area shape="rect" id="node75" href="VIEW_OUT_GOING_MESSAGE.html" title="VIEW_OUT_GOING_MESSAGE" alt="" coords="967,4793,1263,4857">
+<area shape="rect" id="node76" href="VIEW_OVERRIDE.html" title="VIEW_OVERRIDE" alt="" coords="1015,169,1215,233">
+<area shape="rect" id="node77" href="VIEW_RECIPIENT_MESSAGE_DELETE.html" title="VIEW_RECIPIENT_MESSAGE_DELETE" alt="" coords="1769,6433,2122,6497">
+<area shape="rect" id="node78" href="VIEW_SURVEY_DEPLOYED.html" title="VIEW_SURVEY_DEPLOYED" alt="" coords="1391,7541,1665,7605">
+<area shape="rect" id="node79" href="VIEW_WB_USER_DELEGATE.html" title="VIEW_WB_USER_DELEGATE" alt="" coords="1385,1607,1671,1671">
+<area shape="rect" id="node80" href="VIEW_WBUT_HIERARCHY.html" title="VIEW_WBUT_HIERARCHY" alt="" coords="983,4875,1246,4939">
+<area shape="rect" id="node81" href="VIEW_WORKBRAIN_ERROR.html" title="VIEW_WORKBRAIN_ERROR" alt="" coords="1389,5116,1667,5180">
+<area shape="rect" id="node82" href="WORKBRAIN_ERROR.html" title="WORKBRAIN_ERROR" alt="" coords="996,5133,1233,5221">
+<area shape="rect" id="node83" href="VIEW_WORKBRAIN_ERROR_LOG.html" title="VIEW_WORKBRAIN_ERROR_LOG" alt="" coords="1369,5239,1687,5303">
+<area shape="rect" id="node84" href="WORKBRAIN_ERROR_LOG.html" title="WORKBRAIN_ERROR_LOG" alt="" coords="976,5275,1253,5363">
+<area shape="rect" id="node85" href="VIEW_WORKBRAIN_USER.html" title="VIEW_WORKBRAIN_USER" alt="" coords="982,7729,1247,7793">
+<area shape="rect" id="node87" href="VIEW_WORKBRAIN_USER_LIST.html" title="VIEW_WORKBRAIN_USER_LIST" alt="" coords="1375,5699,1681,5763">
+<area shape="rect" id="node88" href="WORKBRAIN_USER_LIST.html" title="WORKBRAIN_USER_LIST" alt="" coords="982,5593,1247,5681">
+<area shape="rect" id="node89" href="VIEW_WORKBRAIN_USER_LIST_MEMBE.html" title="VIEW_WORKBRAIN_USER_LIST_MEMBE" alt="" coords="1760,5557,2131,5621">
+<area shape="rect" id="node90" href="WORKBRAIN_USER_LIST_MEMBER.html" title="WORKBRAIN_USER_LIST_MEMBER" alt="" coords="1357,5557,1699,5645">
+<area shape="rect" id="node91" href="VIEW_WORKBRAIN_USER_PREFERENCE.html" title="VIEW_WORKBRAIN_USER_PREFERENCE" alt="" coords="1340,5787,1716,5851">
+<area shape="rect" id="node92" href="WORKBRAIN_USER_PREFERENCE.html" title="WORKBRAIN_USER_PREFERENCE" alt="" coords="947,5735,1282,5823">
+<area shape="rect" id="node93" href="VIEW_WORKBRAIN_USER_TEAM.html" title="VIEW_WORKBRAIN_USER_TEAM" alt="" coords="1371,1337,1685,1401">
+<area shape="rect" id="node94" href="WORKBRAIN_USER_TEAM.html" title="WORKBRAIN_USER_TEAM" alt="" coords="978,1356,1251,1444">
+<area shape="rect" id="node95" href="VL_BUSINESS_OBJECT.html" title="VL_BUSINESS_OBJECT" alt="" coords="1403,4529,1653,4593">
+<area shape="rect" id="node96" href="VL_MESSAGE_FOLDER.html" title="VL_MESSAGE_FOLDER" alt="" coords="1404,6787,1652,6851">
+<area shape="rect" id="node97" href="VL_SB_SCHD_BID.html" title="VL_SB_SCHD_BID" alt="" coords="1423,7111,1633,7175">
+<area shape="rect" id="node98" href="VL_SC_CONSTRAINT.html" title="VL_SC_CONSTRAINT" alt="" coords="1412,1076,1644,1140">
+<area shape="rect" id="node99" href="WB_RESOURCE.html" title="WB_RESOURCE" alt="" coords="1015,7095,1214,7183">
+<area shape="rect" id="node100" href="WBI_FLAT_USER_TEAM.html" title="WBI_FLAT_USER_TEAM" alt="" coords="988,3888,1241,3976">
+<area shape="rect" id="node101" href="WBI_OVERRIDE_VALUE.html" title="WBI_OVERRIDE_VALUE" alt="" coords="1403,3568,1653,3656">
+<area shape="rect" id="node102" href="WBI_SEC_EMP_BY_TEAM.html" title="WBI_SEC_EMP_BY_TEAM" alt="" coords="982,2312,1247,2376">
+<area shape="rect" id="node103" href="WBI_USER_EXECUTION.html" title="WBI_USER_EXECUTION" alt="" coords="1400,3816,1656,3904">
+<area shape="rect" id="node104" href="WORKBRAIN_LOG.html" title="WORKBRAIN_LOG" alt="" coords="1007,6159,1222,6247">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/SC_WARNING.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

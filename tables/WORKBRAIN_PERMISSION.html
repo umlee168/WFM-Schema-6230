@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>WORKBRAIN_PERMISSION - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>WORKBRAIN_PERMISSION</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="WBP_ID">WBP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="JOBSKD_TASK_GRP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_JSTGRP_WBP_ID">
+						<a href='JOBSKD_TASK_GRP.html'>JOBSKD_TASK_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_JSTGRP_WBP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="MAINTENANCE_FORM_GRP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_MFG_WBP_ID">
+						<a href='MAINTENANCE_FORM_GRP.html'>MAINTENANCE_FORM_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_MFG_WBP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="OVERRIDE_TYPE_GRP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_OVRDTPGP_WBPID">
+						<a href='OVERRIDE_TYPE_GRP.html'>OVERRIDE_TYPE_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_OVRDTPGP_WBPID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_OVERRIDE_TYPE_GRP.WBP_ID&#39;s name implies that it&#39;s a child of WORKBRAIN_PERMISSION.WBP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_OVERRIDE_TYPE_GRP.html'>VIEW_OVERRIDE_TYPE_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_VR_TOC_GRP.WBP_ID&#39;s name implies that it&#39;s a child of WORKBRAIN_PERMISSION.WBP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_VR_TOC_GRP.html'>VIEW_VR_TOC_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_WORKBRAIN_FIELD_GROUP.WBP_ID&#39;s name implies that it&#39;s a child of WORKBRAIN_PERMISSION.WBP_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_WORKBRAIN_FIELD_GROUP.html'>VIEW_WORKBRAIN_FIELD_GROUP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_WORKBRAIN_GROUP.WBP_ID&#39;s name implies that it&#39;s a child of WORKBRAIN_PERMISSION.WBP_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_WORKBRAIN_GROUP.html'>VL_WORKBRAIN_GROUP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_WORKBRAIN_PERMISSION.WBP_ID&#39;s name implies that it&#39;s a child of WORKBRAIN_PERMISSION.WBP_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_WORKBRAIN_PERMISSION.html'>VL_WORKBRAIN_PERMISSION</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VR_TOC_GRP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_VG_WBP_ID">
+						<a href='VR_TOC_GRP.html'>VR_TOC_GRP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_VG_WBP_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="WORKBRAIN_FIELD_GROUP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_WBFG_WBP_ID">
+						<a href='WORKBRAIN_FIELD_GROUP.html'>WORKBRAIN_FIELD_GROUP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_WBFG_WBP_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="WORKBRAIN_GROUP.WBP_ID references WORKBRAIN_PERMISSION.WBP_ID via FK_WBG_WBP_ID">
+						<a href='WORKBRAIN_GROUP.html'>WORKBRAIN_GROUP</a><span class='relatedKey'>.WBP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_WBG_WBP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="WBP_NAME">WBP_NAME</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='2 columns'>Table contained <span id="recordNumber">3</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_WORKBRAIN_PMSN</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>WBP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> UK_WBP_NAME</td>
+				  <td>Must be unique</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>WBP_NAME</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="JOBSKD_TASK_GRP.html" title="JOBSKD_TASK_GRP" alt="" coords="721,5,955,211">
+<area shape="rect" id="node2" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="404,459,649,635">
+<area shape="rect" id="node3" href="WORKBRAIN_PERMISSION.html" title="WORKBRAIN_PERMISSION" alt="" coords="5,563,360,691">
+<area shape="rect" id="node4" href="MAINTENANCE_FORM_GRP.html" title="MAINTENANCE_FORM_GRP" alt="" coords="696,228,980,433">
+<area shape="rect" id="node5" href="OVERRIDE_TYPE_GRP.html" title="OVERRIDE_TYPE_GRP" alt="" coords="714,451,962,656">
+<area shape="rect" id="node6" href="VR_TOC_GRP.html" title="VR_TOC_GRP" alt="" coords="747,673,929,879">
+<area shape="rect" id="node7" href="WORKBRAIN_FIELD_GROUP.html" title="WORKBRAIN_FIELD_GROUP" alt="" coords="693,896,983,1101">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/WORKBRAIN_PERMISSION.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="COGNOS_SESSION.html" title="COGNOS_SESSION" alt="" coords="1124,977,1348,1065">
+<area shape="rect" id="node2" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="404,937,649,1113">
+<area shape="rect" id="node3" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="775,1013,999,1101">
+<area shape="rect" id="node8" href="WORKBRAIN_PERMISSION.html" title="WORKBRAIN_PERMISSION" alt="" coords="5,1204,360,1332">
+<area shape="rect" id="node4" href="DISTRIBUTION_LIST_GROUP.html" title="DISTRIBUTION_LIST_GROUP" alt="" coords="739,1119,1034,1207">
+<area shape="rect" id="node5" href="FORM_GROUP.html" title="FORM_GROUP" alt="" coords="792,1224,981,1312">
+<area shape="rect" id="node6" href="JOBSKD_TASK_GRP.html" title="JOBSKD_TASK_GRP" alt="" coords="770,1552,1003,1757">
+<area shape="rect" id="node7" href="JOBSKD_TASK.html" title="JOBSKD_TASK" alt="" coords="431,1575,623,1663">
+<area shape="rect" id="node9" href="LABMET_SEC_GRP.html" title="LABMET_SEC_GRP" alt="" coords="775,556,998,644">
+<area shape="rect" id="node10" href="MAINTENANCE_FORM_ELEMENT_PRMSN.html" title="MAINTENANCE_FORM_ELEMENT_PRMSN" alt="" coords="693,5,1080,93">
+<area shape="rect" id="node11" href="MAINTENANCE_FORM.html" title="MAINTENANCE_FORM" alt="" coords="61,172,304,260">
+<area shape="rect" id="node12" href="MAINTENANCE_FORM_GRP.html" title="MAINTENANCE_FORM_GRP" alt="" coords="745,333,1029,539">
+<area shape="rect" id="node13" href="OVERRIDE_TYPE_GRP.html" title="OVERRIDE_TYPE_GRP" alt="" coords="763,1329,1011,1535">
+<area shape="rect" id="node14" href="OVERRIDE_TYPE.html" title="OVERRIDE_TYPE" alt="" coords="423,1352,630,1440">
+<area shape="rect" id="node15" href="POP_UP_GRP.html" title="POP_UP_GRP" alt="" coords="795,661,978,749">
+<area shape="rect" id="node16" href="VR_TOC_GRP.html" title="VR_TOC_GRP" alt="" coords="795,1775,978,1980">
+<area shape="rect" id="node17" href="VR_TOC.html" title="VR_TOC" alt="" coords="456,1797,597,1885">
+<area shape="rect" id="node18" href="WBI_ACTIVITY_WBGRP.html" title="WBI_ACTIVITY_WBGRP" alt="" coords="762,767,1011,855">
+<area shape="rect" id="node19" href="WBI_LP_WB_GROUP.html" title="WBI_LP_WB_GROUP" alt="" coords="771,872,1003,960">
+<area shape="rect" id="node20" href="WORKBRAIN_FIELD.html" title="WORKBRAIN_FIELD" alt="" coords="414,172,639,260">
+<area shape="rect" id="node21" href="WORKBRAIN_FIELD_GROUP.html" title="WORKBRAIN_FIELD_GROUP" alt="" coords="742,111,1031,316">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/WORKBRAIN_PERMISSION.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="JOBSKD_TASK_GRP.html" title="JOBSKD_TASK_GRP" alt="" coords="776,5,1009,211">
+<area shape="rect" id="node2" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="431,713,677,889">
+<area shape="rect" id="node3" href="WORKBRAIN_PERMISSION.html" title="WORKBRAIN_PERMISSION" alt="" coords="5,867,360,995">
+<area shape="rect" id="node4" href="MAINTENANCE_FORM_GRP.html" title="MAINTENANCE_FORM_GRP" alt="" coords="751,228,1035,433">
+<area shape="rect" id="node5" href="OVERRIDE_TYPE_GRP.html" title="OVERRIDE_TYPE_GRP" alt="" coords="769,451,1017,656">
+<area shape="rect" id="node6" href="VIEW_OVERRIDE_TYPE_GRP.html" title="VIEW_OVERRIDE_TYPE_GRP" alt="" coords="1102,545,1391,727">
+<area shape="rect" id="node7" href="VIEW_VR_TOC_GRP.html" title="VIEW_VR_TOC_GRP" alt="" coords="1135,781,1359,963">
+<area shape="rect" id="node8" href="VR_TOC_GRP.html" title="VR_TOC_GRP" alt="" coords="801,781,984,987">
+<area shape="rect" id="node9" href="VIEW_WORKBRAIN_FIELD_GROUP.html" title="VIEW_WORKBRAIN_FIELD_GROUP" alt="" coords="1081,1216,1412,1397">
+<area shape="rect" id="node10" href="WORKBRAIN_FIELD_GROUP.html" title="WORKBRAIN_FIELD_GROUP" alt="" coords="748,1216,1037,1421">
+<area shape="rect" id="node11" href="VL_WORKBRAIN_GROUP.html" title="VL_WORKBRAIN_GROUP" alt="" coords="762,1040,1023,1163">
+<area shape="rect" id="node12" href="VL_WORKBRAIN_PERMISSION.html" title="VL_WORKBRAIN_PERMISSION" alt="" coords="404,1475,704,1568">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/WORKBRAIN_PERMISSION.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="COGNOS_SESSION.html" title="COGNOS_SESSION" alt="" coords="1235,1585,1459,1673">
+<area shape="rect" id="node2" href="WORKBRAIN_GROUP.html" title="WORKBRAIN_GROUP" alt="" coords="431,1443,677,1619">
+<area shape="rect" id="node3" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="829,1553,1053,1641">
+<area shape="rect" id="node8" href="WORKBRAIN_PERMISSION.html" title="WORKBRAIN_PERMISSION" alt="" coords="5,2145,360,2273">
+<area shape="rect" id="node4" href="DISTRIBUTION_LIST_GROUP.html" title="DISTRIBUTION_LIST_GROUP" alt="" coords="794,1129,1089,1217">
+<area shape="rect" id="node5" href="FORM_GROUP.html" title="FORM_GROUP" alt="" coords="847,1271,1036,1359">
+<area shape="rect" id="node6" href="JOBSKD_TASK_GRP.html" title="JOBSKD_TASK_GRP" alt="" coords="825,763,1058,968">
+<area shape="rect" id="node7" href="JOBSKD_TASK.html" title="JOBSKD_TASK" alt="" coords="458,795,650,883">
+<area shape="rect" id="node9" href="LABMET_SEC_GRP.html" title="LABMET_SEC_GRP" alt="" coords="830,1412,1053,1500">
+<area shape="rect" id="node10" href="MAINTENANCE_FORM_ELEMENT_PRMSN.html" title="MAINTENANCE_FORM_ELEMENT_PRMSN" alt="" coords="748,435,1135,523">
+<area shape="rect" id="node11" href="MAINTENANCE_FORM.html" title="MAINTENANCE_FORM" alt="" coords="61,361,304,449">
+<area shape="rect" id="node12" href="MAINTENANCE_FORM_GRP.html" title="MAINTENANCE_FORM_GRP" alt="" coords="799,540,1083,745">
+<area shape="rect" id="node13" href="OVERRIDE_TYPE_GRP.html" title="OVERRIDE_TYPE_GRP" alt="" coords="817,2259,1065,2464">
+<area shape="rect" id="node14" href="OVERRIDE_TYPE.html" title="OVERRIDE_TYPE" alt="" coords="451,2300,657,2388">
+<area shape="rect" id="node15" href="POP_UP_GRP.html" title="POP_UP_GRP" alt="" coords="850,1731,1033,1819">
+<area shape="rect" id="node16" href="VIEW_BO_FORM_GROUP.html" title="VIEW_BO_FORM_GROUP" alt="" coords="1215,503,1478,567">
+<area shape="rect" id="node17" href="VIEW_DISTRIBUTION_LIST_GROUP.html" title="VIEW_DISTRIBUTION_LIST_GROUP" alt="" coords="1179,1093,1515,1157">
+<area shape="rect" id="node18" href="VIEW_FORM_GROUP.html" title="VIEW_FORM_GROUP" alt="" coords="1231,1253,1462,1317">
+<area shape="rect" id="node19" href="VIEW_LABMET_SEC_GRP.html" title="VIEW_LABMET_SEC_GRP" alt="" coords="1215,1357,1479,1421">
+<area shape="rect" id="node20" href="VIEW_MAINTENANCE_FORM_GRP.html" title="VIEW_MAINTENANCE_FORM_GRP" alt="" coords="1184,584,1509,648">
+<area shape="rect" id="node21" href="VIEW_OVERRIDE_TYPE_GRP.html" title="VIEW_OVERRIDE_TYPE_GRP" alt="" coords="1202,2307,1491,2488">
+<area shape="rect" id="node22" href="VIEW_POP_UP_GRP.html" title="VIEW_POP_UP_GRP" alt="" coords="1235,1723,1459,1787">
+<area shape="rect" id="node23" href="VIEW_VR_TOC_GRP.html" title="VIEW_VR_TOC_GRP" alt="" coords="1235,2619,1459,2800">
+<area shape="rect" id="node24" href="VR_TOC.html" title="VR_TOC" alt="" coords="483,2589,625,2677">
+<area shape="rect" id="node25" href="VR_TOC_GRP.html" title="VR_TOC_GRP" alt="" coords="850,2553,1033,2759">
+<area shape="rect" id="node26" href="VIEW_WORKBRAIN_FIELD_GROUP.html" title="VIEW_WORKBRAIN_FIELD_GROUP" alt="" coords="1181,188,1512,369">
+<area shape="rect" id="node27" href="WORKBRAIN_FIELD.html" title="WORKBRAIN_FIELD" alt="" coords="441,201,667,289">
+<area shape="rect" id="node28" href="WORKBRAIN_FIELD_GROUP.html" title="WORKBRAIN_FIELD_GROUP" alt="" coords="797,140,1086,345">
+<area shape="rect" id="node29" href="VIEW_WORKBRAIN_USER.html" title="VIEW_WORKBRAIN_USER" alt="" coords="1214,1488,1479,1552">
+<area shape="rect" id="node30" href="VL_WORKBRAIN_GROUP.html" title="VL_WORKBRAIN_GROUP" alt="" coords="811,2119,1072,2241">
+<area shape="rect" id="node31" href="VL_WORKBRAIN_PERMISSION.html" title="VL_WORKBRAIN_PERMISSION" alt="" coords="404,2695,704,2788">
+<area shape="rect" id="node32" href="WBI_ACTIVITY_WBGRP.html" title="WBI_ACTIVITY_WBGRP" alt="" coords="817,1836,1066,1924">
+<area shape="rect" id="node33" href="WBI_LP_WB_GROUP.html" title="WBI_LP_WB_GROUP" alt="" coords="825,1941,1057,2029">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/WORKBRAIN_PERMISSION.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

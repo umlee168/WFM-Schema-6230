@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ST_COURSE - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>ST_COURSE</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="STCRS_ID">STCRS_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="ST_COURSE_CALENDAR.STCRS_ID references ST_COURSE.STCRS_ID via FK_SCC_STCRS_ID">
+						<a href='ST_COURSE_CALENDAR.html'>ST_COURSE_CALENDAR</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCC_STCRS_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_COURSE_NOTIFY.STCRS_ID references ST_COURSE.STCRS_ID via FK_CRSNFY_STCRSID">
+						<a href='ST_COURSE_NOTIFY.html'>ST_COURSE_NOTIFY</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_CRSNFY_STCRSID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_COURSE_PREREQUISITE.PREREQ_ID references ST_COURSE.STCRS_ID via FK_SCP_PREREQ_ID">
+						<a href='ST_COURSE_PREREQUISITE.html'>ST_COURSE_PREREQUISITE</a><span class='relatedKey'>.PREREQ_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCP_PREREQ_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_COURSE_PREREQUISITE.STCRS_ID references ST_COURSE.STCRS_ID via FK_SCP_STCRS_ID">
+						<a href='ST_COURSE_PREREQUISITE.html'>ST_COURSE_PREREQUISITE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SCP_STCRS_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_COURSE_SURVEY.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='ST_COURSE_SURVEY.html'>ST_COURSE_SURVEY</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_INSTRUCTOR_COURSE.STCRS_ID references ST_COURSE.STCRS_ID via FK_SIC_STCRS_ID">
+						<a href='ST_INSTRUCTOR_COURSE.html'>ST_INSTRUCTOR_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SIC_STCRS_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_SKILL_COURSE.STCRS_ID references ST_COURSE.STCRS_ID via FK_STC_STCRS_ID">
+						<a href='ST_SKILL_COURSE.html'>ST_SKILL_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_STC_STCRS_ID <span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="ST_WBT_COURSE.STCRS_ID references ST_COURSE.STCRS_ID via FK_SWC_STCRS_ID">
+						<a href='ST_WBT_COURSE.html'>ST_WBT_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SWC_STCRS_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_COURSE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_COURSE.html'>VIEW_ST_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_COURSE_CALENDAR.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_COURSE_CALENDAR.html'>VIEW_ST_COURSE_CALENDAR</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_COURSE_PREREQUISITE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_COURSE_PREREQUISITE.html'>VIEW_ST_COURSE_PREREQUISITE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_COURSE_SURVEY.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_COURSE_SURVEY.html'>VIEW_ST_COURSE_SURVEY</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_INSTRUCTOR_COURSE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_INSTRUCTOR_COURSE.html'>VIEW_ST_INSTRUCTOR_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_SKILL_COURSE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_SKILL_COURSE.html'>VIEW_ST_SKILL_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VIEW_ST_WBT_COURSE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VIEW_ST_WBT_COURSE.html'>VIEW_ST_WBT_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="VL_ST_COURSE.STCRS_ID&#39;s name implies that it&#39;s a child of ST_COURSE.STCRS_ID, but it doesn&#39;t reference that column.">
+						<a href='VL_ST_COURSE.html'>VL_ST_COURSE</a><span class='relatedKey'>.STCRS_ID</span>
+					</td>
+					<td class="constraint detail">
+						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_NAME">STCRS_NAME</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_DESC">STCRS_DESC</span></td>
+				 <td>VARCHAR2</td>
+				 <td>100</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="STCRSTYP_ID">STCRSTYP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="ST_COURSE.STCRSTYP_ID references ST_COURSE_TYPE.STCRSTYP_ID via FK_SC_STCRSTYP_ID">
+						<a href='ST_COURSE_TYPE.html'>ST_COURSE_TYPE</a><span class='relatedKey'>.STCRSTYP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SC_STCRSTYP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_DAYS">STCRS_DAYS</span></td>
+				 <td>NUMBER</td>
+				 <td>12,2</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>1</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_LIFE_MONTHS">STCRS_LIFE_MONTHS</span></td>
+				 <td>NUMBER</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>1</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_RECERTIFY_WINDOW">STCRS_RECERTIFY_WINDOW</span></td>
+				 <td>NUMBER</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_REQGRADE">STCRS_REQGRADE</span></td>
+				 <td>NUMBER</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_COST">STCRS_COST</span></td>
+				 <td>NUMBER</td>
+				 <td>10,2</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_STATUS">STCRS_STATUS</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>&#39;ACTIVE&#39;</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_FLAG1">STCRS_FLAG1</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_FLAG2">STCRS_FLAG2</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_FLAG3">STCRS_FLAG3</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_FLAG4">STCRS_FLAG4</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_FLAG5">STCRS_FLAG5</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_UDF1">STCRS_UDF1</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_UDF2">STCRS_UDF2</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_UDF3">STCRS_UDF3</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_UDF4">STCRS_UDF4</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="STCRS_UDF5">STCRS_UDF5</span></td>
+				 <td>VARCHAR2</td>
+				 <td>40</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="CLIENT_ID">CLIENT_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>1  </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='21 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_ST_COURSE</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>STCRS_ID</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="ST_COURSE.html" title="ST_COURSE" alt="" coords="271,448,655,1133">
+<area shape="rect" id="node2" href="ST_COURSE_TYPE.html" title="ST_COURSE_TYPE" alt="" coords="5,539,227,656">
+<area shape="rect" id="node3" href="ST_COURSE_CALENDAR.html" title="ST_COURSE_CALENDAR" alt="" coords="713,5,979,211">
+<area shape="rect" id="node4" href="ST_COURSE_NOTIFY.html" title="ST_COURSE_NOTIFY" alt="" coords="721,228,971,375">
+<area shape="rect" id="node5" href="ST_COURSE_PREREQUISITE.html" title="ST_COURSE_PREREQUISITE" alt="" coords="699,392,993,568">
+<area shape="rect" id="node6" href="ST_INSTRUCTOR_COURSE.html" title="ST_INSTRUCTOR_COURSE" alt="" coords="705,585,987,761">
+<area shape="rect" id="node7" href="ST_SKILL_COURSE.html" title="ST_SKILL_COURSE" alt="" coords="733,779,959,955">
+<area shape="rect" id="node8" href="ST_WBT_COURSE.html" title="ST_WBT_COURSE" alt="" coords="719,972,973,1148">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/ST_COURSE.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="ST_COURSE.html" title="ST_COURSE" alt="" coords="271,448,655,1133">
+<area shape="rect" id="node2" href="ST_COURSE_TYPE.html" title="ST_COURSE_TYPE" alt="" coords="5,539,227,656">
+<area shape="rect" id="node3" href="ST_COURSE_CALENDAR.html" title="ST_COURSE_CALENDAR" alt="" coords="713,5,979,211">
+<area shape="rect" id="node4" href="ST_INSTRUCTOR.html" title="ST_INSTRUCTOR" alt="" coords="358,245,567,333">
+<area shape="rect" id="node5" href="ST_LOCATION.html" title="ST_LOCATION" alt="" coords="369,96,556,184">
+<area shape="rect" id="node6" href="ST_COURSE_NOTIFY.html" title="ST_COURSE_NOTIFY" alt="" coords="721,421,971,568">
+<area shape="rect" id="node7" href="ST_COURSE_PREREQUISITE.html" title="ST_COURSE_PREREQUISITE" alt="" coords="699,585,993,761">
+<area shape="rect" id="node8" href="ST_EMP_COURSE_CALENDAR.html" title="ST_EMP_COURSE_CALENDAR" alt="" coords="1037,8,1341,96">
+<area shape="rect" id="node9" href="ST_INSTRUCTOR_COURSE.html" title="ST_INSTRUCTOR_COURSE" alt="" coords="705,228,987,404">
+<area shape="rect" id="node10" href="ST_NOTIFY_HIST.html" title="ST_NOTIFY_HIST" alt="" coords="1085,424,1293,512">
+<area shape="rect" id="node11" href="ST_SKILL_COURSE.html" title="ST_SKILL_COURSE" alt="" coords="733,835,959,1011">
+<area shape="rect" id="node12" href="ST_SKILL.html" title="ST_SKILL" alt="" coords="387,1151,539,1239">
+<area shape="rect" id="node13" href="ST_WBT_COURSE.html" title="ST_WBT_COURSE" alt="" coords="719,1139,973,1315">
+<area shape="rect" id="node14" href="WORKBRAIN_TEAM.html" title="WORKBRAIN_TEAM" alt="" coords="351,1256,575,1344">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/ST_COURSE.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="ST_COURSE.html" title="ST_COURSE" alt="" coords="271,991,655,1676">
+<area shape="rect" id="node2" href="ST_COURSE_TYPE.html" title="ST_COURSE_TYPE" alt="" coords="5,1653,227,1771">
+<area shape="rect" id="node3" href="ST_COURSE_CALENDAR.html" title="ST_COURSE_CALENDAR" alt="" coords="713,693,979,899">
+<area shape="rect" id="node4" href="ST_COURSE_NOTIFY.html" title="ST_COURSE_NOTIFY" alt="" coords="721,916,971,1063">
+<area shape="rect" id="node5" href="ST_COURSE_PREREQUISITE.html" title="ST_COURSE_PREREQUISITE" alt="" coords="699,1116,993,1292">
+<area shape="rect" id="node6" href="ST_COURSE_SURVEY.html" title="ST_COURSE_SURVEY" alt="" coords="725,1345,967,1521">
+<area shape="rect" id="node7" href="ST_INSTRUCTOR_COURSE.html" title="ST_INSTRUCTOR_COURSE" alt="" coords="705,5,987,181">
+<area shape="rect" id="node8" href="ST_SKILL_COURSE.html" title="ST_SKILL_COURSE" alt="" coords="733,235,959,411">
+<area shape="rect" id="node9" href="ST_WBT_COURSE.html" title="ST_WBT_COURSE" alt="" coords="719,464,973,640">
+<area shape="rect" id="node10" href="VIEW_ST_COURSE.html" title="VIEW_ST_COURSE" alt="" coords="705,1575,987,1697">
+<area shape="rect" id="node11" href="VIEW_ST_COURSE_CALENDAR.html" title="VIEW_ST_COURSE_CALENDAR" alt="" coords="1053,853,1357,1035">
+<area shape="rect" id="node12" href="VIEW_ST_COURSE_PREREQUISITE.html" title="VIEW_ST_COURSE_PREREQUISITE" alt="" coords="1037,1201,1373,1324">
+<area shape="rect" id="node13" href="VIEW_ST_COURSE_SURVEY.html" title="VIEW_ST_COURSE_SURVEY" alt="" coords="1063,1385,1347,1508">
+<area shape="rect" id="node14" href="VIEW_ST_INSTRUCTOR_COURSE.html" title="VIEW_ST_INSTRUCTOR_COURSE" alt="" coords="1043,68,1367,220">
+<area shape="rect" id="node15" href="VIEW_ST_SKILL_COURSE.html" title="VIEW_ST_SKILL_COURSE" alt="" coords="1072,284,1339,436">
+<area shape="rect" id="node16" href="VIEW_ST_WBT_COURSE.html" title="VIEW_ST_WBT_COURSE" alt="" coords="1077,527,1334,679">
+<area shape="rect" id="node17" href="VL_ST_COURSE.html" title="VL_ST_COURSE" alt="" coords="705,1715,987,1837">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/ST_COURSE.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="ST_COURSE.html" title="ST_COURSE" alt="" coords="271,888,655,1573">
+<area shape="rect" id="node2" href="ST_COURSE_TYPE.html" title="ST_COURSE_TYPE" alt="" coords="5,1611,227,1728">
+<area shape="rect" id="node3" href="ST_COURSE_CALENDAR.html" title="ST_COURSE_CALENDAR" alt="" coords="713,45,979,251">
+<area shape="rect" id="node4" href="ST_INSTRUCTOR.html" title="ST_INSTRUCTOR" alt="" coords="358,372,567,460">
+<area shape="rect" id="node5" href="ST_LOCATION.html" title="ST_LOCATION" alt="" coords="369,201,556,289">
+<area shape="rect" id="node6" href="ST_COURSE_NOTIFY.html" title="ST_COURSE_NOTIFY" alt="" coords="721,641,971,788">
+<area shape="rect" id="node7" href="ST_COURSE_PREREQUISITE.html" title="ST_COURSE_PREREQUISITE" alt="" coords="699,805,993,981">
+<area shape="rect" id="node8" href="ST_COURSE_SURVEY.html" title="ST_COURSE_SURVEY" alt="" coords="725,1035,967,1211">
+<area shape="rect" id="node9" href="ST_EMP_COURSE_CALENDAR.html" title="ST_EMP_COURSE_CALENDAR" alt="" coords="1053,5,1357,93">
+<area shape="rect" id="node10" href="ST_INSTRUCTOR_COURSE.html" title="ST_INSTRUCTOR_COURSE" alt="" coords="705,376,987,552">
+<area shape="rect" id="node11" href="ST_NOTIFY_HIST.html" title="ST_NOTIFY_HIST" alt="" coords="1101,644,1309,732">
+<area shape="rect" id="node12" href="ST_SKILL_COURSE.html" title="ST_SKILL_COURSE" alt="" coords="733,1616,959,1792">
+<area shape="rect" id="node13" href="ST_SKILL.html" title="ST_SKILL" alt="" coords="387,1759,539,1847">
+<area shape="rect" id="node14" href="ST_WBT_COURSE.html" title="ST_WBT_COURSE" alt="" coords="719,1845,973,2021">
+<area shape="rect" id="node15" href="WORKBRAIN_TEAM.html" title="WORKBRAIN_TEAM" alt="" coords="351,1953,575,2041">
+<area shape="rect" id="node16" href="VIEW_ST_COURSE.html" title="VIEW_ST_COURSE" alt="" coords="705,1336,987,1459">
+<area shape="rect" id="node17" href="VIEW_ST_COURSE_CALENDAR.html" title="VIEW_ST_COURSE_CALENDAR" alt="" coords="1053,173,1357,355">
+<area shape="rect" id="node18" href="VIEW_ST_COURSE_PREREQUISITE.html" title="VIEW_ST_COURSE_PREREQUISITE" alt="" coords="1037,868,1373,991">
+<area shape="rect" id="node19" href="VIEW_ST_COURSE_SURVEY.html" title="VIEW_ST_COURSE_SURVEY" alt="" coords="1063,1097,1347,1220">
+<area shape="rect" id="node20" href="VIEW_ST_EMP_COURSE_CALENDAR.html" title="VIEW_ST_EMP_COURSE_CALENDAR" alt="" coords="1417,40,1763,104">
+<area shape="rect" id="node21" href="VIEW_ST_INSTRUCTOR_COURSE.html" title="VIEW_ST_INSTRUCTOR_COURSE" alt="" coords="1043,471,1367,623">
+<area shape="rect" id="node22" href="VIEW_ST_SKILL_COURSE.html" title="VIEW_ST_SKILL_COURSE" alt="" coords="1072,1616,1339,1768">
+<area shape="rect" id="node23" href="VIEW_ST_WBT_COURSE.html" title="VIEW_ST_WBT_COURSE" alt="" coords="1077,1845,1334,1997">
+<area shape="rect" id="node24" href="VL_ST_COURSE.html" title="VL_ST_COURSE" alt="" coords="705,1476,987,1599">
+<area shape="rect" id="node25" href="VL_ST_COURSE_TYPE.html" title="VL_ST_COURSE_TYPE" alt="" coords="340,1591,585,1655">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/ST_COURSE.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

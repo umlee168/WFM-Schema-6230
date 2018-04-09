@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SO_EMPLOYEE - WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>SO_EMPLOYEE</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SEMP_ID">SEMP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="EMP_ID">EMP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SO_EMPLOYEE.EMP_ID references EMPLOYEE.EMP_ID via FK_SEMP_EMP_ID">
+						<a href='EMPLOYEE.html'>EMPLOYEE</a><span class='relatedKey'>.EMP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SEMP_EMP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="SKDGRP_ID">SKDGRP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SO_EMPLOYEE.SKDGRP_ID references SO_SCHEDULE_GROUP.SKDGRP_ID via FK_SEMP_SG_ID">
+						<a href='SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a><span class='relatedKey'>.SKDGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SEMP_SG_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="EMPGRP_ID">EMPGRP_ID</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="SO_EMPLOYEE.EMPGRP_ID references SO_EMPLOYEE_GROUP.EMPGRP_ID via FK_SEMP_EMPGRP_ID">
+						<a href='SO_EMPLOYEE_GROUP.html'>SO_EMPLOYEE_GROUP</a><span class='relatedKey'>.EMPGRP_ID</span>
+					</td>
+					<td class="constraint detail">
+						FK_SEMP_EMPGRP_ID <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_EFF_DATE">SEMP_EFF_DATE</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_SKDMAX_HRS">SEMP_SKDMAX_HRS</span></td>
+				 <td>NUMBER</td>
+				 <td>6,2</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_SKDMIN_HRS">SEMP_SKDMIN_HRS</span></td>
+				 <td>NUMBER</td>
+				 <td>6,2</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_DAYMAX_HRS">SEMP_DAYMAX_HRS</span></td>
+				 <td>NUMBER</td>
+				 <td>4,2</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_SHFTMIN_HRS">SEMP_SHFTMIN_HRS</span></td>
+				 <td>NUMBER</td>
+				 <td>4,2</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_ONFIXED_SKD">SEMP_ONFIXED_SKD</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_MAX2NT_RULE">SEMP_MAX2NT_RULE</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_IS_SALARY">SEMP_IS_SALARY</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_MAXSHFTDAY">SEMP_MAXSHFTDAY</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>1 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_SEASONAL_REG">SEMP_SEASONAL_REG</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>&#39;R&#39; </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_EXEMPT_STAT">SEMP_EXEMPT_STAT</span></td>
+				 <td>VARCHAR2</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>&#39;H&#39; </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_IS_MINOR">SEMP_IS_MINOR</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_X_IN_DATE">SEMP_X_IN_DATE</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_X_OUT_DATE">SEMP_X_OUT_DATE</span></td>
+				 <td>DATE</td>
+				 <td>7</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="SEMP_ISKEYHOLDER">SEMP_ISKEYHOLDER</span></td>
+				 <td>NUMBER</td>
+				 <td>38</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='19 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PK_SOSEMP_ID</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SEMP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SOEMP_SGIDEID</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+				  <td>SKDGRP_ID + EMP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SOEMPL_EGEMP</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+				  <td>EMPGRP_ID + EMP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SOEMPL_EMPGRP</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>EMPGRP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SOEMPL_EMPID</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>EMP_ID</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>IDX_SOEMPL_SKG</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>SKDGRP_ID</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="SO_EMPLOYEE.html" title="SO_EMPLOYEE" alt="" coords="609,361,937,988">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="307,5,565,445">
+<area shape="rect" id="node3" href="SO_EMPLOYEE_GROUP.html" title="SO_EMPLOYEE_GROUP" alt="" coords="307,499,565,704">
+<area shape="rect" id="node4" href="SO_SCHEDULE_GROUP.html" title="SO_SCHEDULE_GROUP" alt="" coords="5,489,263,1164">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/SO_EMPLOYEE.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="AC_EMPLOYEE_DATE.html" title="AC_EMPLOYEE_DATE" alt="" coords="945,5904,1186,5992">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="588,4228,845,4668">
+<area shape="rect" id="node8" href="CALC_GROUP.html" title="CALC_GROUP" alt="" coords="317,2312,503,2400">
+<area shape="rect" id="node9" href="PAY_GROUP.html" title="PAY_GROUP" alt="" coords="323,4407,497,4495">
+<area shape="rect" id="node27" href="EMPLOYMENT_TYPE.html" title="EMPLOYMENT_TYPE" alt="" coords="291,610,529,698">
+<area shape="rect" id="node28" href="EMPLOYEE_WORK_TYPE.html" title="EMPLOYEE_WORK_TYPE" alt="" coords="276,1212,544,1300">
+<area shape="rect" id="node29" href="SHIFT_PATTERN.html" title="SHIFT_PATTERN" alt="" coords="308,6047,512,6135">
+<area shape="rect" id="node30" href="TIMEZONE.html" title="TIMEZONE" alt="" coords="331,256,489,344">
+<area shape="rect" id="node3" href="AC_EVENT_LOG.html" title="AC_EVENT_LOG" alt="" coords="1349,2334,1549,2422">
+<area shape="rect" id="node4" href="AC_VIOLATION_LOG.html" title="AC_VIOLATION_LOG" alt="" coords="951,2299,1180,2387">
+<area shape="rect" id="node5" href="ACA_EMP_MSRMNT_GROUP.html" title="ACA_EMP_MSRMNT_GROUP" alt="" coords="920,6010,1211,6098">
+<area shape="rect" id="node6" href="ACA_SERVICE_SUMMARY.html" title="ACA_SERVICE_SUMMARY" alt="" coords="931,6115,1199,6203">
+<area shape="rect" id="node7" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="1346,6794,1553,6882">
+<area shape="rect" id="node10" href="WORKBRAIN_TEAM.html" title="WORKBRAIN_TEAM" alt="" coords="298,8035,522,8123">
+<area shape="rect" id="node11" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="953,5639,1177,5727">
+<area shape="rect" id="node12" href="AMX_AVAIL_SUMMARY.html" title="AMX_AVAIL_SUMMARY" alt="" coords="943,7755,1188,7843">
+<area shape="rect" id="node13" href="AMX_AVAILABILITY.html" title="AMX_AVAILABILITY" alt="" coords="957,6431,1174,6519">
+<area shape="rect" id="node14" href="AMX_OVERRIDE.html" title="AMX_OVERRIDE" alt="" coords="966,6536,1165,6624">
+<area shape="rect" id="node15" href="AS_EMP_TEAM_PRIORITY_BY_SHIFT.html" title="AS_EMP_TEAM_PRIORITY_BY_SHIFT" alt="" coords="889,7966,1241,8054">
+<area shape="rect" id="node16" href="CLOCK_TRAN_PROCESSED.html" title="CLOCK_TRAN_PROCESSED" alt="" coords="1306,115,1593,203">
+<area shape="rect" id="node17" href="WORK_SUMMARY.html" title="WORK_SUMMARY" alt="" coords="959,151,1172,239">
+<area shape="rect" id="node18" href="CMPLNC_VIOLATION.html" title="CMPLNC_VIOLATION" alt="" coords="949,6678,1182,6766">
+<area shape="rect" id="node19" href="EA_TIME_APPROVAL.html" title="EA_TIME_APPROVAL" alt="" coords="949,1980,1181,2068">
+<area shape="rect" id="node20" href="EA_TIME_APPROVAL_ERROR.html" title="EA_TIME_APPROVAL_ERROR" alt="" coords="1302,1998,1597,2086">
+<area shape="rect" id="node21" href="EMP_DEF_LAB.html" title="EMP_DEF_LAB" alt="" coords="971,6940,1160,7028">
+<area shape="rect" id="node22" href="EMP_SCHD_DTL_LAYER.html" title="EMP_SCHD_DTL_LAYER" alt="" coords="1319,7987,1579,8075">
+<area shape="rect" id="node23" href="SO_ACTIVITY.html" title="SO_ACTIVITY" alt="" coords="977,8636,1154,8724">
+<area shape="rect" id="node24" href="EMPLOYEE_SCHEDULE.html" title="EMPLOYEE_SCHEDULE" alt="" coords="937,7614,1193,7702">
+<area shape="rect" id="node66" href="SO_SCHEDULE_GROUP.html" title="SO_SCHEDULE_GROUP" alt="" coords="588,10483,845,11158">
+<area shape="rect" id="node91" href="COLOUR.html" title="COLOUR" alt="" coords="337,10747,483,10835">
+<area shape="rect" id="node25" href="EMP_SP_ZONE.html" title="EMP_SP_ZONE" alt="" coords="970,8071,1161,8159">
+<area shape="rect" id="node26" href="EMP_UDF_DATA.html" title="EMP_UDF_DATA" alt="" coords="965,7082,1165,7170">
+<area shape="rect" id="node31" href="EMPLOYEE_BADGE.html" title="EMPLOYEE_BADGE" alt="" coords="953,7187,1178,7275">
+<area shape="rect" id="node32" href="EMPLOYEE_BALANCE.html" title="EMPLOYEE_BALANCE" alt="" coords="944,7292,1187,7380">
+<area shape="rect" id="node33" href="EMPLOYEE_BALANCE_LOG.html" title="EMPLOYEE_BALANCE_LOG" alt="" coords="1307,818,1591,906">
+<area shape="rect" id="node34" href="EMPLOYEE_BID_PERIOD.html" title="EMPLOYEE_BID_PERIOD" alt="" coords="933,292,1198,380">
+<area shape="rect" id="node35" href="EMPLOYEE_BID_PERIOD_SOL.html" title="EMPLOYEE_BID_PERIOD_SOL" alt="" coords="913,398,1217,486">
+<area shape="rect" id="node36" href="EMPLOYEE_BID_PERIOD_SP_JOB.html" title="EMPLOYEE_BID_PERIOD_SP_JOB" alt="" coords="899,503,1231,591">
+<area shape="rect" id="node37" href="EMPLOYEE_BIO_DATA.html" title="EMPLOYEE_BIO_DATA" alt="" coords="942,608,1189,696">
+<area shape="rect" id="node38" href="EMPLOYEE_COMMENT.html" title="EMPLOYEE_COMMENT" alt="" coords="939,714,1192,802">
+<area shape="rect" id="node39" href="EMPLOYEE_HISTORY.html" title="EMPLOYEE_HISTORY" alt="" coords="945,10,1186,98">
+<area shape="rect" id="node40" href="EMPLOYEE_JOB.html" title="EMPLOYEE_JOB" alt="" coords="963,819,1167,907">
+<area shape="rect" id="node41" href="EMPLOYEE_JOB_POSTING.html" title="EMPLOYEE_JOB_POSTING" alt="" coords="925,924,1206,1012">
+<area shape="rect" id="node42" href="EMPLOYEE_LOCATION.html" title="EMPLOYEE_LOCATION" alt="" coords="940,1030,1191,1118">
+<area shape="rect" id="node43" href="EMPLOYEE_MACHINE.html" title="EMPLOYEE_MACHINE" alt="" coords="945,1135,1186,1223">
+<area shape="rect" id="node44" href="EMPLOYEE_OVERTIME.html" title="EMPLOYEE_OVERTIME" alt="" coords="939,1240,1191,1328">
+<area shape="rect" id="node45" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="916,1346,1215,1434">
+<area shape="rect" id="node46" href="EMPLOYEE_SCHED_DTL.html" title="EMPLOYEE_SCHED_DTL" alt="" coords="1317,8500,1581,8588">
+<area shape="rect" id="node47" href="EMPLOYEE_TEAM.html" title="EMPLOYEE_TEAM" alt="" coords="958,8176,1173,8264">
+<area shape="rect" id="node48" href="ENT_EMP_POLICY.html" title="ENT_EMP_POLICY" alt="" coords="957,1487,1174,1575">
+<area shape="rect" id="node49" href="ES_CALL_LOG.html" title="ES_CALL_LOG" alt="" coords="1355,5772,1543,5860">
+<area shape="rect" id="node50" href="ES_SHIFT_SUMMARY.html" title="ES_SHIFT_SUMMARY" alt="" coords="947,6220,1184,6308">
+<area shape="rect" id="node51" href="ES_CLIST_EMPLOYEE.html" title="ES_CLIST_EMPLOYEE" alt="" coords="943,1592,1188,1680">
+<area shape="rect" id="node52" href="ES_EMPGRP_EMPLOYEE.html" title="ES_EMPGRP_EMPLOYEE" alt="" coords="932,1698,1199,1786">
+<area shape="rect" id="node53" href="ES_PUBLISH_EMPLOYEE.html" title="ES_PUBLISH_EMPLOYEE" alt="" coords="932,1803,1199,1891">
+<area shape="rect" id="node54" href="ES_RELIEF_BLOCK.html" title="ES_RELIEF_BLOCK" alt="" coords="953,6326,1177,6414">
+<area shape="rect" id="node55" href="ES_ROTROW_ASGMT.html" title="ES_ROTROW_ASGMT" alt="" coords="1329,6899,1569,6987">
+<area shape="rect" id="node56" href="ES_ROTROW_CONFLICTS.html" title="ES_ROTROW_CONFLICTS" alt="" coords="1313,4764,1586,4852">
+<area shape="rect" id="node57" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1343,6274,1556,6362">
+<area shape="rect" id="node58" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="986,6783,1145,6871">
+<area shape="rect" id="node59" href="ES_SHIFT_HISTORY.html" title="ES_SHIFT_HISTORY" alt="" coords="1335,5983,1564,6071">
+<area shape="rect" id="node60" href="ES_SHIFT_LOCK.html" title="ES_SHIFT_LOCK" alt="" coords="1347,5878,1551,5966">
+<area shape="rect" id="node61" href="ES_SHIFT_OFFER_EMP_SHIFT.html" title="ES_SHIFT_OFFER_EMP_SHIFT" alt="" coords="913,2194,1218,2282">
+<area shape="rect" id="node62" href="ES_SHIFTPREF_SUMMARY.html" title="ES_SHIFTPREF_SUMMARY" alt="" coords="1311,5547,1588,5635">
+<area shape="rect" id="node63" href="ES_SHIFTPREF_SUMMARY_HISTORY.html" title="ES_SHIFTPREF_SUMMARY_HISTORY" alt="" coords="1657,5639,2011,5727">
+<area shape="rect" id="node64" href="FCST_DRIVER.html" title="FCST_DRIVER" alt="" coords="1741,9391,1927,9479">
+<area shape="rect" id="node65" href="FORECAST.html" title="FORECAST" alt="" coords="1368,9427,1531,9515">
+<area shape="rect" id="node98" href="SO_CLIENT_TYPE.html" title="SO_CLIENT_TYPE" alt="" coords="303,10536,517,10624">
+<area shape="rect" id="node99" href="SO_VOLUME_TYPE.html" title="SO_VOLUME_TYPE" alt="" coords="9,10642,232,10730">
+<area shape="rect" id="node110" href="SO_FCAST_GROUP.html" title="SO_FCAST_GROUP" alt="" coords="298,10642,522,10730">
+<area shape="rect" id="node117" href="SO_LEVERAGE_MATRIX.html" title="SO_LEVERAGE_MATRIX" alt="" coords="282,10918,538,11006">
+<area shape="rect" id="node128" href="SO_STFRND_RULES.html" title="SO_STFRND_RULES" alt="" coords="294,11023,526,11111">
+<area shape="rect" id="node67" href="FCST_DRIVER_DEPT.html" title="FCST_DRIVER_DEPT" alt="" coords="949,10486,1182,10574">
+<area shape="rect" id="node68" href="FCST_DRIVER_IMPORT.html" title="FCST_DRIVER_IMPORT" alt="" coords="939,10591,1192,10679">
+<area shape="rect" id="node69" href="FCST_HISTORY.html" title="FCST_HISTORY" alt="" coords="1735,8674,1933,8762">
+<area shape="rect" id="node70" href="FCST_LOC_SUMMARY.html" title="FCST_LOC_SUMMARY" alt="" coords="1711,9584,1957,9672">
+<area shape="rect" id="node71" href="FCST_LOCATION.html" title="FCST_LOCATION" alt="" coords="962,10943,1169,11031">
+<area shape="rect" id="node72" href="FCST_NONPROD_SMRY.html" title="FCST_NONPROD_SMRY" alt="" coords="936,11048,1195,11136">
+<area shape="rect" id="node73" href="FCST_WORKLOAD_SMRY.html" title="FCST_WORKLOAD_SMRY" alt="" coords="1699,9864,1969,9952">
+<area shape="rect" id="node74" href="FS_EVENT.html" title="FS_EVENT" alt="" coords="987,2440,1144,2528">
+<area shape="rect" id="node75" href="HOLIDAY_CAL_EMP.html" title="HOLIDAY_CAL_EMP" alt="" coords="953,2546,1178,2634">
+<area shape="rect" id="node76" href="MP_EMP_NOTE.html" title="MP_EMP_NOTE" alt="" coords="967,2651,1163,2739">
+<area shape="rect" id="node77" href="OSB_GROUP_EMPLOYEE.html" title="OSB_GROUP_EMPLOYEE" alt="" coords="931,2756,1200,2844">
+<area shape="rect" id="node78" href="OTE_GROUP_EMPLOYEE.html" title="OTE_GROUP_EMPLOYEE" alt="" coords="931,2862,1200,2950">
+<area shape="rect" id="node79" href="OTE_RESPONSE.html" title="OTE_RESPONSE" alt="" coords="963,2967,1168,3055">
+<area shape="rect" id="node80" href="RTSS_GROUP_EMP.html" title="RTSS_GROUP_EMP" alt="" coords="952,3072,1179,3160">
+<area shape="rect" id="node81" href="RTSS_RULE_ERR_LOG.html" title="RTSS_RULE_ERR_LOG" alt="" coords="939,3178,1191,3266">
+<area shape="rect" id="node82" href="SB_EMP_BID_GROUP.html" title="SB_EMP_BID_GROUP" alt="" coords="945,3283,1186,3371">
+<area shape="rect" id="node83" href="SB_EMP_PREF.html" title="SB_EMP_PREF" alt="" coords="970,3388,1161,3476">
+<area shape="rect" id="node84" href="SB_SCHD_BID_BID.html" title="SB_SCHD_BID_BID" alt="" coords="955,3494,1176,3582">
+<area shape="rect" id="node85" href="SB_SCHD_BID_EMP.html" title="SB_SCHD_BID_EMP" alt="" coords="951,3599,1179,3687">
+<area shape="rect" id="node86" href="SC_ALERT.html" title="SC_ALERT" alt="" coords="986,3704,1145,3792">
+<area shape="rect" id="node87" href="SC_EMP_SCHOOL.html" title="SC_EMP_SCHOOL" alt="" coords="957,3810,1173,3898">
+<area shape="rect" id="node88" href="SCHED_COST_DETAIL.html" title="SCHED_COST_DETAIL" alt="" coords="943,8282,1188,8370">
+<area shape="rect" id="node89" href="SCHEDULE_EMPLOYEE.html" title="SCHEDULE_EMPLOYEE" alt="" coords="937,3915,1193,4003">
+<area shape="rect" id="node90" href="SHIFT_TRADE.html" title="SHIFT_TRADE" alt="" coords="973,4020,1157,4108">
+<area shape="rect" id="node92" href="SO_ACTUAL_PAY_COST.html" title="SO_ACTUAL_PAY_COST" alt="" coords="937,8387,1194,8475">
+<area shape="rect" id="node93" href="SO_BUDG_EVENT_HOUR.html" title="SO_BUDG_EVENT_HOUR" alt="" coords="932,11190,1199,11278">
+<area shape="rect" id="node94" href="SO_BUDG_PAY_COST.html" title="SO_BUDG_PAY_COST" alt="" coords="943,11295,1187,11383">
+<area shape="rect" id="node95" href="SO_BUILD_PERCENT.html" title="SO_BUILD_PERCENT" alt="" coords="947,11400,1184,11488">
+<area shape="rect" id="node96" href="SO_CLIENT_STFDEF.html" title="SO_CLIENT_STFDEF" alt="" coords="1333,10098,1566,10186">
+<area shape="rect" id="node97" href="SO_DISTRIBUTION.html" title="SO_DISTRIBUTION" alt="" coords="955,10239,1175,10327">
+<area shape="rect" id="node100" href="SO_CORP_ENT_HOUR.html" title="SO_CORP_ENT_HOUR" alt="" coords="942,11683,1189,11771">
+<area shape="rect" id="node101" href="SO_DAY_PART_OVR.html" title="SO_DAY_PART_OVR" alt="" coords="951,11788,1180,11876">
+<area shape="rect" id="node102" href="SO_EMPLOYEE.html" title="SO_EMPLOYEE" alt="" coords="1285,8747,1613,9374">
+<area shape="rect" id="node103" href="SO_EMPLOYEE_GROUP.html" title="SO_EMPLOYEE_GROUP" alt="" coords="936,9096,1195,9302">
+<area shape="rect" id="node104" href="SO_RULE_GROUP.html" title="SO_RULE_GROUP" alt="" coords="609,9187,825,9275">
+<area shape="rect" id="node105" href="SO_EVENT_DETAIL.html" title="SO_EVENT_DETAIL" alt="" coords="1339,8606,1560,8694">
+<area shape="rect" id="node106" href="SO_EVENT_TYPE.html" title="SO_EVENT_TYPE" alt="" coords="961,8919,1170,9007">
+<area shape="rect" id="node107" href="SO_EVT_EMP_AV_OVRD.html" title="SO_EVT_EMP_AV_OVRD" alt="" coords="1705,7788,1963,7876">
+<area shape="rect" id="node108" href="SO_FCAST.html" title="SO_FCAST" alt="" coords="985,11894,1145,11982">
+<area shape="rect" id="node109" href="SO_FCAST_EXTERNAL.html" title="SO_FCAST_EXTERNAL" alt="" coords="941,8778,1189,8866">
+<area shape="rect" id="node111" href="SO_FCAST_REGEN_MAPPING.html" title="SO_FCAST_REGEN_MAPPING" alt="" coords="916,11999,1215,12087">
+<area shape="rect" id="node112" href="SO_FCAST_SPEC_DAY.html" title="SO_FCAST_SPEC_DAY" alt="" coords="1326,12007,1573,12095">
+<area shape="rect" id="node113" href="SO_FISCAL_YEAR.html" title="SO_FISCAL_YEAR" alt="" coords="960,12156,1171,12244">
+<area shape="rect" id="node114" href="SO_HIST_INT_REQ.html" title="SO_HIST_INT_REQ" alt="" coords="1339,9568,1559,9656">
+<area shape="rect" id="node115" href="SO_INTERVAL_REQ.html" title="SO_INTERVAL_REQ" alt="" coords="1337,11435,1562,11523">
+<area shape="rect" id="node116" href="SO_SCHEDULE.html" title="SO_SCHEDULE" alt="" coords="969,11506,1162,11594">
+<area shape="rect" id="node118" href="SO_LOCATION_PROP.html" title="SO_LOCATION_PROP" alt="" coords="945,12475,1185,12563">
+<area shape="rect" id="node119" href="SO_PLAN_WORKLOAD.html" title="SO_PLAN_WORKLOAD" alt="" coords="943,12580,1188,12668">
+<area shape="rect" id="node120" href="SO_PLANNED_VOLUME.html" title="SO_PLANNED_VOLUME" alt="" coords="939,9424,1192,9512">
+<area shape="rect" id="node121" href="SO_PREFERREDTIME_SOURCE.html" title="SO_PREFERREDTIME_SOURCE" alt="" coords="1677,10255,1991,10343">
+<area shape="rect" id="node122" href="SO_RESULTS_DETAIL.html" title="SO_RESULTS_DETAIL" alt="" coords="944,12686,1187,12774">
+<area shape="rect" id="node123" href="SO_RESULTS_SUMMARY.html" title="SO_RESULTS_SUMMARY" alt="" coords="932,12791,1199,12879">
+<area shape="rect" id="node124" href="SO_RULE.html" title="SO_RULE" alt="" coords="989,9530,1141,9618">
+<area shape="rect" id="node125" href="SO_SCHED_BAT_DET.html" title="SO_SCHED_BAT_DET" alt="" coords="1329,9884,1570,9972">
+<area shape="rect" id="node126" href="SO_SCHED_BAT_REQ.html" title="SO_SCHED_BAT_REQ" alt="" coords="944,9319,1187,9407">
+<area shape="rect" id="node127" href="SO_SCHEDULE_COST.html" title="SO_SCHEDULE_COST" alt="" coords="1327,10887,1572,10975">
+<area shape="rect" id="node129" href="SO_SCHEDULE_PROF.html" title="SO_SCHEDULE_PROF" alt="" coords="943,9671,1187,9759">
+<area shape="rect" id="node130" href="SO_SCHEDULE_SCORE.html" title="SO_SCHEDULE_SCORE" alt="" coords="1321,11222,1577,11310">
+<area shape="rect" id="node131" href="SO_SCHEDULED_EVENT.html" title="SO_SCHEDULED_EVENT" alt="" coords="934,9776,1197,9864">
+<area shape="rect" id="node132" href="SO_SHIFT_ACTIVITY.html" title="SO_SHIFT_ACTIVITY" alt="" coords="1719,11592,1949,11680">
+<area shape="rect" id="node133" href="SO_SHIFT_DETAIL.html" title="SO_SHIFT_DETAIL" alt="" coords="1341,11682,1557,11770">
+<area shape="rect" id="node134" href="SO_SHIFT_OFFER_EMP_SHIFT.html" title="SO_SHIFT_OFFER_EMP_SHIFT" alt="" coords="912,4198,1219,4286">
+<area shape="rect" id="node135" href="SO_SHIFT_REQ.html" title="SO_SHIFT_REQ" alt="" coords="1351,11576,1547,11664">
+<area shape="rect" id="node136" href="SO_SKD_EMPGRP.html" title="SO_SKD_EMPGRP" alt="" coords="1341,10239,1558,10327">
+<area shape="rect" id="node137" href="SO_SKDPROF_EMPGRP.html" title="SO_SKDPROF_EMPGRP" alt="" coords="1320,9779,1579,9867">
+<area shape="rect" id="node138" href="SO_STFOFS_OVR.html" title="SO_STFOFS_OVR" alt="" coords="960,10098,1171,10186">
+<area shape="rect" id="node139" href="SO_TASK.html" title="SO_TASK" alt="" coords="1374,9674,1525,9762">
+<area shape="rect" id="node140" href="SO_TASK_LIST_TMPLT.html" title="SO_TASK_LIST_TMPLT" alt="" coords="939,10380,1191,10468">
+<area shape="rect" id="node141" href="SO_TMP_TRU_POS.html" title="SO_TMP_TRU_POS" alt="" coords="953,10732,1177,10820">
+<area shape="rect" id="node142" href="SO_TMP_TRU_SALE.html" title="SO_TMP_TRU_SALE" alt="" coords="951,10838,1180,10926">
+<area shape="rect" id="node143" href="SO_VOLUME_WORKLOAD.html" title="SO_VOLUME_WORKLOAD" alt="" coords="1699,10098,1969,10186">
+<area shape="rect" id="node144" href="SS_SCHEDULED_SWIPE.html" title="SS_SCHEDULED_SWIPE" alt="" coords="1321,1064,1578,1152">
+<area shape="rect" id="node145" href="SS_SCHEDULED_SWIPE_LOG.html" title="SS_SCHEDULED_SWIPE_LOG" alt="" coords="1300,1891,1599,1979">
+<area shape="rect" id="node146" href="SS_UPDATE.html" title="SS_UPDATE" alt="" coords="981,4339,1150,4427">
+<area shape="rect" id="node147" href="SS_WORKDAY.html" title="SS_WORKDAY" alt="" coords="973,4444,1158,4532">
+<area shape="rect" id="node148" href="ST_EMP_COURSE_CALENDAR.html" title="ST_EMP_COURSE_CALENDAR" alt="" coords="913,4550,1217,4638">
+<area shape="rect" id="node149" href="ST_EMP_SKILL.html" title="ST_EMP_SKILL" alt="" coords="969,4655,1162,4743">
+<area shape="rect" id="node150" href="ST_INSTRUCTOR.html" title="ST_INSTRUCTOR" alt="" coords="961,4760,1170,4848">
+<area shape="rect" id="node151" href="ST_NOTIFY_HIST.html" title="ST_NOTIFY_HIST" alt="" coords="961,4866,1169,4954">
+<area shape="rect" id="node152" href="TIME_OFF_REQUEST.html" title="TIME_OFF_REQUEST" alt="" coords="1331,5442,1568,5530">
+<area shape="rect" id="node153" href="TIMESHEET_LOCK.html" title="TIMESHEET_LOCK" alt="" coords="955,4971,1175,5059">
+<area shape="rect" id="node154" href="TM_ACTITMASGN_WORK.html" title="TM_ACTITMASGN_WORK" alt="" coords="933,5076,1198,5164">
+<area shape="rect" id="node155" href="TOKE_POOL_COUNTER.html" title="TOKE_POOL_COUNTER" alt="" coords="936,5182,1195,5270">
+<area shape="rect" id="node156" href="TOKE_POOL_DIST_PAYOUT.html" title="TOKE_POOL_DIST_PAYOUT" alt="" coords="921,5287,1209,5375">
+<area shape="rect" id="node157" href="TOKE_POOL_EMP_ADJUSTMENT.html" title="TOKE_POOL_EMP_ADJUSTMENT" alt="" coords="902,5392,1229,5480">
+<area shape="rect" id="node158" href="TS_USER.html" title="TS_USER" alt="" coords="990,5498,1141,5586">
+<area shape="rect" id="node159" href="WBI_KPI_SUMMARY_AGG.html" title="WBI_KPI_SUMMARY_AGG" alt="" coords="931,12298,1199,12386">
+<area shape="rect" id="node160" href="WORK_DETAIL_ADJUST.html" title="WORK_DETAIL_ADJUST" alt="" coords="937,7860,1193,7948">
+<area shape="rect" id="node161" href="WORKBRAIN_USER_TEAM.html" title="WORKBRAIN_USER_TEAM" alt="" coords="1313,4088,1586,4176">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/SO_EMPLOYEE.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="SO_EMPLOYEE.html" title="SO_EMPLOYEE" alt="" coords="609,361,937,988">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="307,5,565,445">
+<area shape="rect" id="node3" href="SO_EMPLOYEE_GROUP.html" title="SO_EMPLOYEE_GROUP" alt="" coords="307,499,565,704">
+<area shape="rect" id="node4" href="SO_SCHEDULE_GROUP.html" title="SO_SCHEDULE_GROUP" alt="" coords="5,489,263,1164">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/SO_EMPLOYEE.implied1degrees.png' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="AC_EMPLOYEE_DATE.html" title="AC_EMPLOYEE_DATE" alt="" coords="941,9410,1182,9498">
+<area shape="rect" id="node2" href="EMPLOYEE.html" title="EMPLOYEE" alt="" coords="584,7369,841,7809">
+<area shape="rect" id="node8" href="CALC_GROUP.html" title="CALC_GROUP" alt="" coords="313,587,499,675">
+<area shape="rect" id="node9" href="PAY_GROUP.html" title="PAY_GROUP" alt="" coords="319,227,493,315">
+<area shape="rect" id="node30" href="EMPLOYMENT_TYPE.html" title="EMPLOYMENT_TYPE" alt="" coords="287,11150,525,11238">
+<area shape="rect" id="node31" href="EMPLOYEE_WORK_TYPE.html" title="EMPLOYEE_WORK_TYPE" alt="" coords="272,11255,540,11343">
+<area shape="rect" id="node32" href="SHIFT_PATTERN.html" title="SHIFT_PATTERN" alt="" coords="304,1063,508,1151">
+<area shape="rect" id="node33" href="TIMEZONE.html" title="TIMEZONE" alt="" coords="327,11362,485,11450">
+<area shape="rect" id="node3" href="AC_EVENT_LOG.html" title="AC_EVENT_LOG" alt="" coords="1363,10039,1563,10127">
+<area shape="rect" id="node4" href="AC_VIOLATION_LOG.html" title="AC_VIOLATION_LOG" alt="" coords="947,9997,1176,10085">
+<area shape="rect" id="node5" href="ACA_EMP_MSRMNT_GROUP.html" title="ACA_EMP_MSRMNT_GROUP" alt="" coords="916,3253,1207,3341">
+<area shape="rect" id="node6" href="ACA_SERVICE_SUMMARY.html" title="ACA_SERVICE_SUMMARY" alt="" coords="927,3358,1195,3446">
+<area shape="rect" id="node7" href="AGG_USER_WRK.html" title="AGG_USER_WRK" alt="" coords="1359,4497,1566,4585">
+<area shape="rect" id="node10" href="WORKBRAIN_TEAM.html" title="WORKBRAIN_TEAM" alt="" coords="294,12293,518,12381">
+<area shape="rect" id="node11" href="WORKBRAIN_USER.html" title="WORKBRAIN_USER" alt="" coords="949,9233,1173,9321">
+<area shape="rect" id="node12" href="AMX_AVAIL_SUMMARY.html" title="AMX_AVAIL_SUMMARY" alt="" coords="939,12005,1184,12093">
+<area shape="rect" id="node13" href="AMX_AVAILABILITY.html" title="AMX_AVAILABILITY" alt="" coords="953,3463,1170,3551">
+<area shape="rect" id="node14" href="AMX_OVERRIDE.html" title="AMX_OVERRIDE" alt="" coords="1363,12881,1562,12969">
+<area shape="rect" id="node15" href="AMX_OVR_CODE.html" title="AMX_OVR_CODE" alt="" coords="959,14773,1164,14861">
+<area shape="rect" id="node16" href="SO_SCHEDULE_GROUP.html" title="SO_SCHEDULE_GROUP" alt="" coords="584,16290,841,16965">
+<area shape="rect" id="node101" href="COLOUR.html" title="COLOUR" alt="" coords="333,19255,479,19343">
+<area shape="rect" id="node108" href="SO_DISTRIBUTION.html" title="SO_DISTRIBUTION" alt="" coords="296,18959,516,19047">
+<area shape="rect" id="node109" href="SO_CLIENT_TYPE.html" title="SO_CLIENT_TYPE" alt="" coords="299,16935,513,17023">
+<area shape="rect" id="node110" href="SO_VOLUME_TYPE.html" title="SO_VOLUME_TYPE" alt="" coords="5,15477,228,15565">
+<area shape="rect" id="node118" href="SO_FCAST.html" title="SO_FCAST" alt="" coords="326,16293,486,16381">
+<area shape="rect" id="node120" href="SO_FCAST_GROUP.html" title="SO_FCAST_GROUP" alt="" coords="294,16434,518,16522">
+<area shape="rect" id="node127" href="SO_LEVERAGE_MATRIX.html" title="SO_LEVERAGE_MATRIX" alt="" coords="278,16725,534,16813">
+<area shape="rect" id="node138" href="SO_STFRND_RULES.html" title="SO_STFRND_RULES" alt="" coords="290,16830,522,16918">
+<area shape="rect" id="node17" href="AS_EMP_TEAM_PRIORITY_BY_SHIFT.html" title="AS_EMP_TEAM_PRIORITY_BY_SHIFT" alt="" coords="885,11713,1237,11801">
+<area shape="rect" id="node18" href="CLOCK_TRAN_DELETED.html" title="CLOCK_TRAN_DELETED" alt="" coords="1331,3111,1594,3199">
+<area shape="rect" id="node19" href="WORK_SUMMARY.html" title="WORK_SUMMARY" alt="" coords="955,866,1168,954">
+<area shape="rect" id="node20" href="CLOCK_TRAN_PROCESSED.html" title="CLOCK_TRAN_PROCESSED" alt="" coords="1319,799,1606,887">
+<area shape="rect" id="node21" href="CMPLNC_VIOLATION.html" title="CMPLNC_VIOLATION" alt="" coords="945,3569,1178,3657">
+<area shape="rect" id="node22" href="EA_TIME_APPROVAL.html" title="EA_TIME_APPROVAL" alt="" coords="945,1325,1177,1413">
+<area shape="rect" id="node23" href="EA_TIME_APPROVAL_ERROR.html" title="EA_TIME_APPROVAL_ERROR" alt="" coords="1315,1307,1610,1395">
+<area shape="rect" id="node24" href="EMP_DEF_LAB.html" title="EMP_DEF_LAB" alt="" coords="967,1466,1156,1554">
+<area shape="rect" id="node25" href="EMP_SCHD_DTL_LAYER.html" title="EMP_SCHD_DTL_LAYER" alt="" coords="1333,12606,1593,12694">
+<area shape="rect" id="node26" href="SO_ACTIVITY.html" title="SO_ACTIVITY" alt="" coords="973,19107,1150,19195">
+<area shape="rect" id="node27" href="EMPLOYEE_SCHEDULE.html" title="EMPLOYEE_SCHEDULE" alt="" coords="933,1111,1189,1199">
+<area shape="rect" id="node28" href="EMP_SP_ZONE.html" title="EMP_SP_ZONE" alt="" coords="966,11818,1157,11906">
+<area shape="rect" id="node29" href="EMP_UDF_DATA.html" title="EMP_UDF_DATA" alt="" coords="961,1607,1161,1695">
+<area shape="rect" id="node34" href="EMPLOYEE_BADGE.html" title="EMPLOYEE_BADGE" alt="" coords="949,1749,1174,1837">
+<area shape="rect" id="node35" href="EMPLOYEE_BALANCE.html" title="EMPLOYEE_BALANCE" alt="" coords="940,1890,1183,1978">
+<area shape="rect" id="node36" href="EMPLOYEE_BALANCE_LOG.html" title="EMPLOYEE_BALANCE_LOG" alt="" coords="1321,2233,1605,2321">
+<area shape="rect" id="node37" href="EMPLOYEE_BID_PERIOD.html" title="EMPLOYEE_BID_PERIOD" alt="" coords="929,2031,1194,2119">
+<area shape="rect" id="node38" href="EMPLOYEE_BID_PERIOD_SOL.html" title="EMPLOYEE_BID_PERIOD_SOL" alt="" coords="909,2615,1213,2703">
+<area shape="rect" id="node39" href="EMPLOYEE_BID_PERIOD_SP_JOB.html" title="EMPLOYEE_BID_PERIOD_SP_JOB" alt="" coords="895,2793,1227,2881">
+<area shape="rect" id="node40" href="EMPLOYEE_BIO_DATA.html" title="EMPLOYEE_BIO_DATA" alt="" coords="938,4525,1185,4613">
+<area shape="rect" id="node41" href="EMPLOYEE_COMMENT.html" title="EMPLOYEE_COMMENT" alt="" coords="935,4630,1188,4718">
+<area shape="rect" id="node42" href="EMPLOYEE_HISTORY.html" title="EMPLOYEE_HISTORY" alt="" coords="941,11349,1182,11437">
+<area shape="rect" id="node43" href="EMPLOYEE_JOB.html" title="EMPLOYEE_JOB" alt="" coords="959,2970,1163,3058">
+<area shape="rect" id="node44" href="EMPLOYEE_JOB_POSTING.html" title="EMPLOYEE_JOB_POSTING" alt="" coords="921,4735,1202,4823">
+<area shape="rect" id="node45" href="EMPLOYEE_LOCATION.html" title="EMPLOYEE_LOCATION" alt="" coords="936,4841,1187,4929">
+<area shape="rect" id="node46" href="EMPLOYEE_MACHINE.html" title="EMPLOYEE_MACHINE" alt="" coords="941,4946,1182,5034">
+<area shape="rect" id="node47" href="EMPLOYEE_OVERTIME.html" title="EMPLOYEE_OVERTIME" alt="" coords="935,3147,1187,3235">
+<area shape="rect" id="node48" href="EMPLOYEE_READER_GROUP.html" title="EMPLOYEE_READER_GROUP" alt="" coords="912,3746,1211,3834">
+<area shape="rect" id="node49" href="EMPLOYEE_SCHED_DTL.html" title="EMPLOYEE_SCHED_DTL" alt="" coords="1331,12721,1595,12809">
+<area shape="rect" id="node50" href="EMPLOYEE_TEAM.html" title="EMPLOYEE_TEAM" alt="" coords="954,12514,1169,12602">
+<area shape="rect" id="node51" href="EMPLOYEE_WORKBRAIN_USER.html" title="EMPLOYEE_WORKBRAIN_USER" alt="" coords="1306,8709,1619,8773">
+<area shape="rect" id="node52" href="ENT_EMP_POLICY.html" title="ENT_EMP_POLICY" alt="" coords="953,3887,1170,3975">
+<area shape="rect" id="node53" href="ES_CALL_LOG.html" title="ES_CALL_LOG" alt="" coords="1369,9209,1557,9297">
+<area shape="rect" id="node54" href="ES_SHIFT_SUMMARY.html" title="ES_SHIFT_SUMMARY" alt="" coords="943,11607,1180,11695">
+<area shape="rect" id="node55" href="ES_CLIST_EMPLOYEE.html" title="ES_CLIST_EMPLOYEE" alt="" coords="939,5159,1184,5247">
+<area shape="rect" id="node56" href="ES_EMPGRP_EMPLOYEE.html" title="ES_EMPGRP_EMPLOYEE" alt="" coords="928,5265,1195,5353">
+<area shape="rect" id="node57" href="ES_PUBLISH_EMPLOYEE.html" title="ES_PUBLISH_EMPLOYEE" alt="" coords="928,5370,1195,5458">
+<area shape="rect" id="node58" href="ES_RELIEF_BLOCK.html" title="ES_RELIEF_BLOCK" alt="" coords="949,10354,1173,10442">
+<area shape="rect" id="node59" href="ES_ROTROW_ASGMT.html" title="ES_ROTROW_ASGMT" alt="" coords="1343,13829,1583,13917">
+<area shape="rect" id="node60" href="ES_ROTROW_CONFLICTS.html" title="ES_ROTROW_CONFLICTS" alt="" coords="1326,10487,1599,10575">
+<area shape="rect" id="node61" href="ES_SHIFT_DETAIL.html" title="ES_SHIFT_DETAIL" alt="" coords="1356,10593,1569,10681">
+<area shape="rect" id="node62" href="OVERRIDE.html" title="OVERRIDE" alt="" coords="982,9819,1141,9907">
+<area shape="rect" id="node63" href="ES_SHIFT_HISTORY.html" title="ES_SHIFT_HISTORY" alt="" coords="1348,9477,1577,9565">
+<area shape="rect" id="node64" href="ES_SHIFT_LOCK.html" title="ES_SHIFT_LOCK" alt="" coords="1763,9731,1967,9819">
+<area shape="rect" id="node65" href="ES_SHIFT_OFFER_EMP_SHIFT.html" title="ES_SHIFT_OFFER_EMP_SHIFT" alt="" coords="909,5475,1214,5563">
+<area shape="rect" id="node66" href="ES_SHIFTPREF_SUMMARY.html" title="ES_SHIFTPREF_SUMMARY" alt="" coords="1324,8931,1601,9019">
+<area shape="rect" id="node67" href="ES_SHIFTPREF_SUMMARY_HISTORY.html" title="ES_SHIFTPREF_SUMMARY_HISTORY" alt="" coords="1688,9023,2041,9111">
+<area shape="rect" id="node68" href="FCST_DRIVER.html" title="FCST_DRIVER" alt="" coords="1772,11733,1957,11821">
+<area shape="rect" id="node69" href="FORECAST.html" title="FORECAST" alt="" coords="1381,11095,1544,11183">
+<area shape="rect" id="node70" href="FCST_DRIVER_DEPT.html" title="FCST_DRIVER_DEPT" alt="" coords="945,16990,1178,17078">
+<area shape="rect" id="node71" href="FCST_DRIVER_IMPORT.html" title="FCST_DRIVER_IMPORT" alt="" coords="935,17095,1188,17183">
+<area shape="rect" id="node72" href="FCST_HISTORY.html" title="FCST_HISTORY" alt="" coords="1766,11095,1963,11183">
+<area shape="rect" id="node73" href="FCST_LOC_SUMMARY.html" title="FCST_LOC_SUMMARY" alt="" coords="1742,12406,1987,12494">
+<area shape="rect" id="node74" href="FCST_LOCATION.html" title="FCST_LOCATION" alt="" coords="958,17201,1165,17289">
+<area shape="rect" id="node75" href="FCST_NONPROD_SMRY.html" title="FCST_NONPROD_SMRY" alt="" coords="932,17306,1191,17394">
+<area shape="rect" id="node76" href="FCST_WORKLOAD_SMRY.html" title="FCST_WORKLOAD_SMRY" alt="" coords="1730,12654,1999,12742">
+<area shape="rect" id="node77" href="FS_EVENT.html" title="FS_EVENT" alt="" coords="983,5581,1140,5669">
+<area shape="rect" id="node78" href="HOL_ASGN_TRANS_LOG.html" title="HOL_ASGN_TRANS_LOG" alt="" coords="930,5686,1193,5774">
+<area shape="rect" id="node79" href="HOLIDAY_CAL_EMP.html" title="HOLIDAY_CAL_EMP" alt="" coords="949,5791,1174,5879">
+<area shape="rect" id="node80" href="JP_JOB_POSTING_BID.html" title="JP_JOB_POSTING_BID" alt="" coords="937,5897,1186,5985">
+<area shape="rect" id="node81" href="MP_EMP_NOTE.html" title="MP_EMP_NOTE" alt="" coords="963,6002,1159,6090">
+<area shape="rect" id="node82" href="OSB_GROUP_EMPLOYEE.html" title="OSB_GROUP_EMPLOYEE" alt="" coords="927,6107,1196,6195">
+<area shape="rect" id="node83" href="OTE_GROUP_EMPLOYEE.html" title="OTE_GROUP_EMPLOYEE" alt="" coords="927,6213,1196,6301">
+<area shape="rect" id="node84" href="OTE_RESPONSE.html" title="OTE_RESPONSE" alt="" coords="959,6318,1164,6406">
+<area shape="rect" id="node85" href="RTSS_GROUP_EMP.html" title="RTSS_GROUP_EMP" alt="" coords="948,6423,1175,6511">
+<area shape="rect" id="node86" href="RTSS_RULE_ERR_LOG.html" title="RTSS_RULE_ERR_LOG" alt="" coords="935,6529,1187,6617">
+<area shape="rect" id="node87" href="SB_EMP_BID_GROUP.html" title="SB_EMP_BID_GROUP" alt="" coords="941,6634,1182,6722">
+<area shape="rect" id="node88" href="SB_EMP_PREF.html" title="SB_EMP_PREF" alt="" coords="966,6739,1157,6827">
+<area shape="rect" id="node89" href="SB_SCHD_BID_BID.html" title="SB_SCHD_BID_BID" alt="" coords="951,6845,1172,6933">
+<area shape="rect" id="node90" href="SB_SCHD_BID_EMP.html" title="SB_SCHD_BID_EMP" alt="" coords="947,6950,1175,7038">
+<area shape="rect" id="node91" href="SC_ALERT.html" title="SC_ALERT" alt="" coords="982,7055,1141,7143">
+<area shape="rect" id="node92" href="SC_EMP_SCHOOL.html" title="SC_EMP_SCHOOL" alt="" coords="953,7161,1169,7249">
+<area shape="rect" id="node93" href="SCHED_COST_DETAIL.html" title="SCHED_COST_DETAIL" alt="" coords="939,13022,1184,13110">
+<area shape="rect" id="node94" href="SCHEDULE_EMPLOYEE.html" title="SCHEDULE_EMPLOYEE" alt="" coords="933,7266,1189,7354">
+<area shape="rect" id="node95" href="SEC_EMPLOYEE.html" title="SEC_EMPLOYEE" alt="" coords="1362,10698,1563,10762">
+<area shape="rect" id="node96" href="SEC_EMPLOYEE_BASE.html" title="SEC_EMPLOYEE_BASE" alt="" coords="1338,10779,1587,10843">
+<area shape="rect" id="node97" href="SEC_EMPLOYEE_DATE.html" title="SEC_EMPLOYEE_DATE" alt="" coords="1338,10861,1587,10925">
+<area shape="rect" id="node98" href="SEC_EMPLOYEE_LOOKUP.html" title="SEC_EMPLOYEE_LOOKUP" alt="" coords="1325,8023,1600,8087">
+<area shape="rect" id="node99" href="SEC_EMPLOYEE_NR.html" title="SEC_EMPLOYEE_NR" alt="" coords="1347,9582,1578,9646">
+<area shape="rect" id="node100" href="SHIFT_TRADE.html" title="SHIFT_TRADE" alt="" coords="969,7371,1153,7459">
+<area shape="rect" id="node102" href="SO_ACTUAL_PAY_COST.html" title="SO_ACTUAL_PAY_COST" alt="" coords="933,12701,1190,12789">
+<area shape="rect" id="node103" href="SO_BUDG_EVENT_HOUR.html" title="SO_BUDG_EVENT_HOUR" alt="" coords="1329,16143,1596,16231">
+<area shape="rect" id="node104" href="SO_EVENT_TYPE.html" title="SO_EVENT_TYPE" alt="" coords="957,16045,1166,16133">
+<area shape="rect" id="node105" href="SO_BUDG_PAY_COST.html" title="SO_BUDG_PAY_COST" alt="" coords="939,17411,1183,17499">
+<area shape="rect" id="node106" href="SO_BUILD_PERCENT.html" title="SO_BUILD_PERCENT" alt="" coords="943,17730,1180,17818">
+<area shape="rect" id="node107" href="SO_CLIENT_STFDEF.html" title="SO_CLIENT_STFDEF" alt="" coords="1346,19039,1579,19127">
+<area shape="rect" id="node111" href="SO_CORP_ENT_HOUR.html" title="SO_CORP_ENT_HOUR" alt="" coords="938,17835,1185,17923">
+<area shape="rect" id="node112" href="SO_DAY_PART_OVR.html" title="SO_DAY_PART_OVR" alt="" coords="947,17941,1176,18029">
+<area shape="rect" id="node113" href="SO_EMPLOYEE.html" title="SO_EMPLOYEE" alt="" coords="1299,13022,1627,13649">
+<area shape="rect" id="node114" href="SO_EMPLOYEE_GROUP.html" title="SO_EMPLOYEE_GROUP" alt="" coords="932,13209,1191,13414">
+<area shape="rect" id="node115" href="SO_RULE_GROUP.html" title="SO_RULE_GROUP" alt="" coords="605,13331,821,13419">
+<area shape="rect" id="node116" href="SO_EVENT_DETAIL.html" title="SO_EVENT_DETAIL" alt="" coords="1352,14559,1573,14647">
+<area shape="rect" id="node117" href="SO_EVT_EMP_AV_OVRD.html" title="SO_EVT_EMP_AV_OVRD" alt="" coords="1736,11343,1993,11431">
+<area shape="rect" id="node119" href="SO_FCAST_EXTERNAL.html" title="SO_FCAST_EXTERNAL" alt="" coords="937,13853,1185,13941">
+<area shape="rect" id="node121" href="SO_FCAST_REGEN_MAPPING.html" title="SO_FCAST_REGEN_MAPPING" alt="" coords="912,18082,1211,18170">
+<area shape="rect" id="node122" href="SO_FCAST_SPEC_DAY.html" title="SO_FCAST_SPEC_DAY" alt="" coords="938,18839,1185,18927">
+<area shape="rect" id="node123" href="SO_FISCAL_YEAR.html" title="SO_FISCAL_YEAR" alt="" coords="956,18295,1167,18383">
+<area shape="rect" id="node124" href="SO_HIST_INT_REQ.html" title="SO_HIST_INT_REQ" alt="" coords="1353,17242,1573,17330">
+<area shape="rect" id="node125" href="SO_INTERVAL_REQ.html" title="SO_INTERVAL_REQ" alt="" coords="1350,18437,1575,18525">
+<area shape="rect" id="node126" href="SO_SCHEDULE.html" title="SO_SCHEDULE" alt="" coords="965,16885,1158,16973">
+<area shape="rect" id="node128" href="SO_LOCATION_PROP.html" title="SO_LOCATION_PROP" alt="" coords="941,17589,1181,17677">
+<area shape="rect" id="node129" href="SO_PLAN_WORKLOAD.html" title="SO_PLAN_WORKLOAD" alt="" coords="939,14914,1184,15002">
+<area shape="rect" id="node130" href="SO_PLANNED_VOLUME.html" title="SO_PLANNED_VOLUME" alt="" coords="935,15127,1188,15215">
+<area shape="rect" id="node131" href="SO_PREFERREDTIME_SOURCE.html" title="SO_PREFERREDTIME_SOURCE" alt="" coords="1708,18967,2021,19055">
+<area shape="rect" id="node132" href="SO_RESULTS_DETAIL.html" title="SO_RESULTS_DETAIL" alt="" coords="940,13958,1183,14046">
+<area shape="rect" id="node133" href="SO_RESULTS_SUMMARY.html" title="SO_RESULTS_SUMMARY" alt="" coords="928,14063,1195,14151">
+<area shape="rect" id="node134" href="SO_RULE.html" title="SO_RULE" alt="" coords="985,15233,1137,15321">
+<area shape="rect" id="node135" href="SO_SCHED_BAT_DET.html" title="SO_SCHED_BAT_DET" alt="" coords="1342,17134,1583,17222">
+<area shape="rect" id="node136" href="SO_SCHED_BAT_REQ.html" title="SO_SCHED_BAT_REQ" alt="" coords="940,13503,1183,13591">
+<area shape="rect" id="node137" href="SO_SCHEDULE_COST.html" title="SO_SCHEDULE_COST" alt="" coords="1340,17483,1585,17571">
+<area shape="rect" id="node139" href="SO_SCHEDULE_PROF.html" title="SO_SCHEDULE_PROF" alt="" coords="939,15585,1183,15673">
+<area shape="rect" id="node140" href="SO_SCHEDULE_SCORE.html" title="SO_SCHEDULE_SCORE" alt="" coords="1335,17589,1591,17677">
+<area shape="rect" id="node141" href="SO_SCHEDULED_EVENT.html" title="SO_SCHEDULED_EVENT" alt="" coords="930,15338,1193,15426">
+<area shape="rect" id="node142" href="SO_SHIFT_ACTIVITY.html" title="SO_SHIFT_ACTIVITY" alt="" coords="1750,16993,1979,17081">
+<area shape="rect" id="node143" href="SO_SHIFT_DETAIL.html" title="SO_SHIFT_DETAIL" alt="" coords="1355,16313,1571,16401">
+<area shape="rect" id="node144" href="SO_SHIFT_OFFER_EMP_SHIFT.html" title="SO_SHIFT_OFFER_EMP_SHIFT" alt="" coords="908,7477,1215,7565">
+<area shape="rect" id="node145" href="SO_SHIFT_REQ.html" title="SO_SHIFT_REQ" alt="" coords="1365,16523,1561,16611">
+<area shape="rect" id="node146" href="SO_SKD_EMPGRP.html" title="SO_SKD_EMPGRP" alt="" coords="1354,16418,1571,16506">
+<area shape="rect" id="node147" href="SO_SKDPROF_EMPGRP.html" title="SO_SKDPROF_EMPGRP" alt="" coords="1333,14454,1592,14542">
+<area shape="rect" id="node148" href="SO_STFOFS_OVR.html" title="SO_STFOFS_OVR" alt="" coords="956,15443,1167,15531">
+<area shape="rect" id="node149" href="SO_TASK.html" title="SO_TASK" alt="" coords="1387,13970,1538,14058">
+<area shape="rect" id="node150" href="SO_TASK_LIST_TMPLT.html" title="SO_TASK_LIST_TMPLT" alt="" coords="935,15726,1187,15814">
+<area shape="rect" id="node151" href="SO_TMP_TRU_POS.html" title="SO_TMP_TRU_POS" alt="" coords="949,15903,1173,15991">
+<area shape="rect" id="node152" href="SO_TMP_TRU_SALE.html" title="SO_TMP_TRU_SALE" alt="" coords="947,18509,1176,18597">
+<area shape="rect" id="node153" href="SO_VOLUME_WORKLOAD.html" title="SO_VOLUME_WORKLOAD" alt="" coords="1729,19154,2000,19242">
+<area shape="rect" id="node154" href="SS_SCHEDULED_SWIPE.html" title="SS_SCHEDULED_SWIPE" alt="" coords="1334,2762,1591,2850">
+<area shape="rect" id="node155" href="SS_SCHEDULED_SWIPE_LOG.html" title="SS_SCHEDULED_SWIPE_LOG" alt="" coords="1715,2762,2014,2850">
+<area shape="rect" id="node156" href="SS_UPDATE.html" title="SS_UPDATE" alt="" coords="977,7582,1146,7670">
+<area shape="rect" id="node157" href="SS_WORKDAY.html" title="SS_WORKDAY" alt="" coords="969,7687,1154,7775">
+<area shape="rect" id="node158" href="ST_EMP_COURSE_CALENDAR.html" title="ST_EMP_COURSE_CALENDAR" alt="" coords="909,4029,1213,4117">
+<area shape="rect" id="node159" href="ST_EMP_SKILL.html" title="ST_EMP_SKILL" alt="" coords="965,4170,1158,4258">
+<area shape="rect" id="node160" href="ST_INSTRUCTOR.html" title="ST_INSTRUCTOR" alt="" coords="957,4347,1166,4435">
+<area shape="rect" id="node161" href="ST_NOTIFY_HIST.html" title="ST_NOTIFY_HIST" alt="" coords="957,7937,1165,8025">
+<area shape="rect" id="node162" href="TIME_OFF_REQUEST.html" title="TIME_OFF_REQUEST" alt="" coords="1344,8603,1581,8691">
+<area shape="rect" id="node163" href="TIMESHEET_LOCK.html" title="TIMESHEET_LOCK" alt="" coords="951,8042,1171,8130">
+<area shape="rect" id="node164" href="TM_ACTITMASGN_WORK.html" title="TM_ACTITMASGN_WORK" alt="" coords="929,8147,1194,8235">
+<area shape="rect" id="node165" href="TOKE_POOL_COUNTER.html" title="TOKE_POOL_COUNTER" alt="" coords="932,8253,1191,8341">
+<area shape="rect" id="node166" href="TOKE_POOL_DIST_PAYOUT.html" title="TOKE_POOL_DIST_PAYOUT" alt="" coords="917,8466,1205,8554">
+<area shape="rect" id="node167" href="TOKE_POOL_EMP_ADJUSTMENT.html" title="TOKE_POOL_EMP_ADJUSTMENT" alt="" coords="898,8643,1225,8731">
+<area shape="rect" id="node168" href="TS_USER.html" title="TS_USER" alt="" coords="986,8749,1137,8837">
+<area shape="rect" id="node169" href="VIEW_AC_EMPLOYEE_DATE.html" title="VIEW_AC_EMPLOYEE_DATE" alt="" coords="1321,9395,1604,9459">
+<area shape="rect" id="node170" href="VIEW_AC_EVENT_LOG.html" title="VIEW_AC_EVENT_LOG" alt="" coords="1744,10039,1985,10103">
+<area shape="rect" id="node171" href="VIEW_AC_VIOLATION_LOG.html" title="VIEW_AC_VIOLATION_LOG" alt="" coords="1327,10217,1598,10281">
+<area shape="rect" id="node172" href="VIEW_CLOCK_TRAN_PROCESSED.html" title="VIEW_CLOCK_TRAN_PROCESSED" alt="" coords="1701,867,2029,931">
+<area shape="rect" id="node173" href="VIEW_EMP_DEF_LAB.html" title="VIEW_EMP_DEF_LAB" alt="" coords="1347,1439,1578,1503">
+<area shape="rect" id="node174" href="VIEW_EMP_HOME_TEAM.html" title="VIEW_EMP_HOME_TEAM" alt="" coords="1333,12438,1592,12502">
+<area shape="rect" id="node175" href="VIEW_EMP_TEAM_HIST.html" title="VIEW_EMP_TEAM_HIST" alt="" coords="937,11923,1185,11987">
+<area shape="rect" id="node176" href="VIEW_EMP_UDF_DATA.html" title="VIEW_EMP_UDF_DATA" alt="" coords="1342,1571,1583,1635">
+<area shape="rect" id="node177" href="VIEW_EMPBIDPER_SP_JOB.html" title="VIEW_EMPBIDPER_SP_JOB" alt="" coords="1323,2681,1602,2745">
+<area shape="rect" id="node178" href="VIEW_EMPLOYEE.html" title="VIEW_EMPLOYEE" alt="" coords="958,442,1165,506">
+<area shape="rect" id="node179" href="VIEW_EMPLOYEE_BADGE.html" title="VIEW_EMPLOYEE_BADGE" alt="" coords="1329,1713,1596,1777">
+<area shape="rect" id="node180" href="VIEW_EMPLOYEE_BALANCE.html" title="VIEW_EMPLOYEE_BALANCE" alt="" coords="1321,1850,1605,1914">
+<area shape="rect" id="node181" href="VIEW_EMPLOYEE_BALANCE_LOG.html" title="VIEW_EMPLOYEE_BALANCE_LOG" alt="" coords="1702,2233,2027,2297">
+<area shape="rect" id="node182" href="VIEW_EMPLOYEE_BID_PERIOD.html" title="VIEW_EMPLOYEE_BID_PERIOD" alt="" coords="1309,1965,1616,2029">
+<area shape="rect" id="node183" href="VIEW_EMPLOYEE_BID_PERIOD_DET.html" title="VIEW_EMPLOYEE_BID_PERIOD_DET" alt="" coords="1290,2075,1635,2139">
+<area shape="rect" id="node184" href="VIEW_EMPLOYEE_BID_PERIOD_SOL.html" title="VIEW_EMPLOYEE_BID_PERIOD_SOL" alt="" coords="1290,2599,1635,2663">
+<area shape="rect" id="node185" href="VIEW_EMPLOYEE_BID_PERIOD_SP_JO.html" title="VIEW_EMPLOYEE_BID_PERIOD_SP_JO" alt="" coords="1281,2867,1644,2931">
+<area shape="rect" id="node186" href="VIEW_EMPLOYEE_JOB.html" title="VIEW_EMPLOYEE_JOB" alt="" coords="1340,2949,1585,3013">
+<area shape="rect" id="node187" href="VIEW_EMPLOYEE_OVERTIME.html" title="VIEW_EMPLOYEE_OVERTIME" alt="" coords="1316,3217,1609,3281">
+<area shape="rect" id="node188" href="VIEW_EMPLOYEE_READER_GROUP.html" title="VIEW_EMPLOYEE_READER_GROUP" alt="" coords="1293,3781,1633,3845">
+<area shape="rect" id="node189" href="VIEW_EMPLOYEE_SCHEDULE.html" title="VIEW_EMPLOYEE_SCHEDULE" alt="" coords="1314,1021,1611,1085">
+<area shape="rect" id="node190" href="VIEW_EMPLOYEE_TEAM.html" title="VIEW_EMPLOYEE_TEAM" alt="" coords="1335,12519,1591,12583">
+<area shape="rect" id="node191" href="VIEW_EMPLOYEE_TIMEZONE.html" title="VIEW_EMPLOYEE_TIMEZONE" alt="" coords="915,11454,1207,11518">
+<area shape="rect" id="node192" href="VIEW_ENT_EMP_POLICY.html" title="VIEW_ENT_EMP_POLICY" alt="" coords="1333,3922,1592,3986">
+<area shape="rect" id="node193" href="VIEW_MAX_CLKTIME_BY_EMP_ID.html" title="VIEW_MAX_CLKTIME_BY_EMP_ID" alt="" coords="900,8854,1223,8918">
+<area shape="rect" id="node194" href="VIEW_MOD_ACEVENT_LOG.html" title="VIEW_MOD_ACEVENT_LOG" alt="" coords="1726,10143,2003,10207">
+<area shape="rect" id="node195" href="VIEW_MOD_ACVIOLATION_LOG.html" title="VIEW_MOD_ACVIOLATION_LOG" alt="" coords="1309,10298,1616,10362">
+<area shape="rect" id="node196" href="VIEW_MOD_DAILY_SUMMARY.html" title="VIEW_MOD_DAILY_SUMMARY" alt="" coords="914,8935,1209,8999">
+<area shape="rect" id="node197" href="VIEW_MOD_DAILY_SUMMARY_BASE.html" title="VIEW_MOD_DAILY_SUMMARY_BASE" alt="" coords="890,2173,1233,2237">
+<area shape="rect" id="node198" href="VIEW_MOD_DAILY_SUMMARY_BASE2.html" title="VIEW_MOD_DAILY_SUMMARY_BASE2" alt="" coords="886,2254,1237,2318">
+<area shape="rect" id="node199" href="VIEW_MOD_EMP_WORKBRAIN_USER.html" title="VIEW_MOD_EMP_WORKBRAIN_USER" alt="" coords="1287,8323,1638,8387">
+<area shape="rect" id="node200" href="VIEW_MOD_EMPBIDPER_DET.html" title="VIEW_MOD_EMPBIDPER_DET" alt="" coords="1315,2359,1610,2423">
+<area shape="rect" id="node201" href="VIEW_MOD_EMPLOYEE.html" title="VIEW_MOD_EMPLOYEE" alt="" coords="936,2335,1187,2399">
+<area shape="rect" id="node202" href="VIEW_MOD_EMPLOYEE_HOLIDAY.html" title="VIEW_MOD_EMPLOYEE_HOLIDAY" alt="" coords="1301,9841,1625,9905">
+<area shape="rect" id="node203" href="VIEW_MOD_EMPLOYEE_JOB.html" title="VIEW_MOD_EMPLOYEE_JOB" alt="" coords="1318,3030,1607,3094">
+<area shape="rect" id="node204" href="VIEW_MOD_EMPLOYEE_OVERTIME.html" title="VIEW_MOD_EMPLOYEE_OVERTIME" alt="" coords="1294,3486,1631,3550">
+<area shape="rect" id="node205" href="VIEW_MOD_USER_TEAM_MEMBERS.html" title="VIEW_MOD_USER_TEAM_MEMBERS" alt="" coords="1291,9314,1635,9378">
+<area shape="rect" id="node206" href="VIEW_MOD_WORK_SUMMARY.html" title="VIEW_MOD_WORK_SUMMARY" alt="" coords="1313,286,1612,350">
+<area shape="rect" id="node207" href="VIEW_MOD_WORK_SUMMARY_TEAM.html" title="VIEW_MOD_WORK_SUMMARY_TEAM" alt="" coords="1289,4334,1637,4398">
+<area shape="rect" id="node208" href="VIEW_MSG_SEND_MESSAGE.html" title="VIEW_MSG_SEND_MESSAGE" alt="" coords="1318,8405,1607,8469">
+<area shape="rect" id="node209" href="VIEW_OVERRIDE.html" title="VIEW_OVERRIDE" alt="" coords="1363,9922,1563,9986">
+<area shape="rect" id="node210" href="VIEW_PARSE_CLOCKS.html" title="VIEW_PARSE_CLOCKS" alt="" coords="1341,605,1585,669">
+<area shape="rect" id="node211" href="VIEW_PAYEXP_ADJUSTMENT.html" title="VIEW_PAYEXP_ADJUSTMENT" alt="" coords="915,523,1207,587">
+<area shape="rect" id="node212" href="VIEW_PAYEXP_CURRENT.html" title="VIEW_PAYEXP_CURRENT" alt="" coords="929,605,1193,669">
+<area shape="rect" id="node213" href="VIEW_SB_EMP_SHIFT.html" title="VIEW_SB_EMP_SHIFT" alt="" coords="943,2453,1179,2517">
+<area shape="rect" id="node214" href="VIEW_SHIFT_TIME.html" title="VIEW_SHIFT_TIME" alt="" coords="1357,6453,1568,6517">
+<area shape="rect" id="node215" href="VIEW_SO_ACTSFTHR.html" title="VIEW_SO_ACTSFTHR" alt="" coords="2092,16295,2325,16359">
+<area shape="rect" id="node216" href="VIEW_SO_AVAIL_INFO.html" title="VIEW_SO_AVAIL_INFO" alt="" coords="1747,13897,1983,13961">
+<area shape="rect" id="node217" href="VIEW_SO_CL_STFDEF.html" title="VIEW_SO_CL_STFDEF" alt="" coords="942,16366,1181,16430">
+<area shape="rect" id="node218" href="VIEW_SO_DAILY_SKD.html" title="VIEW_SO_DAILY_SKD" alt="" coords="2091,16630,2326,16694">
+<area shape="rect" id="node219" href="VIEW_SO_DAY_RES.html" title="VIEW_SO_DAY_RES" alt="" coords="951,16447,1172,16511">
+<area shape="rect" id="node220" href="VIEW_SO_EMP_CSTDET.html" title="VIEW_SO_EMP_CSTDET" alt="" coords="934,12619,1189,12683">
+<area shape="rect" id="node221" href="VIEW_SO_EMP_POS.html" title="VIEW_SO_EMP_POS" alt="" coords="1350,13666,1575,13730">
+<area shape="rect" id="node222" href="VIEW_SO_EMP_WORK.html" title="VIEW_SO_EMP_WORK" alt="" coords="1343,16863,1583,16927">
+<area shape="rect" id="node223" href="VIEW_SO_EMP_WSUPP.html" title="VIEW_SO_EMP_WSUPP" alt="" coords="938,13127,1185,13191">
+<area shape="rect" id="node224" href="VIEW_SO_EMPPAYROLL.html" title="VIEW_SO_EMPPAYROLL" alt="" coords="934,2534,1189,2598">
+<area shape="rect" id="node225" href="VIEW_SO_EMPPOS_SKL.html" title="VIEW_SO_EMPPOS_SKL" alt="" coords="1335,13747,1590,13811">
+<area shape="rect" id="node226" href="VIEW_SO_FCAST_DET.html" title="VIEW_SO_FCAST_DET" alt="" coords="941,14331,1181,14395">
+<area shape="rect" id="node227" href="VIEW_SO_INT_REQ.html" title="VIEW_SO_INT_REQ" alt="" coords="1755,18009,1974,18073">
+<area shape="rect" id="node228" href="VIEW_SO_NET_STAFF.html" title="VIEW_SO_NET_STAFF" alt="" coords="1343,16629,1582,16693">
+<area shape="rect" id="node229" href="VIEW_SO_NETSTF_REQ.html" title="VIEW_SO_NETSTF_REQ" alt="" coords="1336,16710,1589,16774">
+<area shape="rect" id="node230" href="VIEW_SO_NETSTFRAW.html" title="VIEW_SO_NETSTFRAW" alt="" coords="1340,14373,1585,14437">
+<area shape="rect" id="node231" href="VIEW_SO_POSPAY.html" title="VIEW_SO_POSPAY" alt="" coords="955,16565,1168,16629">
+<area shape="rect" id="node232" href="VIEW_SO_PROD_RES.html" title="VIEW_SO_PROD_RES" alt="" coords="944,14169,1179,14233">
+<area shape="rect" id="node233" href="VIEW_SO_PROD_RESPS.html" title="VIEW_SO_PROD_RESPS" alt="" coords="934,13771,1189,13835">
+<area shape="rect" id="node234" href="VIEW_SO_SCHED.html" title="VIEW_SO_SCHED" alt="" coords="1762,15018,1967,15082">
+<area shape="rect" id="node235" href="VIEW_SO_SCHED_GRP.html" title="VIEW_SO_SCHED_GRP" alt="" coords="938,13609,1185,13673">
+<area shape="rect" id="node236" href="VIEW_SO_SKDEMP_POS.html" title="VIEW_SO_SKDEMP_POS" alt="" coords="1736,16405,1993,16469">
+<area shape="rect" id="node237" href="VIEW_SO_SKDEMPACT.html" title="VIEW_SO_SKDEMPACT" alt="" coords="2085,16979,2332,17043">
+<area shape="rect" id="node238" href="VIEW_SO_SKDGRP_PAY.html" title="VIEW_SO_SKDGRP_PAY" alt="" coords="934,16646,1189,16710">
+<area shape="rect" id="node239" href="VIEW_ST_EMP_COURSE_CALENDAR.html" title="VIEW_ST_EMP_COURSE_CALENDAR" alt="" coords="1290,4059,1635,4123">
+<area shape="rect" id="node240" href="VIEW_ST_EMP_SKILL.html" title="VIEW_ST_EMP_SKILL" alt="" coords="1345,4171,1580,4235">
+<area shape="rect" id="node241" href="VIEW_ST_INSTRUCTOR.html" title="VIEW_ST_INSTRUCTOR" alt="" coords="1337,4253,1588,4317">
+<area shape="rect" id="node242" href="VIEW_VR_EMPLOYEE_SCHEDULE.html" title="VIEW_VR_EMPLOYEE_SCHEDULE" alt="" coords="1300,1111,1625,1175">
+<area shape="rect" id="node243" href="VIEW_WBI_LOCATION_DIMENSION.html" title="VIEW_WBI_LOCATION_DIMENSION" alt="" coords="896,13690,1227,13754">
+<area shape="rect" id="node244" href="VIEW_WORK_DETAIL_ADJUST.html" title="VIEW_WORK_DETAIL_ADJUST" alt="" coords="1314,178,1611,242">
+<area shape="rect" id="node245" href="WORK_DETAIL_ADJUST.html" title="WORK_DETAIL_ADJUST" alt="" coords="933,265,1189,353">
+<area shape="rect" id="node246" href="VIEW_WORK_SUMMARY.html" title="VIEW_WORK_SUMMARY" alt="" coords="1335,419,1590,483">
+<area shape="rect" id="node247" href="VIEW_WORKBRAIN_USER.html" title="VIEW_WORKBRAIN_USER" alt="" coords="1330,8522,1595,8586">
+<area shape="rect" id="node248" href="VIEW_WORKBRAIN_USER_TEAM.html" title="VIEW_WORKBRAIN_USER_TEAM" alt="" coords="1707,8790,2022,8854">
+<area shape="rect" id="node249" href="WORKBRAIN_USER_TEAM.html" title="WORKBRAIN_USER_TEAM" alt="" coords="1326,8826,1599,8914">
+<area shape="rect" id="node250" href="VL_AMX_OVR_CODE.html" title="VL_AMX_OVR_CODE" alt="" coords="1349,15121,1577,15185">
+<area shape="rect" id="node251" href="VL_EMPLOYEE.html" title="VL_EMPLOYEE" alt="" coords="967,11267,1155,11331">
+<area shape="rect" id="node252" href="VL_SO_ACTIVITY.html" title="VL_SO_ACTIVITY" alt="" coords="1362,19181,1563,19245">
+<area shape="rect" id="node253" href="VL_SO_CLIENT_STFDEF.html" title="VL_SO_CLIENT_STFDEF" alt="" coords="1737,19073,1993,19137">
+<area shape="rect" id="node254" href="VL_SO_DISTRIBUTION.html" title="VL_SO_DISTRIBUTION" alt="" coords="940,18945,1183,19009">
+<area shape="rect" id="node255" href="VL_SO_EMPLOYEE_GROUP.html" title="VL_SO_EMPLOYEE_GROUP" alt="" coords="1321,14147,1604,14211">
+<area shape="rect" id="node256" href="VL_SO_EVENT_DETAIL.html" title="VL_SO_EVENT_DETAIL" alt="" coords="1742,14559,1987,14623">
+<area shape="rect" id="node257" href="VL_SO_EVENT_TYPE.html" title="VL_SO_EVENT_TYPE" alt="" coords="1347,16051,1579,16115">
+<area shape="rect" id="node258" href="VL_SO_FCAST_GROUP.html" title="VL_SO_FCAST_GROUP" alt="" coords="938,14250,1185,14314">
+<area shape="rect" id="node259" href="VL_SO_FCAST_SPEC_DAY.html" title="VL_SO_FCAST_SPEC_DAY" alt="" coords="1327,18778,1598,18842">
+<area shape="rect" id="node260" href="VL_SO_LOCATION_PROP.html" title="VL_SO_LOCATION_PROP" alt="" coords="1331,17402,1594,17466">
+<area shape="rect" id="node261" href="VL_SO_RULE.html" title="VL_SO_RULE" alt="" coords="1375,15218,1550,15282">
+<area shape="rect" id="node262" href="VL_SO_SCHEDULE_GROUP.html" title="VL_SO_SCHEDULE_GROUP" alt="" coords="921,19026,1202,19090">
+<area shape="rect" id="node263" href="VL_SO_SCHEDULE_PROF.html" title="VL_SO_SCHEDULE_PROF" alt="" coords="1329,15619,1596,15683">
+<area shape="rect" id="node264" href="VL_SO_STFRND_RULES.html" title="VL_SO_STFRND_RULES" alt="" coords="934,18758,1189,18822">
+<area shape="rect" id="node265" href="VL_SO_TASK_LIST_TMPLT.html" title="VL_SO_TASK_LIST_TMPLT" alt="" coords="1325,15761,1600,15825">
+<area shape="rect" id="node266" href="VL_SO_VOLUME_TYPE.html" title="VL_SO_VOLUME_TYPE" alt="" coords="938,19285,1185,19349">
+<area shape="rect" id="node267" href="VL_ST_INSTRUCTOR.html" title="VL_ST_INSTRUCTOR" alt="" coords="1346,4415,1579,4479">
+<area shape="rect" id="node268" href="WBI_KPI_SUMMARY_AGG.html" title="WBI_KPI_SUMMARY_AGG" alt="" coords="927,16727,1195,16815">
+<area shape="rect" id="node269" href="WBI_SEC_EMP_BY_TEAM.html" title="WBI_SEC_EMP_BY_TEAM" alt="" coords="1330,10978,1595,11042">
+<area shape="rect" id="node270" href="WBI_USER_EXECUTION.html" title="WBI_USER_EXECUTION" alt="" coords="1335,9663,1591,9751">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/SO_EMPLOYEE.implied2degrees.png' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>
