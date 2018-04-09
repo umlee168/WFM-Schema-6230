@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>WFMSB623 Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="bower/html5shiv/html5shiv.min.js"></script>
+  <script src="bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><b>WFMSB623</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="components.html" title="List of system components">Components</a></li>-->
+			<li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Anomalies</h1></br>
+		<div class="callout callout-warning">        
+			<p>Things that might not be 'quite right' about your database and schema</p>
+		</div>		
+      </section>
+      <!-- Main content -->
+      <section class="content">
+	  <div class="row">
+		<div class="col-md-6"> <!-- Implied Relationship -->
+			<div class="box box-success">
+				<div class="box-header with-border">
+				  <h3 class="box-title">Columns whose name and type imply a relationship to another table's primary key</h3>
+				  <div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				  </div>
+				</div>	
+				<div class="box-body">
+					<table id="implied_constraints" class="table table-bordered table-striped dataTable" role="grid">
+					<thead align='left'>
+					<tr>
+					  <th>Child Column</th>					  
+					  <th>Implied Parent Column</th>						  
+					</tr>
+					</thead>
+					<tbody>
+									<tr>
+					 <td><a href='tables/AC_EVENT_LOG.html'>AC_EVENT_LOG</a>.[WRKD_ID]</td>
+					 <td><a href='tables/WORK_DETAIL.html'>WORK_DETAIL</a>.[WRKD_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AMX_OVR_CODE.html'>AMX_OVR_CODE</a>.[SKDGRP_ID]</td>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/BALANCE_TRANSFER.html'>BALANCE_TRANSFER</a>.[BALTR_BAL_ID]</td>
+					 <td><a href='tables/BALANCE.html'>BALANCE</a>.[BAL_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CALC_GROUP_AUDIT.html'>CALC_GROUP_AUDIT</a>.[CALCGRP_ID]</td>
+					 <td><a href='tables/CALC_GROUP.html'>CALC_GROUP</a>.[CALCGRP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CLOCK_TRAN_DELETED.html'>CLOCK_TRAN_DELETED</a>.[CLKTRANTYPE_ID]</td>
+					 <td><a href='tables/CLOCK_TRAN_TYPE.html'>CLOCK_TRAN_TYPE</a>.[CLKTRANTYPE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CLOCK_TRAN_DELETED.html'>CLOCK_TRAN_DELETED</a>.[EMP_ID]</td>
+					 <td><a href='tables/EMPLOYEE.html'>EMPLOYEE</a>.[EMP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CLOCK_TRAN_DELETED.html'>CLOCK_TRAN_DELETED</a>.[RDR_ID]</td>
+					 <td><a href='tables/READER.html'>READER</a>.[RDR_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CLOCK_TRAN_DELETED.html'>CLOCK_TRAN_DELETED</a>.[WRKS_ID]</td>
+					 <td><a href='tables/WORK_SUMMARY.html'>WORK_SUMMARY</a>.[WRKS_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_BID_PERIOD_SP_JOB.html'>EMPLOYEE_BID_PERIOD_SP_JOB</a>.[BIDPER_ID]</td>
+					 <td><a href='tables/BID_PERIOD.html'>BID_PERIOD</a>.[BIDPER_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_LOCK.html'>ES_SHIFT_LOCK</a>.[SHIFTDTL_ID]</td>
+					 <td><a href='tables/ES_SHIFT_DETAIL.html'>ES_SHIFT_DETAIL</a>.[SHIFTDTL_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_DETAIL_HISTORY.html'>ES_SHIFTPREF_DETAIL_HISTORY</a>.[SPDHIST_SPD_ID]</td>
+					 <td><a href='tables/ES_SHIFTPREF_DETAIL.html'>ES_SHIFTPREF_DETAIL</a>.[SPD_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOL_ASGN_TRANS_LOG.html'>HOL_ASGN_TRANS_LOG</a>.[EMP_ID]</td>
+					 <td><a href='tables/EMPLOYEE.html'>EMPLOYEE</a>.[EMP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOUR_SET_DET.html'>HOUR_SET_DET</a>.[HTYPE_ID]</td>
+					 <td><a href='tables/HOUR_TYPE.html'>HOUR_TYPE</a>.[HTYPE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JP_JOB_POSTING.html'>JP_JOB_POSTING</a>.[JOB_ID]</td>
+					 <td><a href='tables/JOB.html'>JOB</a>.[JOB_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JP_JOB_POSTING_BID.html'>JP_JOB_POSTING_BID</a>.[EMP_ID]</td>
+					 <td><a href='tables/EMPLOYEE.html'>EMPLOYEE</a>.[EMP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JP_JOB_POSTING_BID.html'>JP_JOB_POSTING_BID</a>.[JOBPOST_ID]</td>
+					 <td><a href='tables/JP_JOB_POSTING.html'>JP_JOB_POSTING</a>.[JOBPOST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JP_JOB_POSTING_OVERRIDE.html'>JP_JOB_POSTING_OVERRIDE</a>.[JOBPOST_ID]</td>
+					 <td><a href='tables/JP_JOB_POSTING.html'>JP_JOB_POSTING</a>.[JOBPOST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JP_JOB_POSTING_OVERRIDE.html'>JP_JOB_POSTING_OVERRIDE</a>.[OVR_ID]</td>
+					 <td><a href='tables/OVERRIDE.html'>OVERRIDE</a>.[OVR_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_ACCESS.html'>PAY_GROUP_ACCESS</a>.[AUDTRXN_ID]</td>
+					 <td><a href='tables/AUDIT_TRANSACTION.html'>AUDIT_TRANSACTION</a>.[AUDTRXN_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_ACCESS_AUDIT.html'>PAY_GROUP_ACCESS_AUDIT</a>.[PAYGPACS_ID]</td>
+					 <td><a href='tables/PAY_GROUP_ACCESS.html'>PAY_GROUP_ACCESS</a>.[PAYGPACS_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_ACCESS_AUDIT.html'>PAY_GROUP_ACCESS_AUDIT</a>.[PAYGRP_ID]</td>
+					 <td><a href='tables/PAY_GROUP.html'>PAY_GROUP</a>.[PAYGRP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_ACCESS_AUDIT.html'>PAY_GROUP_ACCESS_AUDIT</a>.[WBU_ID]</td>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a>.[WBU_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/POP_UP.html'>POP_UP</a>.[MFRM_ID]</td>
+					 <td><a href='tables/MAINTENANCE_FORM.html'>MAINTENANCE_FORM</a>.[MFRM_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RELATED_LINK.html'>RELATED_LINK</a>.[RL_MFRM_ID]</td>
+					 <td><a href='tables/MAINTENANCE_FORM.html'>MAINTENANCE_FORM</a>.[MFRM_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_PATTERN_SHIFT_LABOR.html'>SHIFT_PATTERN_SHIFT_LABOR</a>.[SHFTPATSHFT_ID]</td>
+					 <td><a href='tables/SHIFT_PATTERN_SHIFTS.html'>SHIFT_PATTERN_SHIFTS</a>.[SHFTPATSHFT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_BUDG_EVENT_HOUR.html'>SO_BUDG_EVENT_HOUR</a>.[EVTTYP_ID]</td>
+					 <td><a href='tables/SO_EVENT_TYPE.html'>SO_EVENT_TYPE</a>.[EVTTYP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_CLIENT_STFDEF.html'>SO_CLIENT_STFDEF</a>.[SHFTSTFREQ_ID]</td>
+					 <td><a href='tables/SO_SHIFT_STAFF_REQ.html'>SO_SHIFT_STAFF_REQ</a>.[SHFTSTFREQ_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[INVTYP_ID]</td>
+					 <td><a href='tables/SO_INTERVAL_TYPE.html'>SO_INTERVAL_TYPE</a>.[INVTYP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_FCAST.html'>SO_FCAST</a>.[INVTYP_ID]</td>
+					 <td><a href='tables/SO_INTERVAL_TYPE.html'>SO_INTERVAL_TYPE</a>.[INVTYP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_PLAN_WORKLOAD.html'>SO_PLAN_WORKLOAD</a>.[INVTYP_ID]</td>
+					 <td><a href='tables/SO_INTERVAL_TYPE.html'>SO_INTERVAL_TYPE</a>.[INVTYP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_PLANNED_VOLUME.html'>SO_PLANNED_VOLUME</a>.[INVTYP_ID]</td>
+					 <td><a href='tables/SO_INTERVAL_TYPE.html'>SO_INTERVAL_TYPE</a>.[INVTYP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_RULE.html'>SO_RULE</a>.[RUL_MAP_ID]</td>
+					 <td><a href='tables/SHORT_NAMES_MAP.html'>SHORT_NAMES_MAP</a>.[MAP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[FCAST_ID]</td>
+					 <td><a href='tables/SO_FCAST.html'>SO_FCAST</a>.[FCAST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_FRI_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_MON_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_SAT_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_SUN_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_THU_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_TUE_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_WED_DIST_ID]</td>
+					 <td><a href='tables/SO_DISTRIBUTION.html'>SO_DISTRIBUTION</a>.[DIST_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_REQ.html'>SO_SHIFT_REQ</a>.[SHFTSTFREQ_ID]</td>
+					 <td><a href='tables/SO_SHIFT_STAFF_REQ.html'>SO_SHIFT_STAFF_REQ</a>.[SHFTSTFREQ_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_STFRND_RULES.html'>SO_STFRND_RULES</a>.[SKDGRP_ID]</td>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a>.[SKDGRP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SP_ZONE_INCL_TIME_CODE.html'>SP_ZONE_INCL_TIME_CODE</a>.[SPZONE_ID]</td>
+					 <td><a href='tables/SHIFT_PREMIUM_ZONE.html'>SHIFT_PREMIUM_ZONE</a>.[SPZONE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SS_SCHEDULED_SWIPE_LOG.html'>SS_SCHEDULED_SWIPE_LOG</a>.[SS_ID]</td>
+					 <td><a href='tables/SS_SCHEDULED_SWIPE.html'>SS_SCHEDULED_SWIPE</a>.[SS_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_SURVEY.html'>ST_COURSE_SURVEY</a>.[STCRS_ID]</td>
+					 <td><a href='tables/ST_COURSE.html'>ST_COURSE</a>.[STCRS_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SURVEY_RESULT.html'>SURVEY_RESULT</a>.[SRVRSLT_CRTR_WBU_ID]</td>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a>.[WBU_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/VR_TOC.html'>VR_TOC</a>.[VRCONT_ID]</td>
+					 <td><a href='tables/VR_CONTENT.html'>VR_CONTENT</a>.[VRCONT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_JOB_QUEUE.html'>WB_JOB_QUEUE</a>.[SELECT_ID]</td>
+					 <td><a href='tables/SELECT_DICTIONARY.html'>SELECT_DICTIONARY</a>.[SELECT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_RESOURCE.html'>WB_RESOURCE</a>.[WBU_ID]</td>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a>.[WBU_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_USER_DELEGATE.html'>WB_USER_DELEGATE</a>.[WBUD_REF_WBROLE_ID]</td>
+					 <td><a href='tables/WORKBRAIN_ROLE.html'>WORKBRAIN_ROLE</a>.[WBROLE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_USER_DELEGATE.html'>WB_USER_DELEGATE</a>.[WBUD_REF_WBU_ID]</td>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a>.[WBU_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_USER_EXECUTION.html'>WBI_USER_EXECUTION</a>.[CGCRT_ID]</td>
+					 <td><a href='tables/COGNOS_RPRT_CRIT.html'>COGNOS_RPRT_CRIT</a>.[CGCRT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_USER_EXECUTION.html'>WBI_USER_EXECUTION</a>.[CGMAP_ID]</td>
+					 <td><a href='tables/COGNOS_MAPPING.html'>COGNOS_MAPPING</a>.[CGMAP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_USER_EXECUTION.html'>WBI_USER_EXECUTION</a>.[EMP_ID]</td>
+					 <td><a href='tables/EMPLOYEE.html'>EMPLOYEE</a>.[EMP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_USER_EXECUTION.html'>WBI_USER_EXECUTION</a>.[WBT_ID]</td>
+					 <td><a href='tables/WORKBRAIN_TEAM.html'>WORKBRAIN_TEAM</a>.[WBT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_USER_EXECUTION.html'>WBI_USER_EXECUTION</a>.[WBU_ID]</td>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a>.[WBU_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[CALCGRP_ID]</td>
+					 <td><a href='tables/CALC_GROUP.html'>CALC_GROUP</a>.[CALCGRP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[DEPT_ID]</td>
+					 <td><a href='tables/DEPARTMENT.html'>DEPARTMENT</a>.[DEPT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[DOCK_ID]</td>
+					 <td><a href='tables/DOCKET.html'>DOCKET</a>.[DOCK_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[HTYPE_ID]</td>
+					 <td><a href='tables/HOUR_TYPE.html'>HOUR_TYPE</a>.[HTYPE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[JOB_ID]</td>
+					 <td><a href='tables/JOB.html'>JOB</a>.[JOB_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[PROJ_ID]</td>
+					 <td><a href='tables/PROJECT.html'>PROJECT</a>.[PROJ_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[SHFT_ID]</td>
+					 <td><a href='tables/SHIFT.html'>SHIFT</a>.[SHFT_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[TCODE_ID]</td>
+					 <td><a href='tables/TIME_CODE.html'>TIME_CODE</a>.[TCODE_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a>.[WRKDA_WRKD_ID]</td>
+					 <td><a href='tables/WORK_DETAIL.html'>WORK_DETAIL</a>.[WRKD_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/X_FP622_RTSS_PROCESS_TMPL.html'>X_FP622_RTSS_PROCESS_TMPL</a>.[RTSSP_ID]</td>
+					 <td><a href='tables/RTSS_PROCESS.html'>RTSS_PROCESS</a>.[RTSSP_ID]</td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/X_FP622_RTSS_PROCESS_TMPL.html'>X_FP622_RTSS_PROCESS_TMPL</a>.[TMPL_ID]</td>
+					 <td><a href='tables/ES_SCHEDULE_TEMPLATE.html'>ES_SCHEDULE_TEMPLATE</a>.[TMPL_ID]</td>
+					</tr>				
+													</tbody>
+					</table>				
+				</div>
+			</div>	
+		</div>	
+		<div class="col-md-6"> <!-- Tables without indexes -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+				  <h3 class="box-title">Tables without indexes</h3>
+				  <div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				  </div>
+				</div>	
+				<div class="box-body">
+					<table id="un_indexed_tables" class="table table-bordered table-striped dataTable" role="grid">
+					<thead align='left'>
+					<tr>
+					  <th>Table</th>
+					  <th>Rows</th>		
+				  					</tr>
+					</thead>
+					<tbody>
+									<tr><td colspan="3">Anomaly not detected</td></tr>
+									</tbody>
+					</table>				
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-6"> <!-- Tables that contain a single column -->
+			<div class="box box-info">
+				<div class="box-header with-border">
+				  <h3 class="box-title">Tables that contain a single column</h3>
+				  <div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				  </div>
+				</div>	
+				<div class="box-body">
+					<table id="un_indexed_tables" class="table table-bordered table-striped dataTable" role="grid">
+					<thead align='left'>
+					<tr>
+					  <th>Table</th>					  
+					  <th>Column</th>					  
+					</tr>
+					</thead>
+					<tbody>
+									<tr>
+					 <td><a href='tables/CRITERIA.html'>CRITERIA</a></td>
+					 <td></td>					 
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_SUMMARY_BLOCK.html'>ES_SHIFT_SUMMARY_BLOCK</a></td>
+					 <td></td>					 
+					</tr>				
+									<tr>
+					 <td><a href='tables/TASK_SCHEDULE_SYNC.html'>TASK_SCHEDULE_SYNC</a></td>
+					 <td></td>					 
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_NUMTBL.html'>WB_NUMTBL</a></td>
+					 <td></td>					 
+					</tr>				
+													</tbody>
+					</table>				
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-6"> <!-- Tables with incrementing column names, potentially indicating denormalization -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+				  <h3 class="box-title">Tables with incrementing column names, potentially indicating denormalization</h3>
+				  <div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				  </div>
+				</div>	
+				<div class="box-body">
+					<table id="un_indexed_tables" class="table table-bordered table-striped dataTable" role="grid">
+					<thead align='left'>
+					<tr>
+					  <th>Table</th>				  
+					</tr>
+					</thead>
+					<tbody>
+									<tr>
+					 <td><a href='tables/AC_EVENT.html'>AC_EVENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AC_VIOLATION.html'>AC_VIOLATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACA_EMP_MSRMNT_GROUP.html'>ACA_EMP_MSRMNT_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACA_MEASUREMENT_GROUP.html'>ACA_MEASUREMENT_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACA_MEASUREMENT_PERIOD.html'>ACA_MEASUREMENT_PERIOD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACA_SERVICE_SUMMARY.html'>ACA_SERVICE_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACA_TIMECODE.html'>ACA_TIMECODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ACTIVITY.html'>ACTIVITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AGG_USER_WRK.html'>AGG_USER_WRK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AMX_AVAILABILITY.html'>AMX_AVAILABILITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AMX_OVERRIDE.html'>AMX_OVERRIDE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AMX_OVR_CODE.html'>AMX_OVR_CODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_CONFIG_PARAM_NAME.html'>AS_CONFIG_PARAM_NAME</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_CONFIG_PARAM_VALUE.html'>AS_CONFIG_PARAM_VALUE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_CONFIG_TYPE.html'>AS_CONFIG_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_CONFIGURATION.html'>AS_CONFIGURATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_EMP_TEAM_PRIORITY_BY_SHIFT.html'>AS_EMP_TEAM_PRIORITY_BY_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/AS_GROUP.html'>AS_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/BALANCE_CASCADE.html'>BALANCE_CASCADE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/BALANCE_TRANSFER.html'>BALANCE_TRANSFER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/BO_BATCH_DATA.html'>BO_BATCH_DATA</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CALC_GROUP.html'>CALC_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CENSUS_DATA.html'>CENSUS_DATA</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_FILTER.html'>CMPLNC_FILTER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_FILTER_PARAM_NAME.html'>CMPLNC_FILTER_PARAM_NAME</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_FILTER_PARAM_VALUE.html'>CMPLNC_FILTER_PARAM_VALUE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_GROUP.html'>CMPLNC_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_GROUP_FILTER.html'>CMPLNC_GROUP_FILTER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_GROUP_RULE.html'>CMPLNC_GROUP_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_RULE.html'>CMPLNC_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_RULE_PARAM_NAME.html'>CMPLNC_RULE_PARAM_NAME</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_RULE_PARAM_VALUE.html'>CMPLNC_RULE_PARAM_VALUE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CMPLNC_VIOLATION.html'>CMPLNC_VIOLATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/COUNTRY.html'>COUNTRY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CRIT_CLAUSE_HTYPE.html'>CRIT_CLAUSE_HTYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CRIT_CLAUSE_JOB.html'>CRIT_CLAUSE_JOB</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CRIT_CLAUSE_TCODE.html'>CRIT_CLAUSE_TCODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CRIT_CLAUSE_TEAM.html'>CRIT_CLAUSE_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/CS_STAFFING_LEVEL.html'>CS_STAFFING_LEVEL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DATE_SELECTION.html'>DATE_SELECTION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DATE_VALUE.html'>DATE_VALUE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DAY_OF_WEEK.html'>DAY_OF_WEEK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DAY_PART.html'>DAY_PART</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DAY_PART_SET.html'>DAY_PART_SET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DEPARTMENT.html'>DEPARTMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/DOCKET.html'>DOCKET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EA_TIME_APPROVAL.html'>EA_TIME_APPROVAL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EA_TIME_APPROVAL_ERROR.html'>EA_TIME_APPROVAL_ERROR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMP_DEF_LAB.html'>EMP_DEF_LAB</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMP_FNDSRT_CFGDFLT.html'>EMP_FNDSRT_CFGDFLT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMP_SCHD_DTL_LAYER.html'>EMP_SCHD_DTL_LAYER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE.html'>EMPLOYEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_BADGE.html'>EMPLOYEE_BADGE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_BIO_DATA.html'>EMPLOYEE_BIO_DATA</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_COMMENT.html'>EMPLOYEE_COMMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_HISTORY.html'>EMPLOYEE_HISTORY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_JOB.html'>EMPLOYEE_JOB</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_SCHED_DTL.html'>EMPLOYEE_SCHED_DTL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_SCHEDULE.html'>EMPLOYEE_SCHEDULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_TEAM.html'>EMPLOYEE_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYEE_WORK_TYPE.html'>EMPLOYEE_WORK_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/EMPLOYMENT_TYPE.html'>EMPLOYMENT_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ENT_DETAIL.html'>ENT_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ENT_EMP_POLICY.html'>ENT_EMP_POLICY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ENT_ENTITLEMENT.html'>ENT_ENTITLEMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ENT_POLICY.html'>ENT_POLICY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ENT_POLICY_ENTITLEMENT.html'>ENT_POLICY_ENTITLEMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ACT_TYPE.html'>ES_ACT_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_CALL_LIST.html'>ES_CALL_LIST</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_CALL_LOG.html'>ES_CALL_LOG</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_CLIST_EMPLOYEE.html'>ES_CLIST_EMPLOYEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_CLIST_SORT.html'>ES_CLIST_SORT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_CLIST_TEAM.html'>ES_CLIST_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_HOLIDAY_CAL_TEAM.html'>ES_HOLIDAY_CAL_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_JOB_ASSOCIATION.html'>ES_JOB_ASSOCIATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_LEAVE_REASON.html'>ES_LEAVE_REASON</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_REASON.html'>ES_REASON</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_RELIEF_BLOCK.html'>ES_RELIEF_BLOCK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTATION.html'>ES_ROTATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTATION_PUBLISH_TASK.html'>ES_ROTATION_PUBLISH_TASK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTATION_ROW.html'>ES_ROTATION_ROW</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTATION_TYPE.html'>ES_ROTATION_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTATION_VERSION.html'>ES_ROTATION_VERSION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROTROW_ASGMT.html'>ES_ROTROW_ASGMT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROW_LM.html'>ES_ROW_LM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_ROW_VIOLATION.html'>ES_ROW_VIOLATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SCHEDULE_TEMPLATE.html'>ES_SCHEDULE_TEMPLATE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT.html'>ES_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_ATTRIBUTE.html'>ES_SHIFT_ATTRIBUTE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_BREAK.html'>ES_SHIFT_BREAK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_DETAIL.html'>ES_SHIFT_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_DETAIL_LAYER.html'>ES_SHIFT_DETAIL_LAYER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_DISP_LABEL.html'>ES_SHIFT_DISP_LABEL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_HIST_COLOR.html'>ES_SHIFT_HIST_COLOR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_HIST_DET.html'>ES_SHIFT_HIST_DET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_HIST_DETAIL_LAYER.html'>ES_SHIFT_HIST_DETAIL_LAYER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_HIST_SKILL.html'>ES_SHIFT_HIST_SKILL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_HISTORY.html'>ES_SHIFT_HISTORY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_LOCK.html'>ES_SHIFT_LOCK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_LOCK_REASON.html'>ES_SHIFT_LOCK_REASON</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_OFFER.html'>ES_SHIFT_OFFER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_OFFER_EMP_SHIFT.html'>ES_SHIFT_OFFER_EMP_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_OFFER_SHIFTSUM.html'>ES_SHIFT_OFFER_SHIFTSUM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_PROP_DEF.html'>ES_SHIFT_PROP_DEF</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_STATUS.html'>ES_SHIFT_STATUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_SUMMARY.html'>ES_SHIFT_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_SUMMARY_SKILL.html'>ES_SHIFT_SUMMARY_SKILL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFT_TYPE_TEAM.html'>ES_SHIFT_TYPE_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_DETAIL.html'>ES_SHIFTPREF_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_DETAIL_HISTORY.html'>ES_SHIFTPREF_DETAIL_HISTORY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_SUMMARY.html'>ES_SHIFTPREF_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_SUMMARY_HISTORY.html'>ES_SHIFTPREF_SUMMARY_HISTORY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_SHIFTPREF_TYPE.html'>ES_SHIFTPREF_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_STAFFING_REQ.html'>ES_STAFFING_REQ</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_TEAM.html'>ES_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_TMPL_TYPE.html'>ES_TMPL_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_WORKLOAD_CENSUS.html'>ES_WORKLOAD_CENSUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_WORKLOAD_REQ.html'>ES_WORKLOAD_REQ</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ES_WORKLOAD_SOURCE.html'>ES_WORKLOAD_SOURCE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_DRIVER.html'>FCST_DRIVER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_DRIVER_DEPT.html'>FCST_DRIVER_DEPT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_DRIVER_IMPORT.html'>FCST_DRIVER_IMPORT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_EXEC_GROUP.html'>FCST_EXEC_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_ITEM.html'>FCST_ITEM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_LOC_SUMMARY.html'>FCST_LOC_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_LOCATION.html'>FCST_LOCATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_LOCK_TYPE.html'>FCST_LOCK_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_METHOD.html'>FCST_METHOD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_NONPROD_SMRY.html'>FCST_NONPROD_SMRY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_RULE.html'>FCST_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_VOLTYP_PROP.html'>FCST_VOLTYP_PROP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FCST_WORKLOAD_SMRY.html'>FCST_WORKLOAD_SMRY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FS_REASON.html'>FS_REASON</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/FS_THRESHOLD.html'>FS_THRESHOLD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOLIDAY.html'>HOLIDAY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOLIDAY_CAL_DETAIL.html'>HOLIDAY_CAL_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOLIDAY_CAL_EMP.html'>HOLIDAY_CAL_EMP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOLIDAY_CALENDAR.html'>HOLIDAY_CALENDAR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOLIDAY_ROLL.html'>HOLIDAY_ROLL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/HOUR_TYPE.html'>HOUR_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JOB.html'>JOB</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/JOB_RATE.html'>JOB_RATE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/LABOR_SHORTCUT_DTL.html'>LABOR_SHORTCUT_DTL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/LOCATION.html'>LOCATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MAINTENANCE_FORM.html'>MAINTENANCE_FORM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MASS_ENTRY.html'>MASS_ENTRY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MESSAGE_FOLDER.html'>MESSAGE_FOLDER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_DAILY_OVERRIDE.html'>MP_DAILY_OVERRIDE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_EMP_NOTE.html'>MP_EMP_NOTE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE.html'>MP_TEMPLATE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_GROUP.html'>MP_TEMPLATE_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_GROUP_MEMBERS.html'>MP_TEMPLATE_GROUP_MEMBERS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_OVERRIDE.html'>MP_TEMPLATE_OVERRIDE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_REQUIREMENT.html'>MP_TEMPLATE_REQUIREMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_SHIFT_OVERRIDE.html'>MP_TEMPLATE_SHIFT_OVERRIDE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_TCODE.html'>MP_TEMPLATE_TCODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/MP_TEMPLATE_TEAM.html'>MP_TEMPLATE_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OSB_GROUP.html'>OSB_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OSB_GROUP_EMPLOYEE.html'>OSB_GROUP_EMPLOYEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OSB_GROUP_POSTABLE_TEAM.html'>OSB_GROUP_POSTABLE_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OSB_GROUP_TEAM.html'>OSB_GROUP_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OSB_SHIFT_POSTING.html'>OSB_SHIFT_POSTING</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_GROUP.html'>OTE_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_GROUP_EMPLOYEE.html'>OTE_GROUP_EMPLOYEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_OFFER.html'>OTE_OFFER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_RESPONSE.html'>OTE_RESPONSE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_RESPONSE_DATA.html'>OTE_RESPONSE_DATA</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OTE_RESPONSE_DATA_COLS.html'>OTE_RESPONSE_DATA_COLS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OVERRIDE.html'>OVERRIDE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OVERRIDE_TYPE.html'>OVERRIDE_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/OVR_DEF_SETTING.html'>OVR_DEF_SETTING</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP.html'>PAY_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_CAL_DET.html'>PAY_GROUP_CAL_DET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_CALENDAR.html'>PAY_GROUP_CALENDAR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_GROUP_NOTIFICATION_TYPE.html'>PAY_GROUP_NOTIFICATION_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PAY_PERIOD.html'>PAY_PERIOD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PBJ_FACILITY.html'>PBJ_FACILITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PBJ_FACILITY_TEAM.html'>PBJ_FACILITY_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/PROJECT.html'>PROJECT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/READER.html'>READER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/REASON_CODE.html'>REASON_CODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_GROUP.html'>RTSS_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_GROUP_EMP.html'>RTSS_GROUP_EMP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_GROUP_RULE.html'>RTSS_GROUP_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_GROUP_SET.html'>RTSS_GROUP_SET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_GROUP_TEAM.html'>RTSS_GROUP_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_MESSAGE.html'>RTSS_MESSAGE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_PROCESS.html'>RTSS_PROCESS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_PROCESS_MSG.html'>RTSS_PROCESS_MSG</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_PROCESS_STAT.html'>RTSS_PROCESS_STAT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_RUL_ENF_LEVEL.html'>RTSS_RUL_ENF_LEVEL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_RUL_ENF_POINT.html'>RTSS_RUL_ENF_POINT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_RULE.html'>RTSS_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_RULE_ERR_LOG.html'>RTSS_RULE_ERR_LOG</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_SHIFT.html'>RTSS_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_SHIFT_REQ.html'>RTSS_SHIFT_REQ</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_WIN_MSG_STAT.html'>RTSS_WIN_MSG_STAT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_WINDOW.html'>RTSS_WINDOW</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_WINDOW_GROUP.html'>RTSS_WINDOW_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/RTSS_WINDOW_MSG.html'>RTSS_WINDOW_MSG</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_BID_PERIOD.html'>SB_BID_PERIOD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_EMP_BID_GROUP.html'>SB_EMP_BID_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_EMP_PREF.html'>SB_EMP_PREF</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_EMP_PREF_VAL.html'>SB_EMP_PREF_VAL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_PREF_TYPE.html'>SB_PREF_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_SCHD_BID.html'>SB_SCHD_BID</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_SCHD_BID_BID.html'>SB_SCHD_BID_BID</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_SCHD_BID_EMP.html'>SB_SCHD_BID_EMP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_SCHD_BID_GROUP.html'>SB_SCHD_BID_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SB_SCHD_BID_SPAT.html'>SB_SCHD_BID_SPAT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SC_CNSTRNT_GROUP.html'>SC_CNSTRNT_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SC_CNSTRNT_RULE.html'>SC_CNSTRNT_RULE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SC_CONSTRAINT.html'>SC_CONSTRAINT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCH_SHIFT_OFFER_CHANNEL.html'>SCH_SHIFT_OFFER_CHANNEL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCH_SHIFT_OFFER_REJ_REASON.html'>SCH_SHIFT_OFFER_REJ_REASON</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCH_SHIFT_OFFER_STATUS.html'>SCH_SHIFT_OFFER_STATUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCHED_COST_DETAIL.html'>SCHED_COST_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCHEDULE_EMPLOYEE.html'>SCHEDULE_EMPLOYEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SCHEDULE_PERIOD.html'>SCHEDULE_PERIOD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT.html'>SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_PATTERN.html'>SHIFT_PATTERN</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_PATTERN_SHIFT_LABOR.html'>SHIFT_PATTERN_SHIFT_LABOR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_PATTERN_SHIFT_TYPE.html'>SHIFT_PATTERN_SHIFT_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_PATTERN_SHIFTS.html'>SHIFT_PATTERN_SHIFTS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SHIFT_TRADE.html'>SHIFT_TRADE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_ACTIVITY.html'>SO_ACTIVITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_EMPLOYEE_GRPRUL.html'>SO_EMPLOYEE_GRPRUL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_LOCATION_PROP.html'>SO_LOCATION_PROP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_LOCPROP_WORKLD.html'>SO_LOCPROP_WORKLD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_PROPERTY.html'>SO_PROPERTY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_RESULTS_SUMMARY.html'>SO_RESULTS_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_RULE_GROUP.html'>SO_RULE_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SCHEDULE_GROUP.html'>SO_SCHEDULE_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_OFFER.html'>SO_SHIFT_OFFER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_OFFER_ALGORITHM.html'>SO_SHIFT_OFFER_ALGORITHM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_OFFER_EMP_SHIFT.html'>SO_SHIFT_OFFER_EMP_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_OFFER_EMPSHFT_STATUS.html'>SO_SHIFT_OFFER_EMPSHFT_STATUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_SHIFT_OFFER_SHIFT.html'>SO_SHIFT_OFFER_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_STFOFS_OVR_TYPE.html'>SO_STFOFS_OVR_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_TASK.html'>SO_TASK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_TASK_TMPLT.html'>SO_TASK_TMPLT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_TASK_TYPE.html'>SO_TASK_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SO_VOLUME_WORKLOAD.html'>SO_VOLUME_WORKLOAD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SR_DETAIL.html'>SR_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SR_SHIFT_OFFSET.html'>SR_SHIFT_OFFSET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SR_SUM_PRIORITY.html'>SR_SUM_PRIORITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SR_SUMMARY.html'>SR_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/SR_TEAM_PRIORITY.html'>SR_TEAM_PRIORITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE.html'>ST_COURSE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_CALENDAR.html'>ST_COURSE_CALENDAR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_NOTIFY.html'>ST_COURSE_NOTIFY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_PREREQUISITE.html'>ST_COURSE_PREREQUISITE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_SURVEY.html'>ST_COURSE_SURVEY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_COURSE_TYPE.html'>ST_COURSE_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_EMP_COURSE_CALENDAR.html'>ST_EMP_COURSE_CALENDAR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_EMP_SKILL.html'>ST_EMP_SKILL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_INSTRUCTOR.html'>ST_INSTRUCTOR</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_INSTRUCTOR_COURSE.html'>ST_INSTRUCTOR_COURSE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_INSTRUCTOR_LOCATION.html'>ST_INSTRUCTOR_LOCATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_JOB_SKILL.html'>ST_JOB_SKILL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_LOCATION.html'>ST_LOCATION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_NOTIFY_HIST.html'>ST_NOTIFY_HIST</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_SKILL.html'>ST_SKILL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_SKILL_COURSE.html'>ST_SKILL_COURSE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/ST_SKILL_TYPE.html'>ST_SKILL_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/STATE.html'>STATE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/STATE_MIN_WAGE.html'>STATE_MIN_WAGE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TARGET.html'>TARGET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TARGET_DETAIL.html'>TARGET_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TARGET_METRIC.html'>TARGET_METRIC</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TARGET_METRIC_TYPE.html'>TARGET_METRIC_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TARGET_TYPE.html'>TARGET_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TEAM_DAY_PART_SET.html'>TEAM_DAY_PART_SET</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TEAM_RANGE.html'>TEAM_RANGE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TEAM_RANGE_MARKER.html'>TEAM_RANGE_MARKER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TEAM_RANGE_TYPE.html'>TEAM_RANGE_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TEAM_SCHPRD.html'>TEAM_SCHPRD</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_CODE.html'>TIME_CODE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_CODE_BALANCE.html'>TIME_CODE_BALANCE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_OFF_APPROVAL.html'>TIME_OFF_APPROVAL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_OFF_DAY.html'>TIME_OFF_DAY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_OFF_REQUEST.html'>TIME_OFF_REQUEST</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIME_OFF_TYPE.html'>TIME_OFF_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TIMESHEET_FILTER.html'>TIMESHEET_FILTER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_ACTIONITEM.html'>TM_ACTIONITEM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_ACTITMASGN_WORK.html'>TM_ACTITMASGN_WORK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_AIASGN_NOTE.html'>TM_AIASGN_NOTE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_AIAWORK_NOTE.html'>TM_AIAWORK_NOTE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_CATEGORY.html'>TM_CATEGORY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_NOTE_TYPE.html'>TM_NOTE_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_PRIORITY.html'>TM_PRIORITY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_RESOURCE.html'>TM_RESOURCE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_TASK.html'>TM_TASK</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_TASK_STATUS.html'>TM_TASK_STATUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_TEAM_GROUP.html'>TM_TEAM_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TM_WORKASGN_STATUS.html'>TM_WORKASGN_STATUS</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL.html'>TOKE_POOL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL_COUNTER.html'>TOKE_POOL_COUNTER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL_COUNTER_FEE.html'>TOKE_POOL_COUNTER_FEE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL_DIST_PAYOUT.html'>TOKE_POOL_DIST_PAYOUT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL_DISTRIBUTION.html'>TOKE_POOL_DISTRIBUTION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TOKE_POOL_EMP_ADJUSTMENT.html'>TOKE_POOL_EMP_ADJUSTMENT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/TS_USER.html'>TS_USER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/UNIT_OF_SERVICE.html'>UNIT_OF_SERVICE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/UNIT_OF_SERVICE_DETAIL.html'>UNIT_OF_SERVICE_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/UNSTFD_SHIFT.html'>UNSTFD_SHIFT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_ALERT.html'>WB_ALERT</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_ARCH_POLICY.html'>WB_ARCH_POLICY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WB_RESOURCE_TYPE.html'>WB_RESOURCE_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBI_KPI_SUMMARY_AGG.html'>WBI_KPI_SUMMARY_AGG</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBINT_TRANSACTION.html'>WBINT_TRANSACTION</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WBINT_TYPE.html'>WBINT_TYPE</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL.html'>WORK_DETAIL</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_DETAIL_ADJUST.html'>WORK_DETAIL_ADJUST</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORK_SUMMARY.html'>WORK_SUMMARY</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORKBRAIN_GROUP.html'>WORKBRAIN_GROUP</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORKBRAIN_TEAM.html'>WORKBRAIN_TEAM</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORKBRAIN_USER.html'>WORKBRAIN_USER</a></td>
+					</tr>				
+									<tr>
+					 <td><a href='tables/WORKBRAIN_USER_TEAM.html'>WORKBRAIN_USER_TEAM</a></td>
+					</tr>				
+													</tbody>
+					</table>				
+				</div>
+			</div>			
+		</div>	
+		<div class="col-md-6"> <!-- Columns whose default value is the word 'NULL' or 'null', but the SQL NULL value may have been intended -->
+			<div class="box box-primary">
+				<div class="box-header with-border">
+				  <h3 class="box-title" title="Columns whose default value is the word 'NULL' or 'null', but the SQL NULL value may have been intende">Columns whose default value is the word 'NULL' or 'null'</h3>
+				  <div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				  </div>
+				</div>	
+				<div class="box-body">
+					<table id="un_indexed_tables" class="table table-bordered table-striped dataTable" role="grid">
+					<thead align='left'>
+					<tr>
+					  <th>Table</th>				  
+					</tr>
+					</thead>
+					<tbody>
+									<tr><td colspan="3">Anomaly not detected</td></tr>
+									</tbody>
+					</table>				
+				</div>
+			</div>			
+		</div>			
+	 </div>
+	 </section>    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="bower/codemirror/codemirror.js"></script>
+<script src="bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="bower/admin-lte/dist/js/app.min.js"></script>
+<script src="anomalies.js"></script>
+<script src="schemaSpy.js"></script>
+</body>
+</html>
